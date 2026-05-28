@@ -163,7 +163,7 @@ export default async function CaseStudyPage({
                     ))}
                   </div>
 
-                  {/* Section images — each with inline annotation */}
+                  {/* Section images, each with inline annotation */}
                   {section.images && section.images.length > 0 && (
                     <div className="flex flex-col gap-10">
                       {section.images.map((img) => (

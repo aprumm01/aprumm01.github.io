@@ -144,14 +144,14 @@ const _projects: Project[] = [
           "In May 2023 I was promoted to Principal UX Designer and took on a wider scope: design lead for the Travel UX team across both product lines, and lead for all AI interaction design. SAP Joule is SAP's enterprise AI assistant, a conversational interface layered across enterprise workflows. My job is integrating travel booking into Joule and maintaining consistency across multiple concurrent AI initiatives touching the Travel product.",
           "All four booking verticals are now integrated: air, hotel, rental car, and rail. The interaction design challenges here are distinct from traditional UI. How do you handle policy enforcement in a conversational context? What happens when a traveler's request doesn't map cleanly to available options? How do you build trust in AI recommendations when the stakes are a $2,000 international business-class ticket that has to meet a compliance policy?",
           "The work spans discovery research, usability testing for the Joule experience, aligning conversational UI patterns with traveler mental models, and bridging customer expectations with what the AI can actually do reliably. I run customer validation sessions and work with product and engineering to define what belongs in conversational booking versus what still requires the traditional UI.",
-          "One key interaction pattern is a listening event on incoming email: when a traveler receives an event confirmation, they can forward it to Joule, which detects the trip, gathers policy-compliant flight, hotel, and car options, and presents a full itinerary for review and one-tap booking — without the traveler ever opening the Concur app.",
+          "One key interaction pattern is a listening event on incoming email: when a traveler receives an event confirmation, they can forward it to Joule, which detects the trip, gathers policy-compliant flight, hotel, and car options, and presents a full itinerary for review and one-tap booking, without the traveler ever opening the Concur app.",
         ],
         images: [
           {
             src: "/projects/sap-concur/joule/email-trigger.png",
             alt: "Event confirmation email in traveler inbox",
             caption: "Step 1: event confirmation email",
-            annotation: "The interaction begins with a standard event confirmation in the traveler's inbox. No Concur app required at this stage — the trigger is a simple email forward.",
+            annotation: "The interaction begins with a standard event confirmation in the traveler's inbox. No Concur app required at this stage. The trigger is a simple email forward.",
           },
           {
             src: "/projects/sap-concur/joule/email-forward.png",
@@ -163,13 +163,13 @@ const _projects: Project[] = [
             src: "/projects/sap-concur/joule/joule-options.png",
             alt: "Joule presenting flight, hotel, and car options in conversational UI",
             caption: "Step 3: Joule presents options",
-            annotation: "Joule returns a structured itinerary with policy-compliant flights, hotel, and rental car — each option surfacing the attributes that matter in managed travel: carrier preference, loyalty program, policy tier. The traveler reviews and selects without leaving the conversation.",
+            annotation: "Joule returns a structured itinerary with policy-compliant flights, hotel, and rental car. Each option surfaces the attributes that matter in managed travel: carrier preference, loyalty program, policy tier. The traveler reviews and selects without leaving the conversation.",
           },
           {
             src: "/projects/sap-concur/joule/joule-confirmed.png",
             alt: "Trip confirmed state in Joule after booking completion",
             caption: "Step 4: trip confirmed",
-            annotation: "Once the traveler confirms payment, Joule finalizes the booking across all three verticals simultaneously and surfaces a trip overview. The entire flow — from email forward to confirmed booking — requires no navigation through the traditional Concur UI.",
+            annotation: "Once the traveler confirms payment, Joule finalizes the booking across all three verticals simultaneously and surfaces a trip overview. The entire flow, from email forward to confirmed booking, requires no navigation through the traditional Concur UI.",
           },
           {
             src: "/projects/sap-concur/joule/joule-homepage.png",
@@ -540,7 +540,7 @@ const _projects: Project[] = [
         heading: "The Problem",
         paragraphs: [
           "SAP Concur receives roughly 25,000 feedback comments per month from users of my product area alone. That volume is unmanageable for any design team trying to read it directly; insights get filtered, summarized incompletely, or deferred until someone has bandwidth for a quarterly synthesis. By then the moment has passed.",
-          "The core problem is not that the data doesn't exist. It's that the gap between 'raw feedback exists' and 'the team can act on it' is too wide. A human analyst reading thousands of comments doesn't scale. And while real user testing is the right tool for nuanced questions, scheduling and recruiting cycles mean it's rarely available in the middle of an iteration sprint — exactly when a designer most needs to know whether a pattern will hold.",
+          "The core problem is not that the data doesn't exist. It's that the gap between 'raw feedback exists' and 'the team can act on it' is too wide. A human analyst reading thousands of comments doesn't scale. And while real user testing is the right tool for nuanced questions, scheduling and recruiting cycles mean it's rarely available in the middle of an iteration sprint, exactly when a designer most needs to know whether a pattern will hold.",
         ],
       },
       {
@@ -576,9 +576,9 @@ const _projects: Project[] = [
       {
         heading: "The Evaluation Layer",
         paragraphs: [
-          "Beyond persona generation, the tool includes a design evaluation layer. Given a design to review, the system generates an assessment from the perspective of a synthetic user persona — how would this segment of real customers respond to this decision — and then contrasts it against a structured evaluation using established design criteria.",
+          "Beyond persona generation, the tool includes a design evaluation layer. Given a design to review, the system generates an assessment from the perspective of a synthetic user persona, asking how this segment of real customers would respond to the design decision, and then contrasts that against a structured evaluation using established design criteria.",
           "The evaluation criteria are explicit and multi-standard: WCAG 2.1 AA accessibility guidelines, Nielsen Norman usability heuristics, SAP Fiori design system conventions, and iOS Human Interface and Material Design guidelines where applicable. Output is specific and actionable. Rather than 'this might confuse users,' a typical evaluation flags something like 'no format guidance violates Heuristic #6 (recognition vs. recall), severity 7/10,' or identifies which user segment will struggle at a given step and with what estimated frequency. Issues are prioritized by severity and user pain-point weight, not returned as a flat undifferentiated list.",
-          "The tool works best during the iteration phase, when patterns are still being defined. Most usability problems at that stage follow known patterns — missing labels, unclear flows, ambiguous terminology — that a model trained on thousands of real feedback statements is well-suited to detect. It is not a substitute for real user testing, which remains necessary for subtle interaction problems, edge cases, and emotional responses. The value is arriving at real testing with fewer obvious issues and more focused questions.",
+          "The tool works best during the iteration phase, when patterns are still being defined. Most usability problems at that stage follow known patterns (missing labels, unclear flows, ambiguous terminology) that a model trained on thousands of real feedback statements is well-suited to detect. It is not a substitute for real user testing, which remains necessary for subtle interaction problems, edge cases, and emotional responses. The value is arriving at real testing with fewer obvious issues and more focused questions.",
         ],
         stats: [
           { value: "WCAG 2.1 AA", label: "accessibility standard" },
@@ -591,7 +591,7 @@ const _projects: Project[] = [
         heading: "Adoption & Impact",
         paragraphs: [
           "The tool was not announced, launched, or formally rolled out. It was built, shared with the Travel UX team, and adopted because it was useful. Designers use it to pressure-test their work before reviews, to orient quickly on a new project by reading a relevant persona summary, and to catch accessibility and heuristic issues that manual review might miss under time pressure.",
-          "It occupies the space between product tooling and research operations — infrastructure with no natural home on a standard roadmap, but with clear value for the people doing the work.",
+          "It occupies the space between product tooling and research operations: infrastructure with no natural home on a standard roadmap, but with clear value for the people doing the work.",
         ],
         images: [
           {
@@ -658,21 +658,21 @@ const _projects: Project[] = [
       {
         heading: "Research & Information Architecture",
         paragraphs: [
-          "The design started with rank-order research from an internal Concur study and an external source, which established a clear priority hierarchy for the factors business travelers consider when booking. The top-ranked factors — price, number of stops, policy status, and departure/arrival times — were consistently prioritized across traveler types. A middle tier covered seat selection, loyalty program data, and onboard amenities. The lowest-priority factors — class of service detail, eco attributes, aircraft type — were relevant to some travelers but rarely decisive.",
-          "That hierarchy drove the information architecture directly. The top third of priorities appear in the default fare card view, immediately visible without any interaction. The middle third surfaces after the first click — once a traveler has indicated interest in a specific option. The lowest-priority third is distributed throughout the page and available in the detailed fare breakdown: accessible, but not competing for attention at the comparison stage. The progressive disclosure model is a direct translation of the research priority ranking into interaction depth.",
+          "The design started with rank-order research from an internal Concur study and an external source, which established a clear priority hierarchy for the factors business travelers consider when booking. The top-ranked factors (price, number of stops, policy status, and departure/arrival times) were consistently prioritized across traveler types. A middle tier covered seat selection, loyalty program data, and onboard amenities. The lowest-priority factors (class of service detail, eco attributes, aircraft type) were relevant to some travelers but rarely decisive.",
+          "That hierarchy drove the information architecture directly. The top third of priorities appear in the default fare card view, immediately visible without any interaction. The middle third surfaces after the first click, once a traveler has indicated interest in a specific option. The lowest-priority third is distributed throughout the page and available in the detailed fare breakdown: accessible, but not competing for attention at the comparison stage. The progressive disclosure model is a direct translation of the research priority ranking into interaction depth.",
         ],
         images: [
           {
             src: "/projects/multi-fare-display/rank-order-research.png",
             alt: "Rank-order study results: factors travelers consider when booking business travel",
             caption: "Rank-order research: booking factor priorities",
-            annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster — price, stops, policy status, departure/arrival times — established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
+            annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster (price, stops, policy status, departure/arrival times) established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
           },
           {
             src: "/projects/multi-fare-display/card-sort-research.png",
             alt: "Card sort study: business travel booking factor categorization",
             caption: "Card sort: not important / important / very important",
-            annotation: "A card sort study asking business travelers to categorize booking factors by importance. The three-tier categorization from this study — not important, important, very important — maps directly to the three disclosure levels in the fare display: default view, first-click expansion, and full detail.",
+            annotation: "A card sort study asking business travelers to categorize booking factors by importance. The three-tier categorization from this study (not important, important, very important) maps directly to the three disclosure levels in the fare display: default view, first-click expansion, and full detail.",
           },
           {
             src: "/projects/multi-fare-display/prototype-01.png",
@@ -742,18 +742,18 @@ const _projects: Project[] = [
     images: [
       {
         src: "/projects/ngs/results-collapsed.png",
-        alt: "NGS results page — default collapsed view with UPA attribute chips",
+        alt: "NGS results page: default collapsed view with UPA attribute chips",
         annotation: "The default results view shows airlines as scannable rows with highlighted UPA attributes surfaced as chips on the right: Seat Selection, Checked Bags, Upgrade Rights, and others. At a glance, travelers can compare airlines on specific differentiators without expanding any row.",
       },
       {
         src: "/projects/ngs/results-expanded.png",
-        alt: "NGS results — fare matrix expanded, showing UPA and UTA attributes across fare classes",
-        annotation: "Expanding a result row reveals the full attribute matrix. UPA (Universal Product Attributes) are the fare-level, ticket-specific attributes — Seat Selection, Checked Bags, Cancellation, Upgrade Eligibility, Boarding Priority, Lounge Access. UTA (Universal Travel Attributes) are the fixed aircraft-level attributes — Seat, Aircraft Type, Layout, Wi-Fi, Entertainment, Meal Service. Together they give travelers a complete, structured picture of what each fare class actually includes.",
+        alt: "NGS results: fare matrix expanded, showing UPA and UTA attributes across fare classes",
+        annotation: "Expanding a result row reveals the full attribute matrix. UPA (Universal Product Attributes) are the fare-level, ticket-specific attributes: Seat Selection, Checked Bags, Cancellation, Upgrade Eligibility, Boarding Priority, Lounge Access. UTA (Universal Travel Attributes) are the fixed aircraft-level attributes: Seat, Aircraft Type, Layout, Wi-Fi, Entertainment, Meal Service. Together they give travelers a complete, structured picture of what each fare class actually includes.",
       },
       {
         src: "/projects/ngs/compare.png",
-        alt: "NGS compare mode — three flights side by side with aligned UPA and UTA attribute grid",
-        annotation: "Compare mode is where the NGS value proposition is most visible. A traveler can compare fares within a single airline across its fare tiers, compare equivalent fares from different airlines, or compare across both dimensions simultaneously. Most OBTs never surface this comparison at all — travelers see one offer, then another, without a shared frame of reference. The aligned attribute grid makes the differences immediately readable without requiring the traveler to hold multiple options in memory.",
+        alt: "NGS compare mode: three flights side by side with aligned UPA and UTA attribute grid",
+        annotation: "Compare mode is where the NGS value proposition is most visible. A traveler can compare fares within a single airline across its fare tiers, compare equivalent fares from different airlines, or compare across both dimensions simultaneously. Most OBTs never surface this comparison at all. Travelers see one offer, then another, without a shared frame of reference. The aligned attribute grid makes the differences immediately readable without requiring the traveler to hold multiple options in memory.",
       },
     ],
     accentColor: "#0d1a0d",
@@ -762,27 +762,27 @@ const _projects: Project[] = [
         heading: "The Opportunity",
         paragraphs: [
           "ATPCO sits at a unique position in the airline industry: it processes the fare data that all airlines publish and all booking engines consume. Most travelers never encounter ATPCO, but every flight search result is shaped by its data. The Next Gen Storefront was a bet that ATPCO could also define how that data is presented, not just processed.",
-          "The core problem NGS was designed to solve: most online booking tools (OBTs) present travelers with a single airline and a single fare offer at a time. The traveler sees one option, then another, then another — never all of them simultaneously. This makes it nearly impossible to compare fares within an airline across fare classes, or to compare equivalent fare classes across airlines. Travelers end up making decisions based on price alone because that's the only dimension that's consistently visible.",
-          "NGS's central value proposition was full simultaneous disclosure: all airlines, all offered fares, all at once — organized so travelers could compare within an airline across its fare tiers and between airlines at the same fare level. This was particularly meaningful for business travelers, who are bound by company travel policy and need to find options that satisfy both schedule requirements and price restrictions. Business travelers prioritize schedule first, then price within policy; leisure travelers are primarily price-driven. Both audiences benefit from seeing the full offer set, but for different reasons.",
+          "The core problem NGS was designed to solve: most online booking tools (OBTs) present travelers with a single airline and a single fare offer at a time. The traveler sees one option, then another, then another, never all of them simultaneously. This makes it nearly impossible to compare fares within an airline across fare classes, or to compare equivalent fare classes across airlines. Travelers end up making decisions based on price alone because that's the only dimension that's consistently visible.",
+          "NGS's central value proposition was full simultaneous disclosure: all airlines, all offered fares, all at once, organized so travelers could compare within an airline across its fare tiers and between airlines at the same fare level. This was particularly meaningful for business travelers, who are bound by company travel policy and need to find options that satisfy both schedule requirements and price restrictions. Business travelers prioritize schedule first, then price within policy; leisure travelers are primarily price-driven. Both audiences benefit from seeing the full offer set, but for different reasons.",
         ],
       },
       {
         heading: "Design Approach",
         paragraphs: [
           "I approached the NGS design with two audiences in mind simultaneously: the booking engine operators who would configure and deploy it, and the end travelers who would use it to choose flights. The B2B configuration layer needed to give airlines meaningful control over how their products were displayed; the consumer layer needed to make a genuinely novel interaction model feel intuitive.",
-          "The fundamental design challenge was that the NGS model doesn't match most travelers' mental model of air shopping. Travelers expect to see one option at a time and compare sequentially. NGS presents all options simultaneously in a structured grid, which is more efficient but requires a different scanning strategy. Business travelers adapted more readily — they're already accustomed to evaluating multiple fare options to find something that fits both their schedule and their company's policy. Leisure travelers needed more scaffolding to understand that they were looking at a complete, comparable picture rather than being overwhelmed by it.",
-          "The data architecture added another layer of complexity: two fundamentally different types of fare attributes needed to coexist in a single matrix. UPA — Universal Product Attributes — are fare-level, ticket-specific attributes that vary by price class: Seat Selection fees, Checked Bags, Cancellation policy, Upgrade Eligibility, Boarding Priority, Lounge Access. UTA — Universal Travel Attributes — are fixed to the aircraft and don't change by fare class: Seat type, Aircraft, Layout, Wi-Fi, Entertainment, Meal Service. Organizing these into distinct 'Ticket Specific' and 'In Seat' sections gave travelers a clear mental model: UPA rows tell you what you're paying more for; UTA rows tell you what you're getting regardless.",
+          "The fundamental design challenge was that the NGS model doesn't match most travelers' mental model of air shopping. Travelers expect to see one option at a time and compare sequentially. NGS presents all options simultaneously in a structured grid, which is more efficient but requires a different scanning strategy. Business travelers adapted more readily, as they're already accustomed to evaluating multiple fare options to find something that fits both their schedule and their company's policy. Leisure travelers needed more scaffolding to understand that they were looking at a complete, comparable picture rather than being overwhelmed by it.",
+          "The data architecture added another layer of complexity: two fundamentally different types of fare attributes needed to coexist in a single matrix. UPA (Universal Product Attributes) are fare-level, ticket-specific attributes that vary by price class: Seat Selection fees, Checked Bags, Cancellation policy, Upgrade Eligibility, Boarding Priority, Lounge Access. UTA (Universal Travel Attributes) are fixed to the aircraft and don't change by fare class: Seat type, Aircraft, Layout, Wi-Fi, Entertainment, Meal Service. Organizing these into distinct 'Ticket Specific' and 'In Seat' sections gave travelers a clear mental model: UPA rows tell you what you're paying more for; UTA rows tell you what you're getting regardless.",
         ],
         images: [
           {
             src: "/projects/ngs/results-row-expanded.png",
             alt: "Fully expanded result row showing UPA Ticket Specific and UTA In Seat attribute matrix",
             caption: "Expanded row: UPA and UTA attributes organized across fare classes",
-            annotation: "The expanded row shows the full matrix. 'Ticket Specific' rows are UPA — fare-level attributes that vary by price point and represent the commercial differentiators airlines publish via ATPCO. 'In Seat' rows are UTA — fixed aircraft attributes that remain constant across all fares on that flight. Checkmarks indicate included; cost values indicate fees; blank cells indicate unpublished data.",
+            annotation: "The expanded row shows the full matrix. 'Ticket Specific' rows are UPA: fare-level attributes that vary by price point and represent the commercial differentiators airlines publish via ATPCO. 'In Seat' rows are UTA: fixed aircraft attributes that remain constant across all fares on that flight. Checkmarks indicate included; cost values indicate fees; blank cells indicate unpublished data.",
           },
           {
             src: "/projects/ngs/upa-detail.png",
-            alt: "UPA detail expansion panel — Priority Boarding with seat and cabin imagery",
+            alt: "UPA detail expansion panel: Priority Boarding with seat and cabin imagery",
             caption: "UPA detail: attribute description with cabin photography",
             annotation: "Selecting a UPA attribute expands a detail panel with a plain-language description and supporting imagery. This addressed a testing finding: travelers understood the attribute names but wanted confirmation of what the service actually looked like before committing to an upcharge.",
           },
@@ -803,7 +803,7 @@ const _projects: Project[] = [
         videos: [
           {
             src: "/projects/ngs/01-landing-results.mp4",
-            caption: "Results page — default collapsed view",
+            caption: "Results page: default collapsed view",
             annotation: "The default results view surfaces a curated set of highlighted UPA attributes for each airline as scannable chips, giving travelers a quick read on competitive differentiators without expanding anything. The layout was designed to reward both the scan (horizontal comparison across airlines) and the drill (vertical read of a single airline's key attributes).",
           },
           {
@@ -813,7 +813,7 @@ const _projects: Project[] = [
           },
           {
             src: "/projects/ngs/03-upa-amenities.mp4",
-            caption: "UPA attributes — Ticket Specific section",
+            caption: "UPA attributes: Ticket Specific section",
             annotation: "UPA (Universal Product Attributes) are the fare-level, non-aircraft attributes representing the commercial layer of what airlines sell: upgrade eligibility, boarding priority, lounge access, same-day change, cancellation flexibility. These are the attributes that vary most dramatically across fare classes and form the core of airline product differentiation.",
           },
           {
@@ -823,7 +823,7 @@ const _projects: Project[] = [
           },
           {
             src: "/projects/ngs/05-compare.mp4",
-            caption: "Compare mode — up to three fares side by side",
+            caption: "Compare mode: up to three fares side by side",
             annotation: "Compare mode lets travelers pin up to three options and evaluate them across the same UPA and UTA attribute grid. The alignment is exact: every row maps directly across all columns, making it straightforward to spot differences. Validated in guerrilla testing as the most effective format for final booking decisions.",
           },
           {
@@ -843,9 +843,9 @@ const _projects: Project[] = [
         images: [
           {
             src: "/projects/ngs/compare.png",
-            alt: "NGS compare mode — three flights with full UPA and UTA attribute grid side by side",
+            alt: "NGS compare mode: three flights with full UPA and UTA attribute grid side by side",
             caption: "Compare mode: cross-airline and cross-fare comparison in a single view",
-            annotation: "The compare view surfaces something most booking tools never show: a direct, structured comparison across airlines and across fare classes simultaneously. A business traveler working within company policy can quickly identify which options satisfy their schedule need and which of those has the best UPA package for the price. The challenge was compressing the full UPA/UTA matrix into three columns while keeping it readable — testing confirmed the grid held up, and travelers zeroed in on UPA differences (Checked Bags, Cancellation) first.",
+            annotation: "The compare view surfaces something most booking tools never show: a direct, structured comparison across airlines and across fare classes simultaneously. A business traveler working within company policy can quickly identify which options satisfy their schedule need and which of those has the best UPA package for the price. The challenge was compressing the full UPA/UTA matrix into three columns while keeping it readable. Testing confirmed the grid held up, and travelers zeroed in on UPA differences (Checked Bags, Cancellation) first.",
           },
         ],
       },
@@ -933,12 +933,12 @@ const _projects: Project[] = [
     images: [
       {
         src: "/projects/web-graphics/boyd.png",
-        alt: "Boyd Security corporate website — Honesty, Integrity, and Outstanding Performance",
+        alt: "Boyd Security corporate website: Honesty, Integrity, and Outstanding Performance",
         annotation: "Boyd Security corporate website, a Tribeswell client project. Built to a bespoke brief for a construction and energy services company, the design uses dramatic industrial photography with a bold, authoritative typographic system.",
       },
       {
         src: "/projects/web-graphics/newmoon.png",
-        alt: "New Moon Cottage website — dark forest photography anchoring the brand",
+        alt: "New Moon Cottage website: dark forest photography anchoring the brand",
         annotation: "New Moon Cottage branding and website: full identity work and WordPress build for a bed and breakfast. The project included logo development through multiple concept rounds, a brand style guide, and a full WordPress site build.",
       },
       {

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: META.image,
         width: 1200,
         height: 675,
-        alt: "Adam Prumm — UX Design Portfolio",
+        alt: "Adam Prumm: UX Design Portfolio",
       },
     ],
     locale: "en_US",
