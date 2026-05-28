@@ -60,9 +60,9 @@ export default function About() {
               search, multi-fare display, seat selection, fare merchandising, and
               review &amp; book. Prior to Concur, I was at ATPCO, the airline
               industry&apos;s pricing infrastructure backbone, where I led UX research
-              and design across the product portfolio, ran certified Design
-              Sprints at the CPO&apos;s request, and designed tools for pricing
-              analysts at 490+ airlines worldwide.
+              and design across the product portfolio, ran Design Sprints
+              across product teams, and designed tools for pricing analysts
+              at 490+ airlines worldwide.
             </p>
             <p>
               I hold an MFA in Graphic Design and an MS in HCI from Indiana

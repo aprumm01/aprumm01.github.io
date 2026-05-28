@@ -32,9 +32,9 @@ export default function Hero() {
         </h1>
 
         <p className="opacity-0 animate-fade-up delay-300 max-w-lg text-sm text-[#999] leading-relaxed font-[family-name:var(--font-inter)]">
-          10+ years designing enterprise products for the airline and travel
-          industry. Principal UX Designer at SAP Concur. PhD candidate at
-          Indiana University.
+          10 years of design experience spanning enterprise travel products,
+          web design, and front-end development. Principal UX Designer at SAP
+          Concur. PhD candidate at Indiana University.
         </p>
 
         <div className="opacity-0 animate-fade-up delay-400 flex items-center gap-5 pt-2">

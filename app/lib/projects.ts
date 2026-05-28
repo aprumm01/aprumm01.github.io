@@ -144,6 +144,39 @@ const _projects: Project[] = [
           "In May 2023 I was promoted to Principal UX Designer and took on a wider scope: design lead for the Travel UX team across both product lines, and lead for all AI interaction design. SAP Joule is SAP's enterprise AI assistant, a conversational interface layered across enterprise workflows. My job is integrating travel booking into Joule and maintaining consistency across multiple concurrent AI initiatives touching the Travel product.",
           "All four booking verticals are now integrated: air, hotel, rental car, and rail. The interaction design challenges here are distinct from traditional UI. How do you handle policy enforcement in a conversational context? What happens when a traveler's request doesn't map cleanly to available options? How do you build trust in AI recommendations when the stakes are a $2,000 international business-class ticket that has to meet a compliance policy?",
           "The work spans discovery research, usability testing for the Joule experience, aligning conversational UI patterns with traveler mental models, and bridging customer expectations with what the AI can actually do reliably. I run customer validation sessions and work with product and engineering to define what belongs in conversational booking versus what still requires the traditional UI.",
+          "One key interaction pattern is a listening event on incoming email: when a traveler receives an event confirmation, they can forward it to Joule, which detects the trip, gathers policy-compliant flight, hotel, and car options, and presents a full itinerary for review and one-tap booking — without the traveler ever opening the Concur app.",
+        ],
+        images: [
+          {
+            src: "/projects/sap-concur/joule/email-trigger.png",
+            alt: "Event confirmation email in traveler inbox",
+            caption: "Step 1: event confirmation email",
+            annotation: "The interaction begins with a standard event confirmation in the traveler's inbox. No Concur app required at this stage — the trigger is a simple email forward.",
+          },
+          {
+            src: "/projects/sap-concur/joule/email-forward.png",
+            alt: "Forwarding event confirmation to Joule Booking Agent",
+            caption: "Step 2: forward to Joule",
+            annotation: "The traveler forwards the email to Bookit@sap.com. Joule intercepts the message, parses the event details, and begins assembling a policy-compliant itinerary in the background.",
+          },
+          {
+            src: "/projects/sap-concur/joule/joule-options.png",
+            alt: "Joule presenting flight, hotel, and car options in conversational UI",
+            caption: "Step 3: Joule presents options",
+            annotation: "Joule returns a structured itinerary with policy-compliant flights, hotel, and rental car — each option surfacing the attributes that matter in managed travel: carrier preference, loyalty program, policy tier. The traveler reviews and selects without leaving the conversation.",
+          },
+          {
+            src: "/projects/sap-concur/joule/joule-confirmed.png",
+            alt: "Trip confirmed state in Joule after booking completion",
+            caption: "Step 4: trip confirmed",
+            annotation: "Once the traveler confirms payment, Joule finalizes the booking across all three verticals simultaneously and surfaces a trip overview. The entire flow — from email forward to confirmed booking — requires no navigation through the traditional Concur UI.",
+          },
+          {
+            src: "/projects/sap-concur/joule/joule-homepage.png",
+            alt: "SAP Concur homepage with Joule panel open showing completed booking",
+            caption: "Joule integrated into the Concur homepage",
+            annotation: "The Joule panel sits alongside the existing Concur homepage, giving travelers a persistent conversational entry point without replacing the traditional booking UI. The homepage reflects the completed booking in both the Joule conversation and the standard trip cards simultaneously.",
+          },
         ],
       },
     ],
@@ -156,9 +189,9 @@ const _projects: Project[] = [
     role: "Sr. UX Researcher & Design Sprint Facilitator",
     period: "2018–2021",
     description:
-      "ATPCO is the airline industry's pricing and data infrastructure backbone, a B2B company whose products are used by pricing analysts at 490+ airlines globally. I led UX research and design across ATPCO's product portfolio, establishing the user research practice, contributing core design system components alongside a UX engineer, running certified Design Sprints at the CPO's request, and designing analyst tools that replaced raw data grids with plain-language interfaces.",
+      "ATPCO is the airline industry's pricing and data infrastructure backbone, a B2B company whose products are used by pricing analysts at 490+ airlines globally. I led UX research and design across ATPCO's product portfolio, establishing the user research practice, contributing core design system components alongside a UX engineer, running Design Sprints across product teams, and designing analyst tools that replaced raw data grids with plain-language interfaces.",
     highlights: [
-      "Ran ~12 workshops across 5 product teams over 6 months; the CPO requested a monthly cadence after seeing the first results",
+      "Ran ~12 workshops across 5 product teams over 6 months, establishing a monthly Design Sprint cadence",
       "Designed pricing analyst tools for teams across American Airlines, Delta, LATAM, and 490+ airlines worldwide",
       "A/B usability study (7 international participants, Morae) on CIF date-logic UI: 6 of 7 preferred the prototype, findings that drove the shipped redesign",
       "Built core components for ATPCO's design system alongside a UX engineer",
@@ -209,7 +242,7 @@ const _projects: Project[] = [
         heading: "Workshop Facilitation",
         paragraphs: [
           "About a year in, I began running structured design workshops for product teams that were stuck. The initial sessions addressed specific product questions: API portal strategy, airline add-on bundling, pricing system architecture. The format combined discovery research, rapid ideation, and prototype testing in a compressed timeline.",
-          "The work gained visibility quickly. The CPO recognized the value and directed me to run workshops on a monthly cadence across product teams. Over six months I ran approximately 12 workshops across 5 teams. One outcome was a proof-of-concept bundle offer builder designed and tested with airline partners, combining discovery research, UI design, and usability testing in a single sprint.",
+          "The work gained visibility quickly, and the cadence expanded to a monthly schedule across product teams. Over six months I ran approximately 12 workshops across 5 teams. One outcome was a proof-of-concept bundle offer builder designed and tested with airline partners, combining discovery research, UI design, and usability testing in a single sprint.",
         ],
         images: [
           {
@@ -506,8 +539,8 @@ const _projects: Project[] = [
       {
         heading: "The Problem",
         paragraphs: [
-          "SAP Concur receives roughly 25,000 feedback comments per month from users of my product area alone. That volume is unmanageable for any design team trying to read it directly; the insights get filtered, summarized incompletely, or ignored until someone has bandwidth to write a quarterly synthesis document. By then the moment has passed.",
-          "The core problem isn't that the data doesn't exist. It's that the gap between 'raw feedback exists' and 'the team can act on it' is too wide, and the bridge (a human analyst reading thousands of comments) doesn't scale. I built a tool to close that gap.",
+          "SAP Concur receives roughly 25,000 feedback comments per month from users of my product area alone. That volume is unmanageable for any design team trying to read it directly; insights get filtered, summarized incompletely, or deferred until someone has bandwidth for a quarterly synthesis. By then the moment has passed.",
+          "The core problem is not that the data doesn't exist. It's that the gap between 'raw feedback exists' and 'the team can act on it' is too wide. A human analyst reading thousands of comments doesn't scale. And while real user testing is the right tool for nuanced questions, scheduling and recruiting cycles mean it's rarely available in the middle of an iteration sprint — exactly when a designer most needs to know whether a pattern will hold.",
         ],
       },
       {
@@ -543,9 +576,9 @@ const _projects: Project[] = [
       {
         heading: "The Evaluation Layer",
         paragraphs: [
-          "Beyond persona generation, the tool includes a design evaluation layer. Given a design to review, the system generates an assessment from the perspective of a synthetic user persona (how would this segment of real customers respond to this design decision?) and then contrasts it against a structured evaluation using established design criteria.",
-          "The evaluation criteria are explicit and multi-standard: WCAG 2.1 AA accessibility guidelines, Nielsen Norman usability heuristics, SAP Fiori design system conventions, and iOS Human Interface and Material Design guidelines where applicable. The synthetic user assessment and the criteria-based evaluation are presented together, giving designers two complementary lenses on a single decision.",
-          "This layer was the hardest part to build and the most valuable in practice. It surfaces potential issues before a design reaches formal review, and it gives junior designers a structured framework for self-critique. It doesn't replace design judgment; it extends the surface area a designer can evaluate in the time available.",
+          "Beyond persona generation, the tool includes a design evaluation layer. Given a design to review, the system generates an assessment from the perspective of a synthetic user persona — how would this segment of real customers respond to this decision — and then contrasts it against a structured evaluation using established design criteria.",
+          "The evaluation criteria are explicit and multi-standard: WCAG 2.1 AA accessibility guidelines, Nielsen Norman usability heuristics, SAP Fiori design system conventions, and iOS Human Interface and Material Design guidelines where applicable. Output is specific and actionable. Rather than 'this might confuse users,' a typical evaluation flags something like 'no format guidance violates Heuristic #6 (recognition vs. recall), severity 7/10,' or identifies which user segment will struggle at a given step and with what estimated frequency. Issues are prioritized by severity and user pain-point weight, not returned as a flat undifferentiated list.",
+          "The tool works best during the iteration phase, when patterns are still being defined. Most usability problems at that stage follow known patterns — missing labels, unclear flows, ambiguous terminology — that a model trained on thousands of real feedback statements is well-suited to detect. It is not a substitute for real user testing, which remains necessary for subtle interaction problems, edge cases, and emotional responses. The value is arriving at real testing with fewer obvious issues and more focused questions.",
         ],
         stats: [
           { value: "WCAG 2.1 AA", label: "accessibility standard" },
@@ -557,8 +590,8 @@ const _projects: Project[] = [
       {
         heading: "Adoption & Impact",
         paragraphs: [
-          "The tool was not announced, launched, or formally rolled out. It was built, shared internally, and adopted because it was useful. Designers started using it to pressure-test their work before reviews, to quickly orient on a new project by reading a relevant persona summary, and to catch accessibility and heuristic issues that manual review might miss under time pressure.",
-          "The infrastructure required to build and maintain this tool is entirely outside what SAP Concur's engineering team would have prioritized; it sits in the gap between product tooling and research operations, a gap that only exists because someone was willing to own it. That's the nature of this kind of work: it produces outsized leverage precisely because it doesn't fit neatly into anyone else's roadmap.",
+          "The tool was not announced, launched, or formally rolled out. It was built, shared with the Travel UX team, and adopted because it was useful. Designers use it to pressure-test their work before reviews, to orient quickly on a new project by reading a relevant persona summary, and to catch accessibility and heuristic issues that manual review might miss under time pressure.",
+          "It occupies the space between product tooling and research operations — infrastructure with no natural home on a standard roadmap, but with clear value for the people doing the work.",
         ],
         images: [
           {
@@ -583,7 +616,7 @@ const _projects: Project[] = [
     description:
       "The multi-fare display is the central decision surface in Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I originated the information architecture and progressive disclosure model and led research through the project's foundational phases; as the pattern matured, additional designers joined and the work scaled across all four travel verticals.",
     highlights: [
-      "Translated rank-order research findings into a progressive disclosure model, surfacing the most decision-critical fare attributes upfront",
+      "Mapped rank-order research priority tiers directly to interaction depth: top-priority attributes in the default view, mid-priority on first click, lower-priority in fare details",
       "Designed multiple rounds of iteration from information-rich to progressively simpler, balancing stakeholder requirements against traveler comprehension",
       "Redesigned the seat map interaction model alongside the fare display",
       "Scaled the pattern to hotel, rental car, and rail, establishing a unified booking architecture across Concur's travel ecosystem",
@@ -625,15 +658,27 @@ const _projects: Project[] = [
       {
         heading: "Research & Information Architecture",
         paragraphs: [
-          "I started by reviewing rank-order research conducted by a previous team, which established which fare attributes travelers considered most important when making booking decisions: price, flexibility (refund/change policy), and included bags ranked highest. Status benefits and seat upgrade eligibility ranked lower but were critical for frequent travelers.",
-          "From this, I designed a progressive disclosure hierarchy: the primary fare card surfaces price, flexibility tier, and bag policy. Expanding a card reveals the full attribute breakdown. This kept the primary comparison view scannable while preserving access to complete detail for travelers who needed it.",
+          "The design started with rank-order research from an internal Concur study and an external source, which established a clear priority hierarchy for the factors business travelers consider when booking. The top-ranked factors — price, number of stops, policy status, and departure/arrival times — were consistently prioritized across traveler types. A middle tier covered seat selection, loyalty program data, and onboard amenities. The lowest-priority factors — class of service detail, eco attributes, aircraft type — were relevant to some travelers but rarely decisive.",
+          "That hierarchy drove the information architecture directly. The top third of priorities appear in the default fare card view, immediately visible without any interaction. The middle third surfaces after the first click — once a traveler has indicated interest in a specific option. The lowest-priority third is distributed throughout the page and available in the detailed fare breakdown: accessible, but not competing for attention at the comparison stage. The progressive disclosure model is a direct translation of the research priority ranking into interaction depth.",
         ],
         images: [
+          {
+            src: "/projects/multi-fare-display/rank-order-research.png",
+            alt: "Rank-order study results: factors travelers consider when booking business travel",
+            caption: "Rank-order research: booking factor priorities",
+            annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster — price, stops, policy status, departure/arrival times — established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
+          },
+          {
+            src: "/projects/multi-fare-display/card-sort-research.png",
+            alt: "Card sort study: business travel booking factor categorization",
+            caption: "Card sort: not important / important / very important",
+            annotation: "A card sort study asking business travelers to categorize booking factors by importance. The three-tier categorization from this study — not important, important, very important — maps directly to the three disclosure levels in the fare display: default view, first-click expansion, and full detail.",
+          },
           {
             src: "/projects/multi-fare-display/prototype-01.png",
             alt: "Early concept prototype, information-dense fare display",
             caption: "Early concept: high information density",
-            annotation: "The first prototype surfaced all fare attributes simultaneously: flexibility, bags, seat, status benefits, change fees, and upgrade eligibility in a single card. Testing with business travelers showed they often couldn't identify the single most important differentiator between fares; they were scanning too much at once.",
+            annotation: "The first prototype surfaced all fare attributes simultaneously before the research-driven hierarchy was applied. Testing with business travelers showed they couldn't identify the most important differentiator between fares; too many attributes competed for attention at once.",
           },
         ],
       },
@@ -872,19 +917,19 @@ const _projects: Project[] = [
     tags: ["Web Design", "Branding", "Logo Design", "Print Design", "WordPress", "Front-End Development", "3D Design"],
     images: [
       {
-        src: "/projects/web-graphics/nectar.png",
-        alt: "Nectar dark-themed mobile social app UI",
-        annotation: "Nectar is a mobile social app concept; the UI design explores a dark-mode interaction system for social connections and messaging, with an emphasis on personal photography and profile-driven discovery.",
-      },
-      {
         src: "/projects/web-graphics/boyd.png",
-        alt: "Boyd Security corporate website design",
-        annotation: "Boyd Security corporate website, a Tribeswell client project. The design uses dramatic aerial photography with a dark, authoritative color system appropriate for a defense and security services company.",
+        alt: "Boyd Security corporate website — Honesty, Integrity, and Outstanding Performance",
+        annotation: "Boyd Security corporate website, a Tribeswell client project. Built to a bespoke brief for a construction and energy services company, the design uses dramatic industrial photography with a bold, authoritative typographic system.",
       },
       {
         src: "/projects/web-graphics/newmoon.png",
-        alt: "New Moon Cottage branding and website",
-        annotation: "New Moon Cottage branding and website: identity work and web design for a bed and breakfast. The project included logo development through multiple concept rounds, a brand style guide, and a full WordPress site build.",
+        alt: "New Moon Cottage website — dark forest photography anchoring the brand",
+        annotation: "New Moon Cottage branding and website: full identity work and WordPress build for a bed and breakfast. The project included logo development through multiple concept rounds, a brand style guide, and a full WordPress site build.",
+      },
+      {
+        src: "/projects/web-graphics/lessonzest.png",
+        alt: "Lesson Zest education app website and brand identity",
+        annotation: "Lesson Zest brand identity and website: logo system and brand applied to a live education technology product. The lemon mark communicates freshness and fun while remaining legible at small sizes.",
       },
     ],
     accentColor: "#1a1a0d",
@@ -917,7 +962,7 @@ const _projects: Project[] = [
             category: "Branding & Website",
             description: "Full brand identity (logo, style guide) and website build for a bed and breakfast. Dark forest photography anchors the brand.",
             src: "/projects/web-graphics/newmoon.png",
-            alt: "New Moon Cottage branding and website",
+            alt: "New Moon Cottage website homepage",
           },
           {
             title: "Investment Bros",
@@ -936,6 +981,14 @@ const _projects: Project[] = [
         ],
         gallery: [
           {
+            title: "New Moon Cottage",
+            year: "2014",
+            category: "Logo Concepts",
+            description: "Logo development process for a bed and breakfast brand: multiple concept directions ranging from typographic marks to illustrated cottage-and-moon icons before arriving at the final identity.",
+            src: "/projects/web-graphics/newmoon-logo.png",
+            alt: "New Moon Cottage logo concept variations",
+          },
+          {
             title: "Lesson Zest",
             year: "2015",
             category: "Logo & Brand Identity",
@@ -947,9 +1000,9 @@ const _projects: Project[] = [
             title: "Zhang Photography",
             year: "2016",
             category: "Logo Design Study",
-            description: "Logo design study for a photography client, exploring different typographic and symbolic directions for a personal brand mark.",
-            src: "/projects/web-graphics/zhang.png",
-            alt: "Zhang Photography logo design study",
+            description: "Logo design exploration for a photographer's personal brand. Sketchbook ideation covered typographic, symbolic, and camera-mark directions before moving to digital refinement.",
+            src: "/projects/web-graphics/zhang.jpg",
+            alt: "Zhang Photography logo exploration sketchbook",
           },
           {
             title: "Nectar App",
@@ -987,9 +1040,9 @@ const _projects: Project[] = [
             title: "Seasonal Affective Disorder",
             year: "2017",
             category: "3D / Immersive Experience",
-            description: "A virtual gallery exploring how lighting, space, and ambient audio affect emotional state, designed as an interactive 3D environment.",
-            src: "/projects/web-graphics/seasonal.png",
-            alt: "Seasonal Affective Disorder virtual gallery",
+            description: "A virtual gallery exploring how lighting, space, and ambient audio affect emotional state, designed as an interactive 3D environment. Concept sketch showing the gallery spatial layout and interactive kiosk placement.",
+            src: "/projects/web-graphics/seasonal.jpg",
+            alt: "Seasonal Affective Disorder virtual gallery concept sketch",
           },
         ],
       },

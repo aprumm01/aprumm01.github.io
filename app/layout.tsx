@@ -18,7 +18,7 @@ const playfair = Gloock({
 const META = {
   title: "Adam Prumm | Principal UX Designer",
   description:
-    "Principal UX Designer at SAP Concur. 10+ years designing enterprise products for the travel industry. PhD candidate in Informatics at Indiana University.",
+    "Principal UX Designer at SAP Concur. 10 years of design experience spanning enterprise travel products, web design, and front-end development. PhD candidate in Informatics at Indiana University.",
   url: "https://aprumm01.github.io",
   image: "/projects/sap-concur/search-results.jpg",
 };
