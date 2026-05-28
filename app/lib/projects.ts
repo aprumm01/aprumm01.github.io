@@ -312,36 +312,117 @@ const _projects: Project[] = [
     role: "Principal UX Designer, Design Lead",
     period: "2023–Present",
     description:
-      "Tell Concur About Your Trip (TCAYT) is a net-new multi-vertical booking workflow that lets corporate travelers disclose travel arranged outside SAP Concur's managed booking channel. I led end-to-end UX design from discovery through production, defining the interaction model, building new design system components, and aligning the workflow across all four travel verticals.",
+      "Tell Concur About Your Trip (TCAYT) is a net-new multi-vertical booking workflow in SAP Concur that lets corporate travelers plan and search all segments of a trip together, rather than visiting each booking vertical separately. I led end-to-end UX design from discovery through production: the segment-declaration entry point, the two-panel trip builder, coordinated search defaults, and the trip-level finalize view with policy and budget visibility.",
     highlights: [
-      "Led net-new UX design for a multi-vertical outside-booking disclosure workflow, from discovery through production",
-      "Designed new design system components extending SAP Fiori for the disclosure input pattern",
-      "Defined the information architecture and segment input model for multi-vertical trip disclosure",
-      "Ran usability validation to ensure the workflow felt lighter than a full booking flow while capturing all required policy data",
+      "Designed the full trip planning workflow: segment-declaration dialog, two-panel segment builder, coordinated search defaults, and trip-level finalize view",
+      "Introduced 'Match Flight Booking' for hotel and car segments, auto-propagating dates, location, and times from the flight selection to eliminate repeated data entry",
+      "Designed the trip inventory panel, a persistent left-rail view of all selected segments that lets travelers manage the full trip without losing their place in the form",
+      "Built new design system components extending SAP Fiori for the trip builder pattern",
+      "Ran usability validation across the full multi-vertical workflow",
     ],
     tags: ["Interaction Design", "Enterprise UX", "Design Systems", "Information Architecture", "Multi-vertical", "Usability Testing"],
-    images: [],
+    images: [
+      {
+        src: "/projects/tcayt/page-filled.png",
+        alt: "TCAYT Trip Planning page with a flight from San Antonio to Las Vegas filled in",
+        annotation: "The Trip Planning page with a completed flight segment. The left panel shows all selected segments as a persistent inventory; the right panel surfaces the active segment's search form. Travelers configure each segment in sequence without losing sight of the full trip.",
+      },
+      {
+        src: "/projects/tcayt/finalize-full.png",
+        alt: "TCAYT Finalize page showing flight, hotel, and rental car with budget and policy status",
+        annotation: "The Finalize screen aggregates all booked segments with policy indicators, cost breakdown, and the approved trip budget in a single view. A 'Would you like to book anything else?' prompt allows adding additional segments after searching.",
+      },
+      {
+        src: "/projects/tcayt/hotel-match.png",
+        alt: "TCAYT Hotel Search with Match Flight Booking checked, dates and location derived from flight",
+        annotation: "With 'Match Flight Booking' enabled, hotel location and dates are derived from the selected flight. Travelers confirm the match rather than re-entering data. The same pattern applies to rental car.",
+      },
+    ],
     accentColor: "#0a1628",
     sections: [
       {
         heading: "The Design Problem",
         paragraphs: [
-          "Corporate travelers frequently book outside managed booking channels: directly through airline apps for loyalty accrual, through hotel websites for preferred rates, or via executive assistants. This creates a visibility gap for companies that need that information for policy compliance, duty of care, and expense reconciliation.",
-          "SAP Concur's existing booking flow was built for travelers who start from scratch within the tool. There was no lightweight path for a traveler to say 'here is a trip I've already arranged' and have it enter the managed travel system without going through the full search-and-book workflow. TCAYT was designed to close that gap across all four verticals simultaneously.",
+          "When a corporate traveler needs a flight, hotel, and rental car for the same trip, SAP Concur's existing flow required visiting each booking vertical in sequence: search air, book, then return and search hotel, book, then return and search car. There was no concept of a 'trip' until after all the individual bookings were made.",
+          "This fragmented experience created coordination errors: travelers entered dates independently in each vertical and occasionally mismatched hotel check-in with flight arrival. Policy and budget visibility only appeared at each individual booking rather than across the total trip. And for travelers who knew exactly what they needed, there was no way to declare all segments upfront and get them all searched at once.",
         ],
       },
       {
-        heading: "Interaction Model",
+        heading: "Trip Planning Workflow",
         paragraphs: [
-          "The core design challenge was reducing the interaction cost of disclosure without sacrificing the data quality the company needed downstream. A full booking flow collects everything: travelers, dates, segments, ancillaries, costs. An outside-booking disclosure needs the same data set, but the traveler already knows what they booked and shouldn't have to search for options they aren't choosing.",
-          "I designed a structured input model that mirrors the booking confirmation pattern travelers already know: destination, dates, carrier or property, confirmation number. The system resolves input against fare and hotel content in the background rather than asking the traveler to re-select from search results. The multi-vertical architecture lets a traveler disclose all segments of a trip in a single flow, matching the compound-itinerary mental model rather than treating air, hotel, and car as three separate events.",
+          "The entry point is a segment-declaration dialog: travelers choose which verticals they need before entering any search criteria. This single step establishes the shape of the trip and surfaces all relevant segments in the planning view simultaneously.",
+          "The trip builder uses a two-panel layout: a persistent left rail shows all selected segments as a scannable inventory, and the right panel surfaces the active segment's search form. Travelers move through each segment in sequence, and the left rail updates to reflect configured segments, giving a running view of the trip's completeness before any search is run.",
+        ],
+        images: [
+          {
+            src: "/projects/tcayt/dialog.png",
+            alt: "Trip Planning entry dialog with segment checkboxes for Flight, Hotel, Rental Car, and Train",
+            caption: "Step 1: declare your segments",
+            annotation: "The dialog establishes the trip's shape before any search input is required. Selecting segments activates validation: the UI prevents combinations that the system can't coordinate (flight and train cannot share a trip).",
+          },
+          {
+            src: "/projects/tcayt/page-default.png",
+            alt: "Trip Planning page in default state with empty flight search form",
+            caption: "The two-panel trip builder",
+            annotation: "The left rail holds all selected segments as a persistent inventory. The right panel shows the active segment's form. Travelers see the full scope of what they're building throughout the flow rather than only discovering completeness at checkout.",
+          },
+          {
+            src: "/projects/tcayt/page-filled.png",
+            alt: "Trip Planning page with flight details filled in for a trip to Las Vegas",
+            caption: "Segment configured: flight",
+            annotation: "Once the flight is configured, the segment entry in the left rail updates with origin, destination, and dates. The traveler can navigate to hotel or car from the rail, or continue through the sequence using the Previous/Next controls.",
+          },
         ],
       },
       {
-        heading: "Design System Components",
+        heading: "Coordinated Search Defaults",
         paragraphs: [
-          "TCAYT introduced a disclosure input pattern that didn't exist in SAP Fiori's travel-specific component set. I designed new components for segment input, confirmation number resolution, policy status surfacing on outside bookings, and the multi-vertical trip summary. These components were built to be visually and behaviorally consistent with the existing SAP Concur booking flow, so travelers who mix managed and outside booking in the same trip encounter a coherent interaction language.",
-          "The components were contributed to the travel-specific Figma library I maintain alongside the SAP Fiori system, extending the library's coverage to outside-booking scenarios and making the pattern reusable for future features that touch similar workflows.",
+          "The most friction-reducing feature in TCAYT is 'Match Flight Booking,' available on both hotel and rental car segments. When enabled, the system derives location, dates, and (for cars) pickup and drop-off times directly from the configured flight, pre-populating the hotel and car forms without any additional traveler input.",
+          "The match defaults are displayed as dashed-border fields labeled 'Based on flight selection,' a deliberate visual treatment that distinguishes inferred values from traveler-entered values. Travelers can override any matched value if they need a different hotel location or car pickup time, but the default correct case requires no interaction at all.",
+        ],
+        images: [
+          {
+            src: "/projects/tcayt/hotel-match.png",
+            alt: "Hotel Search with Match Flight Booking checked, showing location and dates derived from flight",
+            caption: "Hotel: match flight booking",
+            annotation: "The hotel location resolves to the flight destination city; dates match the flight itinerary. The dashed field style signals that these are system-derived values, distinguishing them from traveler-entered fields. The system informs: 'Your Rental Car search will match your flight booking.'",
+          },
+          {
+            src: "/projects/tcayt/car-match.png",
+            alt: "Rental Car Search with Match Flight Booking checked, pickup and drop-off derived from flight",
+            caption: "Rental car: match flight booking",
+            annotation: "Rental car extends the match further: pickup and drop-off location, dates, and times all derive from the flight. The traveler can expand 'Location Options' to override if needed. In the common case, configuring a rental car takes one interaction: confirming the match.",
+          },
+        ],
+      },
+      {
+        heading: "Trip-Level Visibility",
+        paragraphs: [
+          "The Finalize screen introduces trip-level policy and budget visibility that didn't exist in the previous per-segment booking flow. An approved trip budget displayed at the top of the page gives travelers a running total against their budget allocation before confirming any booking.",
+          "Policy compliance indicators appear on individual segments alongside cost breakdowns by vertical. An 'Additional Information' section captures trip-purpose metadata (form number, cost allocation, number of travelers) that previously required separate data entry after each booking. The 'Would you like to book anything else?' prompt provides a low-friction path to add segments that weren't declared upfront.",
+        ],
+        images: [
+          {
+            src: "/projects/tcayt/finalize-full.png",
+            alt: "Finalize page showing full trip summary with flight, hotel, rental car, budget, and additional information",
+            caption: "Finalize: trip-level review",
+            annotation: "The Finalize screen consolidates policy status, cost by segment, total estimated cost, and budget allocation in a single view. The 'Rental Car has not been selected' warning at bottom surfaces missing segments before the traveler commits, preventing the coordination gaps that occurred in the prior per-vertical flow.",
+          },
+        ],
+      },
+      {
+        heading: "Usability Validation",
+        paragraphs: [
+          "I ran usability testing across the full workflow to validate the segment-builder pattern and the match flight defaults. Key findings shaped several design changes: the left-rail segment inventory needed clearer in-progress vs. complete state differentiation; the dashed field treatment for matched values needed an explicit label explaining the source of the pre-filled data; and the entry dialog needed validation feedback for incompatible segment combinations before the traveler hit the Continue button.",
+          "The overall task completion rate and time-on-task comparisons against the prior per-vertical flow demonstrated a meaningful reduction in booking time for multi-segment trips, which represented the core business case for the feature.",
+        ],
+        videos: [
+          {
+            src: "/projects/tcayt/usability-1.mp4",
+            caption: "Usability session excerpt",
+            annotation: "An excerpt from a moderated usability session evaluating the trip builder. The session focused on the segment configuration flow and the Match Flight Booking interaction.",
+            poster: "/projects/tcayt/page-filled.png",
+          },
         ],
       },
     ],
