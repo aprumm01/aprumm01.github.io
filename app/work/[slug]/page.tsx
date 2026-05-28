@@ -84,7 +84,7 @@ export default async function CaseStudyPage({
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-[#333] px-4 py-1.5 text-sm text-[#aaa]"
+                  className="rounded-full border border-[#333] px-4 py-1.5 text-sm text-[#aaa] transition-all duration-200 ease-out hover:border-white/25 hover:text-[#e8e8e8] hover:bg-white/[0.05] cursor-default"
                 >
                   {tag}
                 </span>
