@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="78%">
+      <stop offset="0%" stop-color="#0a1422"/>
+      <stop offset="100%" stop-color="#030710"/>
+    </radialGradient>
+    <radialGradient id="cgb" cx="50%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#4272c4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4272c4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d1c34"/>
+      <stop offset="100%" stop-color="#0a1828"/>
+    </linearGradient>
+    <filter id="ng" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tg" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.55" fill="#182844"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#dots)" opacity="0.42"/>
+
+  <!-- Title -->
+  <text x="600" y="44" text-anchor="middle" font-family="'Courier New',monospace" font-size="9.5" letter-spacing="5" fill="#1a2e50">SYNTHETIC PERSONA CORPUS · AGENT SEGMENTATION MATRIX</text>
+  <line x1="60" y1="57" x2="1140" y2="57" stroke="#0c1a32" stroke-width="0.8"/>
+
+  <!-- ─────────────────────────────────────────────────────────────────────
+       Card layout: 3 columns × 2 rows
+       Col x: 60, 450, 840   width 350
+       Row y: 75, 370         height 270
+  ───────────────────────────────────────────────────────────────────────── -->
+
+  <!-- ─── CARD 1: SP-01 Enterprise Frequent ──────────────────────────── -->
+  <rect x="60" y="75" width="350" height="270" rx="8" fill="#080e1c" stroke="#3a62a8" stroke-width="1"/>
+  <rect x="60" y="75" width="350" height="270" rx="8" fill="url(#cgb)"/>
+  <!-- Card header bar -->
+  <rect x="60" y="75" width="350" height="52" rx="8" fill="url(#ch)"/>
+  <rect x="60" y="107" width="350" height="20" fill="url(#ch)"/>
+  <!-- Android head -->
+  <circle cx="112" cy="101" r="24" fill="#0a1428" stroke="#4272c4" stroke-width="1.2" filter="url(#ng)"/>
+  <circle cx="112" cy="97" r="9" fill="none" stroke="#3060a8" stroke-width="0.9"/>
+  <circle cx="108" cy="94" r="2" fill="#4272c4"/>
+  <circle cx="116" cy="94" r="2" fill="#4272c4"/>
+  <path d="M 107 100 Q 112 104, 117 100" stroke="#3060a8" stroke-width="0.9" fill="none"/>
+  <line x1="112" y1="88" x2="112" y2="84" stroke="#3060a8" stroke-width="0.8"/>
+  <circle cx="112" cy="83" r="1.5" fill="#4272c4" opacity="0.5"/>
+  <line x1="103" y1="97" x2="98" y2="94" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <line x1="121" y1="97" x2="126" y2="94" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <!-- Header text -->
+  <text x="146" y="93" font-family="'Courier New',monospace" font-size="7.5" letter-spacing="2" fill="#4272c4">SP-01</text>
+  <text x="146" y="108" font-family="'Courier New',monospace" font-size="11.5" fill="#b0c8e8">Enterprise Frequent</text>
+  <!-- Segment badge -->
+  <rect x="310" y="82" width="90" height="18" rx="9" fill="#0e1a30" stroke="#3060a8" stroke-width="0.8"/>
+  <text x="355" y="94" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="1" fill="#3a60a8">ACTIVE</text>
+  <!-- Divider -->
+  <line x1="76" y1="135" x2="394" y2="135" stroke="#0e1e38" stroke-width="0.8"/>
+  <!-- Attributes -->
+  <text x="76" y="158" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">MARKET</text>
+  <rect x="140" y="147" width="100" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="190" y="159" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Enterprise B2B</text>
+  <text x="76" y="184" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">DEVICE</text>
+  <rect x="140" y="173" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="180" y="185" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Desktop</text>
+  <text x="76" y="210" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">FREQUENCY</text>
+  <rect x="175" y="199" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="215" y="211" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">15+ / month</text>
+  <!-- Influence bar -->
+  <line x1="76" y1="238" x2="394" y2="238" stroke="#0e1e38" stroke-width="0.6"/>
+  <text x="76" y="254" font-family="'Courier New',monospace" font-size="7" fill="#1e3050">INFLUENCE WEIGHT</text>
+  <rect x="220" y="244" width="158" height="6" rx="3" fill="#0a1428"/>
+  <rect x="220" y="244" width="126" height="6" rx="3" fill="#3060a8" opacity="0.7"/>
+  <text x="390" y="254" text-anchor="end" font-family="'Courier New',monospace" font-size="7" fill="#2a4878">0.80</text>
+  <!-- Persona note -->
+  <text x="76" y="280" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Drives highest-volume pain point themes.</text>
+  <text x="76" y="292" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Policy compliance + speed are primary axes.</text>
+  <!-- Corner indicator -->
+  <circle cx="386" cy="309" r="4" fill="#3060a8" opacity="0.3"/>
+  <circle cx="386" cy="309" r="2" fill="#3060a8" opacity="0.6"/>
+
+  <!-- ─── CARD 2: SP-02 Mobile-First ─────────────────────────────────── -->
+  <rect x="450" y="75" width="350" height="270" rx="8" fill="#080e1c" stroke="#3a62a8" stroke-width="1"/>
+  <rect x="450" y="75" width="350" height="270" rx="8" fill="url(#cgb)"/>
+  <rect x="450" y="75" width="350" height="52" rx="8" fill="url(#ch)"/>
+  <rect x="450" y="107" width="350" height="20" fill="url(#ch)"/>
+  <circle cx="502" cy="101" r="24" fill="#0a1428" stroke="#4272c4" stroke-width="1.2" filter="url(#ng)"/>
+  <circle cx="502" cy="97" r="9" fill="none" stroke="#3060a8" stroke-width="0.9"/>
+  <circle cx="498" cy="94" r="2" fill="#4272c4"/>
+  <circle cx="506" cy="94" r="2" fill="#4272c4"/>
+  <path d="M 497 100 Q 502 104, 507 100" stroke="#3060a8" stroke-width="0.9" fill="none"/>
+  <line x1="502" y1="88" x2="502" y2="84" stroke="#3060a8" stroke-width="0.8"/>
+  <circle cx="502" cy="83" r="1.5" fill="#4272c4" opacity="0.5"/>
+  <line x1="493" y1="97" x2="488" y2="94" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <line x1="511" y1="97" x2="516" y2="94" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <text x="536" y="93" font-family="'Courier New',monospace" font-size="7.5" letter-spacing="2" fill="#4272c4">SP-02</text>
+  <text x="536" y="108" font-family="'Courier New',monospace" font-size="11.5" fill="#b0c8e8">Mobile-First User</text>
+  <rect x="700" y="82" width="90" height="18" rx="9" fill="#0e1a30" stroke="#3060a8" stroke-width="0.8"/>
+  <text x="745" y="94" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="1" fill="#3a60a8">ACTIVE</text>
+  <line x1="466" y1="135" x2="784" y2="135" stroke="#0e1e38" stroke-width="0.8"/>
+  <text x="466" y="158" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">MARKET</text>
+  <rect x="530" y="147" width="90" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="575" y="159" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">SMB · Mid-Market</text>
+  <text x="466" y="184" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">DEVICE</text>
+  <rect x="530" y="173" width="60" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="560" y="185" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Mobile</text>
+  <text x="466" y="210" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">FREQUENCY</text>
+  <rect x="565" y="199" width="70" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="600" y="211" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">4–8 / month</text>
+  <line x1="466" y1="238" x2="784" y2="238" stroke="#0e1e38" stroke-width="0.6"/>
+  <text x="466" y="254" font-family="'Courier New',monospace" font-size="7" fill="#1e3050">INFLUENCE WEIGHT</text>
+  <rect x="610" y="244" width="158" height="6" rx="3" fill="#0a1428"/>
+  <rect x="610" y="244" width="98" height="6" rx="3" fill="#3060a8" opacity="0.7"/>
+  <text x="780" y="254" text-anchor="end" font-family="'Courier New',monospace" font-size="7" fill="#2a4878">0.62</text>
+  <text x="466" y="280" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">UX friction dominates feedback. Touch</text>
+  <text x="466" y="292" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">target size + load time are key signals.</text>
+  <circle cx="776" cy="309" r="4" fill="#3060a8" opacity="0.3"/>
+  <circle cx="776" cy="309" r="2" fill="#3060a8" opacity="0.6"/>
+
+  <!-- ─── CARD 3: SP-03 Road Warrior ─────────────────────────────────── -->
+  <rect x="840" y="75" width="300" height="270" rx="8" fill="#080e1c" stroke="#3a62a8" stroke-width="1"/>
+  <rect x="840" y="75" width="300" height="270" rx="8" fill="url(#cgb)"/>
+  <rect x="840" y="75" width="300" height="52" rx="8" fill="url(#ch)"/>
+  <rect x="840" y="107" width="300" height="20" fill="url(#ch)"/>
+  <circle cx="888" cy="101" r="24" fill="#0a1428" stroke="#4272c4" stroke-width="1.2" filter="url(#ng)"/>
+  <circle cx="888" cy="97" r="9" fill="none" stroke="#3060a8" stroke-width="0.9"/>
+  <circle cx="884" cy="94" r="2" fill="#4272c4"/>
+  <circle cx="892" cy="94" r="2" fill="#4272c4"/>
+  <path d="M 883 100 Q 888 104, 893 100" stroke="#3060a8" stroke-width="0.9" fill="none"/>
+  <line x1="888" y1="88" x2="888" y2="84" stroke="#3060a8" stroke-width="0.8"/>
+  <circle cx="888" cy="83" r="1.5" fill="#4272c4" opacity="0.5"/>
+  <line x1="879" y1="97" x2="874" y2="94" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <line x1="897" y1="97" x2="902" y2="94" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <text x="922" y="93" font-family="'Courier New',monospace" font-size="7.5" letter-spacing="2" fill="#4272c4">SP-03</text>
+  <text x="922" y="108" font-family="'Courier New',monospace" font-size="11.5" fill="#b0c8e8">Road Warrior</text>
+  <rect x="1070" y="82" width="60" height="18" rx="9" fill="#0e1a30" stroke="#3060a8" stroke-width="0.8"/>
+  <text x="1100" y="94" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="1" fill="#3a60a8">ACTIVE</text>
+  <line x1="856" y1="135" x2="1124" y2="135" stroke="#0e1e38" stroke-width="0.8"/>
+  <text x="856" y="158" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">MARKET</text>
+  <rect x="920" y="147" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="960" y="159" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Enterprise</text>
+  <text x="856" y="184" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">DEVICE</text>
+  <rect x="920" y="173" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="960" y="185" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Multi-device</text>
+  <text x="856" y="210" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">FREQUENCY</text>
+  <rect x="950" y="199" width="70" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="985" y="211" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">20+ / month</text>
+  <line x1="856" y1="238" x2="1124" y2="238" stroke="#0e1e38" stroke-width="0.6"/>
+  <text x="856" y="254" font-family="'Courier New',monospace" font-size="7" fill="#1e3050">INFLUENCE WEIGHT</text>
+  <rect x="1000" y="244" width="112" height="6" rx="3" fill="#0a1428"/>
+  <rect x="1000" y="244" width="90" height="6" rx="3" fill="#3060a8" opacity="0.7"/>
+  <text x="1124" y="254" text-anchor="end" font-family="'Courier New',monospace" font-size="7" fill="#2a4878">0.80</text>
+  <text x="856" y="280" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Seat · loyalty · speed are critical.</text>
+  <text x="856" y="292" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">High frustration threshold.</text>
+  <circle cx="1116" cy="309" r="4" fill="#3060a8" opacity="0.3"/>
+  <circle cx="1116" cy="309" r="2" fill="#3060a8" opacity="0.6"/>
+
+  <!-- ─── CARD 4: SP-04 Admin Booker ─────────────────────────────────── -->
+  <rect x="60" y="375" width="350" height="270" rx="8" fill="#080e1c" stroke="#3a62a8" stroke-width="1"/>
+  <rect x="60" y="375" width="350" height="270" rx="8" fill="url(#cgb)"/>
+  <rect x="60" y="375" width="350" height="52" rx="8" fill="url(#ch)"/>
+  <rect x="60" y="407" width="350" height="20" fill="url(#ch)"/>
+  <circle cx="112" cy="401" r="24" fill="#0a1428" stroke="#4272c4" stroke-width="1.2" filter="url(#ng)"/>
+  <circle cx="112" cy="397" r="9" fill="none" stroke="#3060a8" stroke-width="0.9"/>
+  <circle cx="108" cy="394" r="2" fill="#4272c4"/>
+  <circle cx="116" cy="394" r="2" fill="#4272c4"/>
+  <path d="M 107 400 Q 112 404, 117 400" stroke="#3060a8" stroke-width="0.9" fill="none"/>
+  <line x1="112" y1="388" x2="112" y2="384" stroke="#3060a8" stroke-width="0.8"/>
+  <circle cx="112" cy="383" r="1.5" fill="#4272c4" opacity="0.5"/>
+  <line x1="103" y1="397" x2="98" y2="394" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <line x1="121" y1="397" x2="126" y2="394" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <text x="146" y="393" font-family="'Courier New',monospace" font-size="7.5" letter-spacing="2" fill="#4272c4">SP-04</text>
+  <text x="146" y="408" font-family="'Courier New',monospace" font-size="11.5" fill="#b0c8e8">Admin Booker</text>
+  <rect x="310" y="382" width="90" height="18" rx="9" fill="#0e1a30" stroke="#3060a8" stroke-width="0.8"/>
+  <text x="355" y="394" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="1" fill="#3a60a8">ACTIVE</text>
+  <line x1="76" y1="435" x2="394" y2="435" stroke="#0e1e38" stroke-width="0.8"/>
+  <text x="76" y="458" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">MARKET</text>
+  <rect x="140" y="447" width="90" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="185" y="459" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Enterprise B2B</text>
+  <text x="76" y="484" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">DEVICE</text>
+  <rect x="140" y="473" width="60" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="170" y="485" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Desktop</text>
+  <text x="76" y="510" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">FREQUENCY</text>
+  <rect x="175" y="499" width="90" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="220" y="511" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">10–30 / month</text>
+  <line x1="76" y1="536" x2="394" y2="536" stroke="#0e1e38" stroke-width="0.6"/>
+  <text x="76" y="552" font-family="'Courier New',monospace" font-size="7" fill="#1e3050">INFLUENCE WEIGHT</text>
+  <rect x="220" y="542" width="158" height="6" rx="3" fill="#0a1428"/>
+  <rect x="220" y="542" width="110" height="6" rx="3" fill="#3060a8" opacity="0.7"/>
+  <text x="390" y="552" text-anchor="end" font-family="'Courier New',monospace" font-size="7" fill="#2a4878">0.70</text>
+  <text x="76" y="576" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Books for others. Efficiency and</text>
+  <text x="76" y="588" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">error-recovery are primary pain points.</text>
+  <circle cx="386" cy="609" r="4" fill="#3060a8" opacity="0.3"/>
+  <circle cx="386" cy="609" r="2" fill="#3060a8" opacity="0.6"/>
+
+  <!-- ─── CARD 5: SP-05 Occasional ───────────────────────────────────── -->
+  <rect x="450" y="375" width="350" height="270" rx="8" fill="#080e1c" stroke="#3a62a8" stroke-width="1"/>
+  <rect x="450" y="375" width="350" height="270" rx="8" fill="url(#cgb)"/>
+  <rect x="450" y="375" width="350" height="52" rx="8" fill="url(#ch)"/>
+  <rect x="450" y="407" width="350" height="20" fill="url(#ch)"/>
+  <circle cx="502" cy="401" r="24" fill="#0a1428" stroke="#4272c4" stroke-width="1.2" filter="url(#ng)"/>
+  <circle cx="502" cy="397" r="9" fill="none" stroke="#3060a8" stroke-width="0.9"/>
+  <circle cx="498" cy="394" r="2" fill="#4272c4"/>
+  <circle cx="506" cy="394" r="2" fill="#4272c4"/>
+  <path d="M 497 400 Q 502 404, 507 400" stroke="#3060a8" stroke-width="0.9" fill="none"/>
+  <line x1="502" y1="388" x2="502" y2="384" stroke="#3060a8" stroke-width="0.8"/>
+  <circle cx="502" cy="383" r="1.5" fill="#4272c4" opacity="0.5"/>
+  <line x1="493" y1="397" x2="488" y2="394" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <line x1="511" y1="397" x2="516" y2="394" stroke="#3060a8" stroke-width="0.7" opacity="0.6"/>
+  <text x="536" y="393" font-family="'Courier New',monospace" font-size="7.5" letter-spacing="2" fill="#4272c4">SP-05</text>
+  <text x="536" y="408" font-family="'Courier New',monospace" font-size="11.5" fill="#b0c8e8">Occasional Traveler</text>
+  <rect x="700" y="382" width="90" height="18" rx="9" fill="#0e1a30" stroke="#3060a8" stroke-width="0.8"/>
+  <text x="745" y="394" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="1" fill="#3a60a8">ACTIVE</text>
+  <line x1="466" y1="435" x2="784" y2="435" stroke="#0e1e38" stroke-width="0.8"/>
+  <text x="466" y="458" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">MARKET</text>
+  <rect x="530" y="447" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="570" y="459" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">SMB · Consumer</text>
+  <text x="466" y="484" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">DEVICE</text>
+  <rect x="530" y="473" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="570" y="485" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">Mixed</text>
+  <text x="466" y="510" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">FREQUENCY</text>
+  <rect x="565" y="499" width="70" height="18" rx="9" fill="#0e1a2e" stroke="#2a4878" stroke-width="0.8"/>
+  <text x="600" y="511" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#4272c4">1–3 / month</text>
+  <line x1="466" y1="536" x2="784" y2="536" stroke="#0e1e38" stroke-width="0.6"/>
+  <text x="466" y="552" font-family="'Courier New',monospace" font-size="7" fill="#1e3050">INFLUENCE WEIGHT</text>
+  <rect x="610" y="542" width="158" height="6" rx="3" fill="#0a1428"/>
+  <rect x="610" y="542" width="72" height="6" rx="3" fill="#3060a8" opacity="0.7"/>
+  <text x="780" y="552" text-anchor="end" font-family="'Courier New',monospace" font-size="7" fill="#2a4878">0.46</text>
+  <text x="466" y="576" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Onboarding friction + discoverability</text>
+  <text x="466" y="588" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">dominate. Lower baseline familiarity.</text>
+  <circle cx="776" cy="609" r="4" fill="#3060a8" opacity="0.3"/>
+  <circle cx="776" cy="609" r="2" fill="#3060a8" opacity="0.6"/>
+
+  <!-- ─── CARD 6: SP-06 Power User (hub) ─────────────────────────────── -->
+  <rect x="840" y="375" width="300" height="270" rx="8" fill="#080e1c" stroke="#5a88d8" stroke-width="1.5"/>
+  <rect x="840" y="375" width="300" height="270" rx="8" fill="url(#cgb)"/>
+  <rect x="840" y="375" width="300" height="52" rx="8" fill="url(#ch)"/>
+  <rect x="840" y="407" width="300" height="20" fill="url(#ch)"/>
+  <!-- Hub node gets slightly brighter styling -->
+  <circle cx="888" cy="401" r="26" fill="#0a1428" stroke="#5a88d8" stroke-width="1.6" filter="url(#ng)"/>
+  <!-- Second inner ring -->
+  <circle cx="888" cy="401" r="20" fill="none" stroke="#3060a8" stroke-width="0.6" opacity="0.4"/>
+  <circle cx="888" cy="397" r="9" fill="none" stroke="#4070b8" stroke-width="1"/>
+  <circle cx="884" cy="394" r="2.5" fill="#5a88d8"/>
+  <circle cx="892" cy="394" r="2.5" fill="#5a88d8"/>
+  <path d="M 883 401 Q 888 406, 893 401" stroke="#4070b8" stroke-width="1" fill="none"/>
+  <line x1="888" y1="388" x2="888" y2="384" stroke="#4070b8" stroke-width="0.9"/>
+  <circle cx="888" cy="383" r="1.8" fill="#5a88d8" opacity="0.6"/>
+  <line x1="879" y1="397" x2="874" y2="394" stroke="#4070b8" stroke-width="0.7" opacity="0.6"/>
+  <line x1="897" y1="397" x2="902" y2="394" stroke="#4070b8" stroke-width="0.7" opacity="0.6"/>
+  <text x="924" y="393" font-family="'Courier New',monospace" font-size="7.5" letter-spacing="2" fill="#5a88d8">SP-06</text>
+  <text x="924" y="408" font-family="'Courier New',monospace" font-size="11.5" fill="#c0d8f0">Power User · Hub</text>
+  <rect x="1058" y="382" width="72" height="18" rx="9" fill="#10203c" stroke="#4a78c8" stroke-width="1"/>
+  <text x="1094" y="394" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="1" fill="#5a88d8">HUB NODE</text>
+  <line x1="856" y1="435" x2="1124" y2="435" stroke="#102040" stroke-width="0.8"/>
+  <text x="856" y="458" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">MARKET</text>
+  <rect x="920" y="447" width="90" height="18" rx="9" fill="#0e1a2e" stroke="#3a68b8" stroke-width="0.8"/>
+  <text x="965" y="459" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#5a88d8">Enterprise B2B</text>
+  <text x="856" y="484" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">DEVICE</text>
+  <rect x="920" y="473" width="80" height="18" rx="9" fill="#0e1a2e" stroke="#3a68b8" stroke-width="0.8"/>
+  <text x="960" y="485" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#5a88d8">All devices</text>
+  <text x="856" y="510" font-family="'Courier New',monospace" font-size="7.5" fill="#2a3e60">FREQUENCY</text>
+  <rect x="950" y="499" width="70" height="18" rx="9" fill="#0e1a2e" stroke="#3a68b8" stroke-width="0.8"/>
+  <text x="985" y="511" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" fill="#5a88d8">30+ / month</text>
+  <line x1="856" y1="536" x2="1124" y2="536" stroke="#0e1e38" stroke-width="0.6"/>
+  <text x="856" y="552" font-family="'Courier New',monospace" font-size="7" fill="#1e3050">INFLUENCE WEIGHT</text>
+  <rect x="1000" y="542" width="112" height="6" rx="3" fill="#0a1428"/>
+  <rect x="1000" y="542" width="112" height="6" rx="3" fill="#4272c4" opacity="0.75"/>
+  <text x="1124" y="552" text-anchor="end" font-family="'Courier New',monospace" font-size="7" fill="#3a68b8">1.00</text>
+  <text x="856" y="576" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Highest influence. Connects all segments.</text>
+  <text x="856" y="588" font-family="'Courier New',monospace" font-size="7" fill="#1a2e4a">Used as baseline for evaluation layer.</text>
+  <circle cx="1116" cy="609" r="4" fill="#4272c4" opacity="0.4"/>
+  <circle cx="1116" cy="609" r="2" fill="#5a88d8" opacity="0.8"/>
+</svg>

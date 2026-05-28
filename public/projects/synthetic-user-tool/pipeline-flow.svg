@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#0a1422"/>
+      <stop offset="100%" stop-color="#03060c"/>
+    </radialGradient>
+    <linearGradient id="a1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c6cf4" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#5a82d4" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="a2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5a82d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4272c4" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="a3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4272c4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3a8ab0" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="a4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a8ab0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2aaa8e" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="b1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#12203e"/>
+      <stop offset="100%" stop-color="#0a1428"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#101e38"/>
+      <stop offset="100%" stop-color="#081220"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e1c32"/>
+      <stop offset="100%" stop-color="#081018"/>
+    </linearGradient>
+    <linearGradient id="b4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c1a2e"/>
+      <stop offset="100%" stop-color="#060e18"/>
+    </linearGradient>
+    <linearGradient id="b5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#081c28"/>
+      <stop offset="100%" stop-color="#040e12"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#8c6cf4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#8c6cf4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#4272c4" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#4272c4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g3" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#4272c4" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#4272c4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g4" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#3a8ab0" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#3a8ab0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g5" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#2aaa8e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#2aaa8e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="arrowGlow" x="-10%" y="-60%" width="120%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="0.6" fill="#182a48"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#dots)" opacity="0.38"/>
+
+  <!-- Title -->
+  <text x="600" y="52" text-anchor="middle" font-family="'Courier New',monospace" font-size="9.5" letter-spacing="5" fill="#1a2e50">SYNTHETIC USER PIPELINE · MONTHLY SIMULATION CADENCE</text>
+  <line x1="60" y1="65" x2="1140" y2="65" stroke="#0c1a30" stroke-width="0.8"/>
+
+  <!-- Stage positions: cx values at 138, 348, 558, 768, 978 — width 150, height 280 -->
+
+  <!-- ─── STAGE 1: Raw Feedback ────────────────────────────────────────── -->
+  <rect x="63" y="165" width="150" height="280" rx="8" fill="url(#b1)" stroke="#6a4ab8" stroke-width="1.2"/>
+  <rect x="63" y="165" width="150" height="280" rx="8" fill="url(#g1)"/>
+  <!-- Icon area -->
+  <rect x="63" y="165" width="150" height="82" rx="8" fill="#0e1630" opacity="0.6"/>
+  <rect x="63" y="215" width="150" height="32" fill="#0e1630" opacity="0.6"/>
+  <!-- Waveform icon -->
+  <polyline points="90,212 100,196 110,224 120,188 130,218 140,202 150,212 160,198 170,208 180,194 190,212" stroke="#8c6cf4" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+  <polyline points="90,212 100,196 110,224 120,188 130,218 140,202 150,212 160,198 170,208 180,194 190,212" stroke="#8c6cf4" stroke-width="0.7" fill="none"/>
+  <!-- Stage label -->
+  <text x="138" y="272" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" letter-spacing="2" fill="#8c6cf4">01</text>
+  <text x="138" y="292" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#c0b0f0">RAW</text>
+  <text x="138" y="308" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#c0b0f0">FEEDBACK</text>
+  <!-- Description -->
+  <text x="138" y="340" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#5a3a98">Qualtrics survey</text>
+  <text x="138" y="354" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#5a3a98">export · ~25,000</text>
+  <text x="138" y="368" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#5a3a98">comments/month</text>
+  <!-- Step indicator -->
+  <line x1="88" y1="420" x2="188" y2="420" stroke="#6a4ab8" stroke-width="0.6" opacity="0.5"/>
+  <text x="138" y="432" text-anchor="middle" font-family="'Courier New',monospace" font-size="6.5" letter-spacing="2" fill="#4a3a78">INPUT</text>
+
+  <!-- ─── ARROW 1→2 ──────────────────────────────────────────────────── -->
+  <path d="M 218 305 L 268 305" stroke="url(#a1)" stroke-width="1.6" fill="none" filter="url(#arrowGlow)"/>
+  <path d="M 218 305 L 268 305" stroke="#8c6cf4" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <polygon points="268,300 278,305 268,310" fill="#6a4ab8" opacity="0.8"/>
+  <!-- Data particle dots -->
+  <circle cx="232" cy="305" r="2" fill="#8c6cf4" opacity="0.5"/>
+  <circle cx="245" cy="305" r="1.5" fill="#8c6cf4" opacity="0.35"/>
+  <circle cx="258" cy="305" r="2" fill="#8c6cf4" opacity="0.5"/>
+
+  <!-- ─── STAGE 2: Content Analysis ────────────────────────────────────── -->
+  <rect x="278" y="165" width="150" height="280" rx="8" fill="url(#b2)" stroke="#4a68b8" stroke-width="1.2"/>
+  <rect x="278" y="165" width="150" height="280" rx="8" fill="url(#g2)"/>
+  <rect x="278" y="165" width="150" height="82" rx="8" fill="#0c1628" opacity="0.6"/>
+  <rect x="278" y="215" width="150" height="32" fill="#0c1628" opacity="0.6"/>
+  <!-- CPU/analysis icon: circle with spokes -->
+  <circle cx="353" cy="206" r="18" fill="none" stroke="#4272c4" stroke-width="1" filter="url(#glow)" opacity="0.7"/>
+  <circle cx="353" cy="206" r="8" fill="#0c1628" stroke="#4272c4" stroke-width="1.2"/>
+  <circle cx="353" cy="206" r="3" fill="#4272c4"/>
+  <line x1="353" y1="184" x2="353" y2="188" stroke="#4272c4" stroke-width="1"/>
+  <line x1="353" y1="224" x2="353" y2="228" stroke="#4272c4" stroke-width="1"/>
+  <line x1="331" y1="206" x2="335" y2="206" stroke="#4272c4" stroke-width="1"/>
+  <line x1="371" y1="206" x2="375" y2="206" stroke="#4272c4" stroke-width="1"/>
+  <line x1="337" y1="190" x2="340" y2="193" stroke="#4272c4" stroke-width="1" opacity="0.6"/>
+  <line x1="369" y1="222" x2="366" y2="219" stroke="#4272c4" stroke-width="1" opacity="0.6"/>
+  <line x1="337" y1="222" x2="340" y2="219" stroke="#4272c4" stroke-width="1" opacity="0.6"/>
+  <line x1="369" y1="190" x2="366" y2="193" stroke="#4272c4" stroke-width="1" opacity="0.6"/>
+  <text x="353" y="272" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" letter-spacing="2" fill="#4272c4">02</text>
+  <text x="353" y="292" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#9ab0e0">CONTENT</text>
+  <text x="353" y="308" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#9ab0e0">ANALYSIS</text>
+  <text x="353" y="340" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#2a4878">AI-powered theme</text>
+  <text x="353" y="354" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#2a4878">extraction · pain</text>
+  <text x="353" y="368" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#2a4878">points · sentiment</text>
+  <line x1="303" y1="420" x2="403" y2="420" stroke="#4a68b8" stroke-width="0.6" opacity="0.5"/>
+  <text x="353" y="432" text-anchor="middle" font-family="'Courier New',monospace" font-size="6.5" letter-spacing="2" fill="#2a3868">PROCESS</text>
+
+  <!-- ─── ARROW 2→3 ──────────────────────────────────────────────────── -->
+  <path d="M 433 305 L 483 305" stroke="url(#a2)" stroke-width="1.6" fill="none" filter="url(#arrowGlow)"/>
+  <path d="M 433 305 L 483 305" stroke="#4272c4" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <polygon points="483,300 493,305 483,310" fill="#3a5aaa" opacity="0.8"/>
+  <circle cx="447" cy="305" r="2" fill="#4272c4" opacity="0.5"/>
+  <circle cx="460" cy="305" r="1.5" fill="#4272c4" opacity="0.35"/>
+  <circle cx="473" cy="305" r="2" fill="#4272c4" opacity="0.5"/>
+
+  <!-- ─── STAGE 3: Corpus Aggregation ──────────────────────────────────── -->
+  <rect x="493" y="165" width="150" height="280" rx="8" fill="url(#b3)" stroke="#3a62a8" stroke-width="1.2"/>
+  <rect x="493" y="165" width="150" height="280" rx="8" fill="url(#g3)"/>
+  <rect x="493" y="165" width="150" height="82" rx="8" fill="#0a1424" opacity="0.6"/>
+  <rect x="493" y="215" width="150" height="32" fill="#0a1424" opacity="0.6"/>
+  <!-- Repository/stack icon -->
+  <ellipse cx="568" cy="196" rx="22" ry="6" fill="none" stroke="#4272c4" stroke-width="1" opacity="0.8" filter="url(#glow)"/>
+  <rect x="546" y="196" width="44" height="10" fill="#0a1424" opacity="0.6"/>
+  <ellipse cx="568" cy="206" rx="22" ry="6" fill="none" stroke="#4272c4" stroke-width="1" opacity="0.6"/>
+  <rect x="546" y="206" width="44" height="10" fill="#0a1424" opacity="0.6"/>
+  <ellipse cx="568" cy="216" rx="22" ry="6" fill="none" stroke="#4272c4" stroke-width="1" opacity="0.4"/>
+  <!-- Branch dots -->
+  <circle cx="549" cy="193" r="2.5" fill="#4272c4" opacity="0.7"/>
+  <circle cx="563" cy="193" r="2.5" fill="#4272c4" opacity="0.5"/>
+  <circle cx="577" cy="193" r="2.5" fill="#4272c4" opacity="0.5"/>
+  <text x="568" y="272" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" letter-spacing="2" fill="#4272c4">03</text>
+  <text x="568" y="292" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#8aaad8">CORPUS</text>
+  <text x="568" y="308" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#8aaad8">AGGREGATION</text>
+  <text x="568" y="340" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#1e3858">GitHub repo ·</text>
+  <text x="568" y="354" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#1e3858">growing dataset</text>
+  <text x="568" y="368" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#1e3858">across all months</text>
+  <line x1="518" y1="420" x2="618" y2="420" stroke="#3a62a8" stroke-width="0.6" opacity="0.5"/>
+  <text x="568" y="432" text-anchor="middle" font-family="'Courier New',monospace" font-size="6.5" letter-spacing="2" fill="#1e3858">STORE</text>
+
+  <!-- ─── ARROW 3→4 ──────────────────────────────────────────────────── -->
+  <path d="M 648 305 L 698 305" stroke="url(#a3)" stroke-width="1.6" fill="none" filter="url(#arrowGlow)"/>
+  <path d="M 648 305 L 698 305" stroke="#3a8ab0" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <polygon points="698,300 708,305 698,310" fill="#2a7898" opacity="0.8"/>
+  <circle cx="662" cy="305" r="2" fill="#4272c4" opacity="0.5"/>
+  <circle cx="675" cy="305" r="1.5" fill="#3a8ab0" opacity="0.35"/>
+  <circle cx="688" cy="305" r="2" fill="#3a8ab0" opacity="0.5"/>
+
+  <!-- ─── STAGE 4: Persona Generation ──────────────────────────────────── -->
+  <rect x="708" y="165" width="150" height="280" rx="8" fill="url(#b4)" stroke="#2a7898" stroke-width="1.2"/>
+  <rect x="708" y="165" width="150" height="280" rx="8" fill="url(#g4)"/>
+  <rect x="708" y="165" width="150" height="82" rx="8" fill="#08121e" opacity="0.6"/>
+  <rect x="708" y="215" width="150" height="32" fill="#08121e" opacity="0.6"/>
+  <!-- Android head icon -->
+  <circle cx="783" cy="202" r="16" fill="none" stroke="#3a8ab0" stroke-width="1.2" filter="url(#glow)" opacity="0.85"/>
+  <circle cx="778" cy="199" r="3" fill="#3a8ab0"/>
+  <circle cx="788" cy="199" r="3" fill="#3a8ab0"/>
+  <path d="M 775 207 Q 783 213, 791 207" stroke="#3a8ab0" stroke-width="1.2" fill="none"/>
+  <line x1="783" y1="186" x2="783" y2="181" stroke="#3a8ab0" stroke-width="1"/>
+  <circle cx="783" cy="180" r="2" fill="#3a8ab0" opacity="0.6"/>
+  <!-- Side antenna lines -->
+  <line x1="767" y1="202" x2="762" y2="198" stroke="#3a8ab0" stroke-width="0.8" opacity="0.6"/>
+  <line x1="799" y1="202" x2="804" y2="198" stroke="#3a8ab0" stroke-width="0.8" opacity="0.6"/>
+  <text x="783" y="272" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" letter-spacing="2" fill="#3a8ab0">04</text>
+  <text x="783" y="292" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#7ac0d8">PERSONA</text>
+  <text x="783" y="308" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#7ac0d8">GENERATION</text>
+  <text x="783" y="340" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#1a4860">Segmentable by</text>
+  <text x="783" y="354" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#1a4860">market · device ·</text>
+  <text x="783" y="368" text-anchor="middle" font-family="'Courier New',monospace" font-size="7.5" fill="#1a4860">frequency · role</text>
+  <line x1="733" y1="420" x2="833" y2="420" stroke="#2a7898" stroke-width="0.6" opacity="0.5"/>
+  <text x="783" y="432" text-anchor="middle" font-family="'Courier New',monospace" font-size="6.5" letter-spacing="2" fill="#1a4860">SYNTHESIZE</text>
+
+  <!-- ─── ARROW 4→5 ──────────────────────────────────────────────────── -->
+  <path d="M 863 305 L 913 305" stroke="url(#a4)" stroke-width="1.6" fill="none" filter="url(#arrowGlow)"/>
+  <path d="M 863 305 L 913 305" stroke="#2aaa8e" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <polygon points="913,300 923,305 913,310" fill="#1a8870" opacity="0.8"/>
+  <circle cx="877" cy="305" r="2" fill="#3a8ab0" opacity="0.5"/>
+  <circle cx="890" cy="305" r="1.5" fill="#2aaa8e" opacity="0.35"/>
+  <circle cx="903" cy="305" r="2" fill="#2aaa8e" opacity="0.5"/>
+
+  <!-- ─── STAGE 5: Design Evaluation ───────────────────────────────────── -->
+  <rect x="923" y="165" width="214" height="280" rx="8" fill="url(#b5)" stroke="#1a9878" stroke-width="1.2"/>
+  <rect x="923" y="165" width="214" height="280" rx="8" fill="url(#g5)"/>
+  <rect x="923" y="165" width="214" height="82" rx="8" fill="#050e10" opacity="0.6"/>
+  <rect x="923" y="215" width="214" height="32" fill="#050e10" opacity="0.6"/>
+  <!-- Diamond evaluation icon -->
+  <polygon points="1030,182 1052,206 1030,222 1008,206" fill="none" stroke="#2aaa8e" stroke-width="1.2" filter="url(#glow)" opacity="0.85"/>
+  <polygon points="1030,192 1042,206 1030,216 1018,206" fill="#2aaa8e" opacity="0.15"/>
+  <circle cx="1030" cy="206" r="4" fill="#2aaa8e" opacity="0.6"/>
+  <text x="1030" y="272" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" letter-spacing="2" fill="#2aaa8e">05</text>
+  <text x="1030" y="292" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#80d8c0">DESIGN</text>
+  <text x="1030" y="308" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" letter-spacing="0.5" fill="#80d8c0">EVALUATION</text>
+  <!-- Multi-criteria labels -->
+  <text x="945" y="338" font-family="'Courier New',monospace" font-size="7" fill="#1a6858">· WCAG 2.1 AA</text>
+  <text x="945" y="352" font-family="'Courier New',monospace" font-size="7" fill="#1a6858">· Nielsen Norman heuristics</text>
+  <text x="945" y="366" font-family="'Courier New',monospace" font-size="7" fill="#1a6858">· SAP Fiori design system</text>
+  <text x="945" y="380" font-family="'Courier New',monospace" font-size="7" fill="#1a6858">· iOS HIG + Material Design</text>
+  <text x="945" y="394" font-family="'Courier New',monospace" font-size="7" fill="#1a6858">· Synthetic persona response</text>
+  <line x1="948" y1="420" x2="1112" y2="420" stroke="#1a9878" stroke-width="0.6" opacity="0.5"/>
+  <text x="1030" y="432" text-anchor="middle" font-family="'Courier New',monospace" font-size="6.5" letter-spacing="2" fill="#0e5840">OUTPUT</text>
+
+  <!-- ─── MONTHLY CADENCE INDICATOR ─────────────────────────────────────── -->
+  <line x1="63" y1="490" x2="1137" y2="490" stroke="#0c1830" stroke-width="0.8"/>
+  <text x="600" y="515" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" letter-spacing="3" fill="#142030">MONTHLY CADENCE</text>
+  <!-- Tick marks -->
+  <g stroke="#1e3050" stroke-width="0.8">
+    <line x1="138" y1="495" x2="138" y2="502"/>
+    <line x1="353" y1="495" x2="353" y2="502"/>
+    <line x1="568" y1="495" x2="568" y2="502"/>
+    <line x1="783" y1="495" x2="783" y2="502"/>
+    <line x1="1030" y1="495" x2="1030" y2="502"/>
+  </g>
+  <text x="138" y="526" text-anchor="middle" font-family="'Courier New',monospace" font-size="6" fill="#1a3050">DAY 1</text>
+  <text x="353" y="526" text-anchor="middle" font-family="'Courier New',monospace" font-size="6" fill="#1a3050">DAY 2–5</text>
+  <text x="568" y="526" text-anchor="middle" font-family="'Courier New',monospace" font-size="6" fill="#1a3050">ONGOING</text>
+  <text x="783" y="526" text-anchor="middle" font-family="'Courier New',monospace" font-size="6" fill="#1a3050">ON DEMAND</text>
+  <text x="1030" y="526" text-anchor="middle" font-family="'Courier New',monospace" font-size="6" fill="#1a3050">ON DEMAND</text>
+
+  <!-- Bottom label -->
+  <line x1="60" y1="600" x2="1140" y2="600" stroke="#0a1828" stroke-width="0.6"/>
+  <text x="600" y="620" text-anchor="middle" font-family="'Courier New',monospace" font-size="7" letter-spacing="3" fill="#0e1e30">BUILT SOLO · NO ENGINEERING SPRINT · NO ROADMAP SLOT · ADOPTED BY DESIGN TEAM</text>
+</svg>
