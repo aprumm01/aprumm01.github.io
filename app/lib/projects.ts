@@ -195,7 +195,6 @@ const _projects: Project[] = [
       "Designed pricing analyst tools for teams across American Airlines, Delta, LATAM, and 490+ airlines worldwide",
       "A/B usability study (7 international participants, Morae) on CIF date-logic UI: 6 of 7 preferred the prototype, findings that drove the shipped redesign",
       "Built core components for ATPCO's design system alongside a UX engineer",
-      "Led UX design for the Next Gen Storefront proof of concept: guerrilla testing, interaction pattern validation, fare comparison hierarchy",
       "Mentored junior designers in visual design and facilitation; trained a successor to take over the facilitation program",
     ],
     tags: ["UX Research", "Design Sprints", "Workshop Facilitation", "B2B Enterprise", "Design Systems", "Usability Testing"],
@@ -209,11 +208,6 @@ const _projects: Project[] = [
         src: "/projects/atpco/search-criteria.png",
         alt: "ATPCO CIF search criteria with date logic controls",
         annotation: "The search criteria and date control panel, one of the two variants tested. The original 'Advance/Postpone' labeling was consistently misinterpreted by participants in the opposite direction the system intended.",
-      },
-      {
-        src: "/projects/atpco/notetaking.png",
-        alt: "ATPCO structured notetaking for usability sessions",
-        annotation: "A structured notetaking template used across moderated research sessions at ATPCO, standardizing how observers captured task performance, errors, and participant language across sessions with analysts at different airlines.",
       },
     ],
     accentColor: "#0d1a0d",
@@ -279,21 +273,6 @@ const _projects: Project[] = [
           { value: "6/7", label: "preferred prototype" },
           { value: "A/B", label: "terminology test" },
           { value: "Morae", label: "session recording" },
-        ],
-      },
-      {
-        heading: "Next Gen Storefront",
-        paragraphs: [
-          "Alongside the research and facilitation work, I led UX design for ATPCO's Next Gen Storefront, a proof-of-concept for next-generation fare comparison and merchandising. The product was not shipped during my tenure, but the work established interaction patterns and information hierarchy for how airlines could present fare options in a modern, structured way to booking engines and travelers.",
-          "I ran guerrilla testing to validate the core interaction patterns and worked through multiple iterations of the fare comparison layout, balancing the data density requirements of airline merchandising against the comprehension needs of the end user.",
-        ],
-        images: [
-          {
-            src: "/projects/atpco/notetaking.png",
-            alt: "Structured notetaking system for usability sessions",
-            caption: "Research notetaking template",
-            annotation: "Standardized observation templates let multiple notetakers capture the same session independently, then compare notes. This approach surfaces disagreements in interpretation early, before synthesis, which is where most of the insight loss in qualitative research actually happens.",
-          },
         ],
       },
     ],
