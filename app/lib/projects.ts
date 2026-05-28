@@ -184,9 +184,173 @@ const _projects: Project[] = [
       },
     ],
   },
+
+  // ─── Multi-Fare Display ──────────────────────────────────────────────────
+  {
+    slug: "multi-fare-display",
+    number: "02",
+    category: "Interaction Design · SAP Concur",
+    title: "Multi-Fare Display",
+    role: "Sr. UX Design Specialist",
+    period: "2021–2023",
+    description:
+      "The multi-fare display is the central decision surface in SAP Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I originated the information architecture and progressive disclosure model and led research through the project's foundational phases; as the pattern matured, additional designers joined and the work scaled across all four travel verticals.",
+    highlights: [
+      "Mapped rank-order research priority tiers directly to interaction depth: top-priority attributes in the default view, mid-priority on first click, lower-priority in fare details",
+      "Designed multiple rounds of iteration from information-rich to progressively simpler, balancing stakeholder requirements against traveler comprehension",
+      "Redesigned the seat map interaction model alongside the fare display",
+      "Scaled the pattern to hotel, rental car, and rail, establishing a unified booking architecture across SAP Concur's travel ecosystem",
+      "Established a travel-specific Figma component library extending SAP Fiori for travel-specific UX patterns",
+    ],
+    tags: ["Information Architecture", "Progressive Disclosure", "Interaction Design", "Enterprise UX", "Design Systems", "Usability Testing"],
+    images: [
+      {
+        src: "/projects/multi-fare-display/prototype-01.png",
+        alt: "Air booking multi-fare display, concept prototype iteration 1",
+        annotation: "First-generation concept prototype showing the fare comparison architecture. Early iterations erred toward maximum information density, surfacing all fare attributes simultaneously to give travelers complete data. Usability testing with business travelers revealed this created decision paralysis rather than clarity.",
+      },
+      {
+        src: "/projects/multi-fare-display/prototype-02.png",
+        alt: "Air booking multi-fare display, concept prototype iteration 2",
+        annotation: "Second-generation prototype showing the progressive disclosure model: fare tiers as columns, core attributes visible by default, detail available on demand. This architecture became the foundation for how SAP Concur presents fare options across all four booking verticals.",
+      },
+      {
+        src: "/projects/sap-concur/fare-merchandising.png",
+        alt: "Final multi-fare merchandising display in production",
+        annotation: "The production multi-fare display: fare families as comparable columns with included services, policy status, and price shown inline. The columns map directly to airline branded fare families; travelers see exactly what changes between tiers without having to navigate away.",
+      },
+    ],
+    accentColor: "#0a1628",
+    overviewStats: [
+      { value: "4", label: "verticals scaled to" },
+      { value: "20+", label: "customer sessions" },
+      { value: "10–20", label: "alpha usability tests" },
+      { value: "WCAG 2.1 AA", label: "accessibility standard" },
+    ],
+    sections: [
+      {
+        heading: "The Design Problem",
+        paragraphs: [
+          "Airline fare structures are deliberately complex; airlines use fare families, branded bundles, and unbundled ancillaries to segment demand and maximize yield. For a corporate traveler booking on SAP Concur, the challenge is understanding what a $400 fare actually includes compared to a $550 fare on the same flight, and whether either one is within company policy.",
+          "The previous fare display at SAP Concur showed fares in a flat list without clear differentiation between fare types. Travelers couldn't easily compare tiers, understand what changed between prices, or see policy status at a glance. The seat map was a separate interaction that disconnected fare choice from seat assignment. The information architecture needed a full redesign.",
+        ],
+      },
+      {
+        heading: "Research & Information Architecture",
+        paragraphs: [
+          "The design started with rank-order research from an internal SAP Concur study and an external source, which established a clear priority hierarchy for the factors business travelers consider when booking. The top-ranked factors (price, number of stops, policy status, and departure/arrival times) were consistently prioritized across traveler types. A middle tier covered seat selection, loyalty program data, and onboard amenities. The lowest-priority factors (class of service detail, eco attributes, aircraft type) were relevant to some travelers but rarely decisive.",
+          "That hierarchy drove the information architecture directly. The top third of priorities appear in the default fare card view, immediately visible without any interaction. The middle third surfaces after the first click, once a traveler has indicated interest in a specific option. The lowest-priority third is distributed throughout the page and available in the detailed fare breakdown: accessible, but not competing for attention at the comparison stage. The progressive disclosure model is a direct translation of the research priority ranking into interaction depth.",
+        ],
+        images: [
+          {
+            src: "/projects/multi-fare-display/rank-order-research.png",
+            alt: "Rank-order study results: factors travelers consider when booking business travel",
+            caption: "Rank-order research: booking factor priorities",
+            annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster (price, stops, policy status, departure/arrival times) established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
+          },
+          {
+            src: "/projects/multi-fare-display/card-sort-research.png",
+            alt: "Card sort study: business travel booking factor categorization",
+            caption: "Card sort: not important / important / very important",
+            annotation: "A card sort study asking business travelers to categorize booking factors by importance. The three-tier categorization from this study (not important, important, very important) maps directly to the three disclosure levels in the fare display: default view, first-click expansion, and full detail.",
+          },
+          {
+            src: "/projects/multi-fare-display/prototype-01.png",
+            alt: "Early concept prototype, information-dense fare display",
+            caption: "Early concept: high information density",
+            annotation: "The first prototype surfaced all fare attributes simultaneously before the research-driven hierarchy was applied. Testing with business travelers showed they couldn't identify the most important differentiator between fares; too many attributes competed for attention at once.",
+          },
+        ],
+      },
+      {
+        heading: "Progressive Disclosure Model",
+        paragraphs: [
+          "The production model uses fare tiers as columns (Basic, Main Cabin, Business Select, First) with a consistent set of core attributes visible in each. The most decision-critical attributes appear in the default collapsed view. Expanding a column reveals the full fare terms. Policy status (in-policy, out-of-policy, approval required) appears as a consistent indicator on every option.",
+          "The design went through multiple iterations. There was a period where product pressure pushed toward adding more attributes to the default view: carrier amenities, loyalty points accrual, upgrade path. I pushed back with usability data showing this caused decision fatigue. Not every argument landed, but the progressive disclosure principle held through to production.",
+        ],
+        images: [
+          {
+            src: "/projects/multi-fare-display/prototype-02.png",
+            alt: "Progressive disclosure model, columns architecture",
+            caption: "Columns architecture: progressive disclosure",
+            annotation: "The columns architecture solved the comparison problem: travelers can scan down a single attribute row to compare it across all fare tiers, or scan across a row to see everything included in one tier. This two-dimensional reading pattern matches how people naturally compare structured options, the same pattern used in airline seat maps and hotel room comparison grids.",
+          },
+          {
+            src: "/projects/sap-concur/fare-merchandising.png",
+            alt: "Production multi-fare display",
+            caption: "Production fare merchandising",
+            annotation: "The production implementation: columns are branded fare families, rows are attributes. The policy status badge on each option tells travelers immediately whether a choice requires approval. The design scales cleanly from 2-column to 5-column depending on the number of fare families the airline publishes for a route.",
+            magnify: true,
+          },
+        ],
+      },
+      {
+        heading: "Scaling the Pattern",
+        paragraphs: [
+          "Once validated for air, the multi-fare architecture was extended to hotel rates, rental car tiers, and rail fare classes, with additional designers contributing as the work expanded. Each vertical has different attributes (hotels have cancellation policy and breakfast inclusion; cars have coverage tiers and fuel options; rail has seat class and flex vs. non-flex) but the underlying progressive disclosure model transferred cleanly.",
+          "Scaling the pattern required abstracting the component architecture in a way that could flex across different attribute sets without fracturing the visual language. This work became the foundation for a Figma component library of travel-specific patterns, extending SAP Fiori with the domain-specific components that the design system team hadn't built.",
+        ],
+        images: [
+          {
+            src: "/projects/sap-concur/search-results.jpg",
+            alt: "Air search results, fare comparison in context",
+            caption: "Search results with fare comparison in context",
+            annotation: "The full search results view showing the multi-fare display in its natural context, within a list of flight options, each showing fare family tiers inline. Travelers can compare fare classes across flights on the same page rather than having to open each flight individually.",
+            magnify: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─── TCAYT ───────────────────────────────────────────────────────────────
+  {
+    slug: "tcayt",
+    number: "03",
+    category: "Enterprise Product Design · SAP Concur",
+    title: "Tell Concur About Your Trip",
+    role: "Principal UX Designer, Design Lead",
+    period: "2023–Present",
+    description:
+      "Tell Concur About Your Trip (TCAYT) is a net-new multi-vertical booking workflow that lets corporate travelers disclose travel arranged outside SAP Concur's managed booking channel. I led end-to-end UX design from discovery through production, defining the interaction model, building new design system components, and aligning the workflow across all four travel verticals.",
+    highlights: [
+      "Led net-new UX design for a multi-vertical outside-booking disclosure workflow, from discovery through production",
+      "Designed new design system components extending SAP Fiori for the disclosure input pattern",
+      "Defined the information architecture and segment input model for multi-vertical trip disclosure",
+      "Ran usability validation to ensure the workflow felt lighter than a full booking flow while capturing all required policy data",
+    ],
+    tags: ["Interaction Design", "Enterprise UX", "Design Systems", "Information Architecture", "Multi-vertical", "Usability Testing"],
+    images: [],
+    accentColor: "#0a1628",
+    sections: [
+      {
+        heading: "The Design Problem",
+        paragraphs: [
+          "Corporate travelers frequently book outside managed booking channels: directly through airline apps for loyalty accrual, through hotel websites for preferred rates, or via executive assistants. This creates a visibility gap for companies that need that information for policy compliance, duty of care, and expense reconciliation.",
+          "SAP Concur's existing booking flow was built for travelers who start from scratch within the tool. There was no lightweight path for a traveler to say 'here is a trip I've already arranged' and have it enter the managed travel system without going through the full search-and-book workflow. TCAYT was designed to close that gap across all four verticals simultaneously.",
+        ],
+      },
+      {
+        heading: "Interaction Model",
+        paragraphs: [
+          "The core design challenge was reducing the interaction cost of disclosure without sacrificing the data quality the company needed downstream. A full booking flow collects everything: travelers, dates, segments, ancillaries, costs. An outside-booking disclosure needs the same data set, but the traveler already knows what they booked and shouldn't have to search for options they aren't choosing.",
+          "I designed a structured input model that mirrors the booking confirmation pattern travelers already know: destination, dates, carrier or property, confirmation number. The system resolves input against fare and hotel content in the background rather than asking the traveler to re-select from search results. The multi-vertical architecture lets a traveler disclose all segments of a trip in a single flow, matching the compound-itinerary mental model rather than treating air, hotel, and car as three separate events.",
+        ],
+      },
+      {
+        heading: "Design System Components",
+        paragraphs: [
+          "TCAYT introduced a disclosure input pattern that didn't exist in SAP Fiori's travel-specific component set. I designed new components for segment input, confirmation number resolution, policy status surfacing on outside bookings, and the multi-vertical trip summary. These components were built to be visually and behaviorally consistent with the existing SAP Concur booking flow, so travelers who mix managed and outside booking in the same trip encounter a coherent interaction language.",
+          "The components were contributed to the travel-specific Figma library I maintain alongside the SAP Fiori system, extending the library's coverage to outside-booking scenarios and making the pattern reusable for future features that touch similar workflows.",
+        ],
+      },
+    ],
+  },
+
+  // ─── ATPCO ───────────────────────────────────────────────────────────────
   {
     slug: "atpco",
-    number: "02",
+    number: "04",
     category: "UX Research & Workshop Facilitation · ATPCO",
     title: "Airline Industry UX Practice",
     role: "Sr. UX Researcher & Design Sprint Facilitator",
@@ -282,7 +446,7 @@ const _projects: Project[] = [
   },
   {
     slug: "cowans",
-    number: "03",
+    number: "05",
     category: "UX Design & Development · Tribeswell",
     title: "Cowan's Collections",
     role: "Web Designer & Developer",
@@ -399,7 +563,7 @@ const _projects: Project[] = [
   },
   {
     slug: "ebay",
-    number: "04",
+    number: "06",
     category: "Interaction Design · Academic",
     title: "eBay Mobile Redesign",
     role: "UX Design, MFA Coursework",
@@ -478,7 +642,7 @@ const _projects: Project[] = [
   // ─── Synthetic User Tool ─────────────────────────────────────────────────
   {
     slug: "synthetic-user-tool",
-    number: "05",
+    number: "07",
     category: "Research Operations · SAP Concur",
     title: "Synthetic User Tool",
     role: "Principal UX Designer, Solo Build",
@@ -587,128 +751,10 @@ const _projects: Project[] = [
     ],
   },
 
-  // ─── Multi-Fare Display ──────────────────────────────────────────────────
-  {
-    slug: "multi-fare-display",
-    number: "06",
-    category: "Interaction Design · SAP Concur",
-    title: "Multi-Fare Display",
-    role: "Sr. UX Design Specialist",
-    period: "2021–2023",
-    description:
-      "The multi-fare display is the central decision surface in Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I originated the information architecture and progressive disclosure model and led research through the project's foundational phases; as the pattern matured, additional designers joined and the work scaled across all four travel verticals.",
-    highlights: [
-      "Mapped rank-order research priority tiers directly to interaction depth: top-priority attributes in the default view, mid-priority on first click, lower-priority in fare details",
-      "Designed multiple rounds of iteration from information-rich to progressively simpler, balancing stakeholder requirements against traveler comprehension",
-      "Redesigned the seat map interaction model alongside the fare display",
-      "Scaled the pattern to hotel, rental car, and rail, establishing a unified booking architecture across Concur's travel ecosystem",
-      "Established a travel-specific Figma component library extending SAP Fiori for travel-specific UX patterns",
-    ],
-    tags: ["Information Architecture", "Progressive Disclosure", "Interaction Design", "Enterprise UX", "Design Systems", "Usability Testing"],
-    images: [
-      {
-        src: "/projects/multi-fare-display/prototype-01.png",
-        alt: "Air booking multi-fare display, concept prototype iteration 1",
-        annotation: "First-generation concept prototype showing the fare comparison architecture. Early iterations erred toward maximum information density, surfacing all fare attributes simultaneously to give travelers complete data. Usability testing with business travelers revealed this created decision paralysis rather than clarity.",
-      },
-      {
-        src: "/projects/multi-fare-display/prototype-02.png",
-        alt: "Air booking multi-fare display, concept prototype iteration 2",
-        annotation: "Second-generation prototype showing the progressive disclosure model: fare tiers as columns, core attributes visible by default, detail available on demand. This architecture became the foundation for how Concur presents fare options across all four booking verticals.",
-      },
-      {
-        src: "/projects/sap-concur/fare-merchandising.png",
-        alt: "Final multi-fare merchandising display in production",
-        annotation: "The production multi-fare display: fare families as comparable columns with included services, policy status, and price shown inline. The columns map directly to airline branded fare families; travelers see exactly what changes between tiers without having to navigate away.",
-      },
-    ],
-    accentColor: "#0a1628",
-    overviewStats: [
-      { value: "4", label: "verticals scaled to" },
-      { value: "20+", label: "customer sessions" },
-      { value: "10–20", label: "alpha usability tests" },
-      { value: "WCAG 2.1 AA", label: "accessibility standard" },
-    ],
-    sections: [
-      {
-        heading: "The Design Problem",
-        paragraphs: [
-          "Airline fare structures are deliberately complex; airlines use fare families, branded bundles, and unbundled ancillaries to segment demand and maximize yield. For a corporate traveler booking on Concur, the challenge is understanding what a $400 fare actually includes compared to a $550 fare on the same flight, and whether either one is within company policy.",
-          "The previous fare display at Concur showed fares in a flat list without clear differentiation between fare types. Travelers couldn't easily compare tiers, understand what changed between prices, or see policy status at a glance. The seat map was a separate interaction that disconnected fare choice from seat assignment. The information architecture needed a full redesign.",
-        ],
-      },
-      {
-        heading: "Research & Information Architecture",
-        paragraphs: [
-          "The design started with rank-order research from an internal Concur study and an external source, which established a clear priority hierarchy for the factors business travelers consider when booking. The top-ranked factors (price, number of stops, policy status, and departure/arrival times) were consistently prioritized across traveler types. A middle tier covered seat selection, loyalty program data, and onboard amenities. The lowest-priority factors (class of service detail, eco attributes, aircraft type) were relevant to some travelers but rarely decisive.",
-          "That hierarchy drove the information architecture directly. The top third of priorities appear in the default fare card view, immediately visible without any interaction. The middle third surfaces after the first click, once a traveler has indicated interest in a specific option. The lowest-priority third is distributed throughout the page and available in the detailed fare breakdown: accessible, but not competing for attention at the comparison stage. The progressive disclosure model is a direct translation of the research priority ranking into interaction depth.",
-        ],
-        images: [
-          {
-            src: "/projects/multi-fare-display/rank-order-research.png",
-            alt: "Rank-order study results: factors travelers consider when booking business travel",
-            caption: "Rank-order research: booking factor priorities",
-            annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster (price, stops, policy status, departure/arrival times) established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
-          },
-          {
-            src: "/projects/multi-fare-display/card-sort-research.png",
-            alt: "Card sort study: business travel booking factor categorization",
-            caption: "Card sort: not important / important / very important",
-            annotation: "A card sort study asking business travelers to categorize booking factors by importance. The three-tier categorization from this study (not important, important, very important) maps directly to the three disclosure levels in the fare display: default view, first-click expansion, and full detail.",
-          },
-          {
-            src: "/projects/multi-fare-display/prototype-01.png",
-            alt: "Early concept prototype, information-dense fare display",
-            caption: "Early concept: high information density",
-            annotation: "The first prototype surfaced all fare attributes simultaneously before the research-driven hierarchy was applied. Testing with business travelers showed they couldn't identify the most important differentiator between fares; too many attributes competed for attention at once.",
-          },
-        ],
-      },
-      {
-        heading: "Progressive Disclosure Model",
-        paragraphs: [
-          "The production model uses fare tiers as columns (Basic, Main Cabin, Business Select, First) with a consistent set of core attributes visible in each. The most decision-critical attributes appear in the default collapsed view. Expanding a column reveals the full fare terms. Policy status (in-policy, out-of-policy, approval required) appears as a consistent indicator on every option.",
-          "The design went through multiple iterations. There was a period where product pressure pushed toward adding more attributes to the default view: carrier amenities, loyalty points accrual, upgrade path. I pushed back with usability data showing this caused decision fatigue. Not every argument landed, but the progressive disclosure principle held through to production.",
-        ],
-        images: [
-          {
-            src: "/projects/multi-fare-display/prototype-02.png",
-            alt: "Progressive disclosure model, columns architecture",
-            caption: "Columns architecture: progressive disclosure",
-            annotation: "The columns architecture solved the comparison problem: travelers can scan down a single attribute row to compare it across all fare tiers, or scan across a row to see everything included in one tier. This two-dimensional reading pattern matches how people naturally compare structured options, the same pattern used in airline seat maps and hotel room comparison grids.",
-          },
-          {
-            src: "/projects/sap-concur/fare-merchandising.png",
-            alt: "Production multi-fare display",
-            caption: "Production fare merchandising",
-            annotation: "The production implementation: columns are branded fare families, rows are attributes. The policy status badge on each option tells travelers immediately whether a choice requires approval. The design scales cleanly from 2-column to 5-column depending on the number of fare families the airline publishes for a route.",
-            magnify: true,
-          },
-        ],
-      },
-      {
-        heading: "Scaling the Pattern",
-        paragraphs: [
-          "Once validated for air, the multi-fare architecture was extended to hotel rates, rental car tiers, and rail fare classes, with additional designers contributing as the work expanded. Each vertical has different attributes (hotels have cancellation policy and breakfast inclusion; cars have coverage tiers and fuel options; rail has seat class and flex vs. non-flex) but the underlying progressive disclosure model transferred cleanly.",
-          "Scaling the pattern required abstracting the component architecture in a way that could flex across different attribute sets without fracturing the visual language. This work became the foundation for a Figma component library of travel-specific patterns, extending SAP Fiori with the domain-specific components that the design system team hadn't built.",
-        ],
-        images: [
-          {
-            src: "/projects/sap-concur/search-results.jpg",
-            alt: "Air search results, fare comparison in context",
-            caption: "Search results with fare comparison in context",
-            annotation: "The full search results view showing the multi-fare display in its natural context, within a list of flight options, each showing fare family tiers inline. Travelers can compare fare classes across flights on the same page rather than having to open each flight individually.",
-            magnify: true,
-          },
-        ],
-      },
-    ],
-  },
-
   // ─── NGS ─────────────────────────────────────────────────────────────────
   {
     slug: "ngs",
-    number: "07",
+    number: "08",
     category: "Product Design · ATPCO",
     title: "Next Gen Storefront",
     role: "UX Designer",
@@ -841,7 +887,7 @@ const _projects: Project[] = [
   // ─── Urban Expressions ───────────────────────────────────────────────────
   {
     slug: "urban-expressions",
-    number: "08",
+    number: "09",
     category: "Illustration & Graphic Design · Commission",
     title: "Urban Expressions",
     role: "Illustrator & Graphic Designer",
@@ -902,7 +948,7 @@ const _projects: Project[] = [
   // ─── Web & Graphic Design ────────────────────────────────────────────────
   {
     slug: "web-and-graphics",
-    number: "09",
+    number: "10",
     category: "Web & Graphic Design",
     title: "Web & Graphic Design",
     role: "Designer & Developer",
