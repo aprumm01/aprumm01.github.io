@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/app/components/Nav";
 import AnnotatedImage from "@/app/components/AnnotatedImage";
+import VideoPlayer from "@/app/components/VideoPlayer";
 import { projects, getProject, getAdjacentProjects, type GalleryItem } from "@/app/lib/projects";
 
 export function generateStaticParams() {
@@ -172,6 +173,21 @@ export default async function CaseStudyPage({
                           alt={img.alt}
                           caption={img.caption}
                           annotation={img.annotation}
+                        />
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Section videos */}
+                  {section.videos && section.videos.length > 0 && (
+                    <div className="flex flex-col gap-10">
+                      {section.videos.map((vid) => (
+                        <VideoPlayer
+                          key={vid.src}
+                          src={vid.src}
+                          caption={vid.caption}
+                          annotation={vid.annotation}
+                          poster={vid.poster}
                         />
                       ))}
                     </div>

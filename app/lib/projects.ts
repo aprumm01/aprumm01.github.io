@@ -19,10 +19,18 @@ export interface GalleryItem {
   alt: string;
 }
 
+export interface ProjectVideo {
+  src: string;
+  caption?: string;
+  annotation?: string;
+  poster?: string;
+}
+
 export interface Section {
   heading: string;
   paragraphs: string[];
   images?: ProjectImage[];
+  videos?: ProjectVideo[];
   stats?: Stat[];
   gallery?: GalleryItem[];
 }
@@ -725,6 +733,51 @@ const _projects: Project[] = [
             alt: "NGS fare comparison interface",
             caption: "NGS fare comparison: structured attribute display",
             annotation: "The interface organizes airlines into comparable cards with attribute chips aligned across a consistent taxonomy. Travelers can scan vertically within one airline's card to understand what that option includes, or scan horizontally across a single attribute row to compare all airlines on that dimension. The structure mirrors how analysts in the industry actually compare airline products, which was ATPCO's primary research source for validating the taxonomy.",
+          },
+        ],
+        videos: [
+          {
+            src: "/projects/ngs/ngs-demo.mp4",
+            caption: "Full NGS prototype demo",
+            annotation: "A walkthrough of the complete NGS prototype, showing the fare results page, attribute chip interaction, amenities detail expansion, comparison mode, and the review screen. The flow was designed to be operated by a booking engine operator during airline partner demonstrations.",
+          },
+        ],
+      },
+      {
+        heading: "Interaction Walkthrough",
+        paragraphs: [
+          "The prototype was built to demonstrate the full booking interaction to airline industry partners. Each stage of the flow was designed to be self-explanatory to a traveler with no prior exposure to the NGS model, while still giving booking engine operators the configuration control they needed on the back end.",
+        ],
+        videos: [
+          {
+            src: "/projects/ngs/01-landing-results.mp4",
+            caption: "Results page: structured fare cards",
+            annotation: "The landing results view shows airlines as structured cards with their competitive differentiators surfaced as attribute chips. The layout was designed to let travelers scan vertically within one card or horizontally across a single attribute row.",
+          },
+          {
+            src: "/projects/ngs/02-first-row.mp4",
+            caption: "First result row: attribute detail",
+            annotation: "Expanding the first result row reveals the full attribute breakdown for that airline's fare. Attributes are organized into consistent categories so travelers can orient themselves regardless of which airline they expand.",
+          },
+          {
+            src: "/projects/ngs/03-upa-amenities.mp4",
+            caption: "UPA amenities display",
+            annotation: "The amenities panel surfaces structured data from ATPCO's Universal Product Architecture layer, translating raw fare rule data into human-readable service attributes. This was one of the core technical challenges: making dense airline data comprehensible at a glance.",
+          },
+          {
+            src: "/projects/ngs/04-amenities-details.mp4",
+            caption: "Amenities detail expansion",
+            annotation: "Drilling into amenity detail gives travelers the complete service description without overwhelming the primary comparison view. The progressive disclosure model keeps the default view scannable while preserving access to full information.",
+          },
+          {
+            src: "/projects/ngs/05-compare.mp4",
+            caption: "Fare comparison mode",
+            annotation: "The comparison mode lets travelers pin up to three fare options side by side, with attributes aligned in a consistent grid. This was validated in guerrilla testing as the most effective format for travelers making final booking decisions.",
+          },
+          {
+            src: "/projects/ngs/06-review.mp4",
+            caption: "Review screen",
+            annotation: "The review screen consolidates selected fare details, policy status, and traveler information before booking confirmation. The design carried forward the attribute-chip language from the results view to maintain visual continuity through the booking flow.",
           },
         ],
       },
