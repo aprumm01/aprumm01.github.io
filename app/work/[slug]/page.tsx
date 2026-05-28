@@ -51,6 +51,7 @@ export default async function CaseStudyPage({
   if (!project) notFound();
 
   const { prev, next } = getAdjacentProjects(slug);
+  const heroImages = project.images.slice(0, 3);
 
   return (
     <>
@@ -113,20 +114,22 @@ export default async function CaseStudyPage({
           </section>
         )}
 
-        {/* Hero image strip */}
+        {/* Hero image strip — max 3, centered when 2 */}
         <div className="border-t border-[#1a1a1a]">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px">
-            {project.images.map((img, i) => (
+          <div className="flex sm:justify-center gap-px overflow-hidden">
+            {heroImages.map((img, i) => (
               <div
                 key={`${img.src}-${i}`}
-                className={`relative overflow-hidden bg-[#111] ${i > 0 ? "hidden sm:block" : ""}`}
+                className={`relative shrink-0 overflow-hidden bg-[#111] ${
+                  i > 0 ? "hidden sm:block" : "w-full"
+                } sm:w-1/3`}
                 style={{ aspectRatio: "16/9" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="h-full w-full object-cover object-top opacity-60"
+                  className="h-full w-full object-cover object-top opacity-75"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent" />
               </div>

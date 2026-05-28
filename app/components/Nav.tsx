@@ -55,7 +55,7 @@ export default function Nav() {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="text-sm text-[#888] hover:text-[#fafafa] transition-colors tracking-wide"
+                className="text-sm text-[#888] hover:text-[#6B9C6F] transition-colors tracking-wide"
               >
                 {item.label}
               </a>
@@ -100,7 +100,7 @@ export default function Nav() {
               <a
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 text-base text-[#888] hover:text-[#fafafa] transition-colors tracking-wide"
+                className="block py-3 text-base text-[#888] hover:text-[#6B9C6F] transition-colors tracking-wide"
               >
                 {item.label}
               </a>

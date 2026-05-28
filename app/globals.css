@@ -5,6 +5,62 @@
   --font-display: var(--font-playfair);
 }
 
+:root {
+  --gold:       #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark:  #A67C3A;
+  --green:      #4E7D53;
+  --green-dark: #1A3A1F;
+}
+
+@keyframes gold-shimmer {
+  from { background-position: 0% 50%; }
+  to   { background-position: 200% 50%; }
+}
+
+/* Gradient border via padding trick — wrap content in this + p-px */
+.gold-border {
+  background: linear-gradient(
+    to right,
+    var(--gold-dark),
+    var(--gold),
+    var(--gold-light),
+    var(--gold),
+    var(--gold-dark)
+  );
+  background-size: 300% 100%;
+}
+
+.gold-border:hover {
+  animation: gold-shimmer 2s linear infinite;
+}
+
+/* Card lift + ambient glow on hover */
+.card-hover {
+  transition: box-shadow 0.4s ease, transform 0.35s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(78, 125, 83, 0.14),
+    0 0 50px rgba(78, 125, 83, 0.06),
+    0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* Metallic gradient text — use on number labels, headings */
+.gold-text {
+  background: linear-gradient(
+    to bottom right,
+    var(--gold) 0%,
+    var(--gold-light) 50%,
+    var(--gold) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 html {
   scroll-behavior: smooth;
 }

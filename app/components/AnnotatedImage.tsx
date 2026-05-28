@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 
 interface Props {
   src: string;
@@ -9,8 +9,6 @@ interface Props {
   magnify?: boolean;
 }
 
-const MAG_W = 300;
-const MAG_H = 188;
 const ZOOM = 2.5;
 
 interface MagState {
@@ -20,15 +18,20 @@ interface MagState {
   relY: number;
   imgW: number;
   imgH: number;
+  lensW: number;
+  lensH: number;
 }
 
 export default function AnnotatedImage({ src, alt, caption, annotation, magnify }: Props) {
   const [open, setOpen] = useState(false);
   const [mag, setMag] = useState<MagState | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const lightboxImgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      setMag(null);
+      return;
+    }
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
@@ -36,24 +39,49 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
     return () => document.removeEventListener("keydown", handler);
   }, [open]);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!magnify || !containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const relX = e.clientX - rect.left;
-    const relY = e.clientY - rect.top;
+  const handleLightboxMouseMove = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
+    if (!magnify || !lightboxImgRef.current) return;
+    const img = lightboxImgRef.current;
+    if (!img.naturalWidth || !img.naturalHeight) return;
+    const rect = img.getBoundingClientRect();
 
-    let magX = e.clientX + 18;
-    let magY = e.clientY - MAG_H - 18;
-    if (magX + MAG_W > window.innerWidth - 8) magX = e.clientX - MAG_W - 18;
-    if (magY < 8) magY = e.clientY + 28;
+    // object-contain may letterbox the image inside the element —
+    // compute the actual rendered content rect so relX/Y map to real image pixels
+    const naturalAspect = img.naturalWidth / img.naturalHeight;
+    const elementAspect = rect.width / rect.height;
+    let contentW: number, contentH: number, contentLeft: number, contentTop: number;
+    if (naturalAspect > elementAspect) {
+      contentW = rect.width;
+      contentH = rect.width / naturalAspect;
+      contentLeft = rect.left;
+      contentTop = rect.top + (rect.height - contentH) / 2;
+    } else {
+      contentH = rect.height;
+      contentW = rect.height * naturalAspect;
+      contentLeft = rect.left + (rect.width - contentW) / 2;
+      contentTop = rect.top;
+    }
 
-    setMag({ viewX: magX, viewY: magY, relX, relY, imgW: rect.width, imgH: rect.height });
+    // Cursor position relative to actual image content (not element box)
+    const relX = e.clientX - contentLeft;
+    const relY = e.clientY - contentTop;
+
+    // Lens width adapts to image but is capped so wide landscape images don't create a screen-filling lens
+    const lensW = Math.min(Math.round(contentW + 80), 500, window.innerWidth - 40);
+    const lensH = Math.round(lensW * 0.65);
+
+    // Center the lens on the cursor, clamped to stay fully within the viewport
+    const magX = Math.max(8, Math.min(e.clientX - Math.round(lensW / 2), window.innerWidth - lensW - 8));
+    const magY = Math.max(8, Math.min(e.clientY - Math.round(lensH / 2), window.innerHeight - lensH - 8));
+
+    setMag({ viewX: magX, viewY: magY, relX, relY, imgW: contentW, imgH: contentH, lensW, lensH });
   }, [magnify]);
 
-  const handleMouseLeave = useCallback(() => setMag(null), []);
+  const handleLightboxMouseLeave = useCallback(() => setMag(null), []);
 
   return (
     <>
+      {/* ── Thumbnail ─────────────────────────────────────────────────────── */}
       <div className={`grid gap-8 items-start ${annotation ? "lg:grid-cols-[3fr_2fr]" : "grid-cols-1"}`}>
         <div>
           <button
@@ -62,11 +90,8 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
             aria-label={`View full size: ${alt}`}
           >
             <div
-              ref={containerRef}
               className="relative overflow-hidden rounded-lg bg-[#111]"
-              style={{ aspectRatio: "16/9", cursor: magnify ? "crosshair" : undefined }}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
+              style={{ aspectRatio: "16/9" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -77,7 +102,7 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
               />
               <div className="absolute inset-0 flex items-end justify-end p-3 opacity-0 transition-opacity duration-200 group-hover/img:opacity-100">
                 <span className="rounded-full bg-black/70 px-2.5 py-1 text-xs tracking-wide text-[#ccc] backdrop-blur-sm">
-                  {magnify ? "Hover to zoom · Click to expand ↗" : "View full size ↗"}
+                  {magnify ? "Click to expand + zoom ↗" : "View full size ↗"}
                 </span>
               </div>
             </div>
@@ -97,38 +122,7 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
         )}
       </div>
 
-      {mag && magnify && (
-        <div
-          className="pointer-events-none fixed z-40 overflow-hidden rounded-lg border border-white/20 shadow-2xl"
-          style={{
-            left: mag.viewX,
-            top: mag.viewY,
-            width: MAG_W,
-            height: MAG_H,
-            backgroundColor: "#111",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={src}
-            alt=""
-            style={{
-              position: "absolute",
-              width: `${mag.imgW * ZOOM}px`,
-              height: `${mag.imgH * ZOOM}px`,
-              objectFit: "cover",
-              objectPosition: "top",
-              left: `${MAG_W / 2 - mag.relX * ZOOM}px`,
-              top: `${MAG_H / 2 - mag.relY * ZOOM}px`,
-            }}
-          />
-          <div
-            className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-lg"
-            style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, transparent 40%)" }}
-          />
-        </div>
-      )}
-
+      {/* ── Lightbox ──────────────────────────────────────────────────────── */}
       {open && (
         <div
           role="dialog"
@@ -138,19 +132,31 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
           onClick={() => setOpen(false)}
         >
           <button
-            className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[#aaa] hover:bg-white/20 hover:text-white transition-colors"
+            className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[#aaa] hover:bg-white/20 hover:text-white transition-colors z-10"
             onClick={() => setOpen(false)}
             aria-label="Close"
           >
             ✕
           </button>
+
+          {magnify && (
+            <p className="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-[#666] tracking-wide pointer-events-none">
+              Hover to zoom
+            </p>
+          )}
+
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            ref={lightboxImgRef}
             src={src}
             alt={alt}
             className="max-h-[80vh] max-w-[90vw] rounded-lg object-contain"
+            style={{ cursor: magnify ? "crosshair" : "default" }}
             onClick={(e) => e.stopPropagation()}
+            onMouseMove={magnify ? handleLightboxMouseMove : undefined}
+            onMouseLeave={magnify ? handleLightboxMouseLeave : undefined}
           />
+
           {annotation && (
             <p
               className="max-w-2xl text-center text-sm leading-relaxed text-[#888]"
@@ -159,6 +165,29 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
               {annotation}
             </p>
           )}
+        </div>
+      )}
+
+      {/* ── Magnifier lens (background-image avoids any img-element distortion) ── */}
+      {mag && magnify && open && (
+        <div
+          className="pointer-events-none fixed z-[60] overflow-hidden rounded-xl border border-white/25 shadow-2xl"
+          style={{
+            left: mag.viewX,
+            top: mag.viewY,
+            width: mag.lensW,
+            height: mag.lensH,
+            backgroundImage: `url(${src})`,
+            backgroundSize: `${mag.imgW * ZOOM}px ${mag.imgH * ZOOM}px`,
+            backgroundPosition: `${mag.lensW / 2 - mag.relX * ZOOM}px ${mag.lensH / 2 - mag.relY * ZOOM}px`,
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#0a0a0a",
+          }}
+        >
+          <div
+            className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl"
+            style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 30%)" }}
+          />
         </div>
       )}
     </>

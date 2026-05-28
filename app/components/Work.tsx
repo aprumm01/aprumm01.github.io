@@ -6,116 +6,153 @@ export default function Work() {
     <section id="work" className="mx-auto max-w-6xl px-6 py-16 md:py-32">
       <div className="mb-16 flex items-center gap-4">
         <span className="text-xs tracking-widest uppercase text-[#333]">01</span>
-        <div className="h-px flex-1 bg-[#1a1a1a]" />
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#2A4A2E]/40 to-transparent" />
         <span className="text-sm tracking-widest uppercase text-[#777]">Selected Work</span>
       </div>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-12">
         {projects.map((project, i) => (
           <article
             key={project.slug}
-            className="group relative overflow-hidden rounded-xl border border-[#1a1a1a] bg-[#0e0e0e] transition-all duration-300 hover:border-white/8"
+            className="group card-hover relative overflow-hidden rounded-xl border border-[#1A2E1C]/60 hover:border-[#2E5233]/50"
+            style={{
+              background: `
+                radial-gradient(ellipse 35% 45% at 0% 100%, #0C1209 0%, transparent 52%),
+                radial-gradient(ellipse 25% 30% at 100% 0%, #0A1108 0%, transparent 48%),
+                linear-gradient(160deg, #0a0c0a 0%, #0d0d0d 50%, #0a0c0a 100%)
+              `,
+            }}
           >
-            {/* Accent glow on hover */}
+            {/* Per-project accent glow */}
             <div
               className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               style={{
-                background: `radial-gradient(ellipse 70% 60% at 0% 100%, ${project.accentColor}cc, transparent)`,
+                background: `radial-gradient(ellipse 70% 60% at 0% 100%, ${project.accentColor}bb, transparent)`,
               }}
             />
+            {/* Green top-edge highlight on hover */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#3D6B42]/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <div className="relative flex flex-col gap-0">
-              {/* Top: metadata + content */}
-              <div className="flex flex-col gap-6 p-8 md:p-10 lg:flex-row lg:gap-12">
-                {/* Number */}
-                <div className="shrink-0 lg:w-16">
-                  <span className="font-[family-name:var(--font-playfair)] text-4xl text-[#1e1e1e] group-hover:text-[#2a2a2a] transition-colors">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
+            <div className="relative flex flex-col">
+              <div className="flex flex-col gap-5 p-8 md:p-10">
 
-                {/* Content */}
-                <div className="flex flex-1 flex-col gap-4">
-                  <div>
-                    <p className="mb-1 text-sm tracking-wide uppercase text-[#777]">
-                      {project.category}
-                    </p>
-                    <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#f0f0f0] leading-tight">
-                      {project.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-[#777]">
-                      {project.role} &middot; {project.period}
-                    </p>
-                  </div>
+                {/* Category label */}
+                <p className="text-xs tracking-widest uppercase text-[#A67C3A]">
+                  {project.category}
+                </p>
 
-                  <p className="text-base text-[#999] leading-relaxed max-w-2xl font-[family-name:var(--font-inter)]">
-                    {project.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <ul className="flex flex-col gap-1.5">
-                    {project.highlights.map((h) => (
-                      <li
-                        key={h}
-                        className="flex items-start gap-2 text-sm text-[#888] leading-relaxed font-[family-name:var(--font-inter)]"
-                      >
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#333]" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-white/[0.03] px-3 py-1.5 text-sm text-[#888] border border-white/[0.08]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="border-t border-[#1a1a1a] px-8 md:px-10 py-5">
-                <Link
-                  href={`/work/${project.slug}`}
-                  className="group/btn inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2 text-sm text-[#999] transition-all duration-200 hover:bg-white hover:text-[#0a0a0a] hover:border-white"
-                >
-                  View case study
-                  <span className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span>
-                </Link>
-              </div>
-
-              {/* Image strip */}
-              <Link href={`/work/${project.slug}`} className="block">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-px border-t border-[#1a1a1a]">
-                  {project.images.map((img, i) => (
-                    <div
-                      key={`${img.src}-${i}`}
-                      className={`relative overflow-hidden bg-[#111] ${i > 0 ? "hidden sm:block" : ""}`}
-                      style={{ aspectRatio: "16/9" }}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={img.src}
-                        alt={img.alt}
-                        className="h-full w-full object-cover object-top opacity-70 group-hover:opacity-90 transition-opacity duration-500"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e]/60 to-transparent" />
-                      {i === 0 && (
-                        <span className="absolute bottom-2 left-3 text-xs tracking-widest uppercase text-[#777]">
-                          {project.role.split(",")[0].trim()}
-                        </span>
-                      )}
+                {/* Header row: number + title (baseline-aligned) + CTA button */}
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex items-baseline gap-4 min-w-0 flex-1">
+                    <span className="gold-text font-[family-name:var(--font-playfair)] text-4xl opacity-60 group-hover:opacity-95 transition-opacity duration-300 shrink-0 select-none">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#f0f0f0] leading-tight">
+                        {project.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-[#666]">
+                        {project.role} &middot; {project.period}
+                      </p>
                     </div>
+                  </div>
+
+                  {/* Primary CTA — top right */}
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className="shrink-0 inline-flex items-center gap-2 rounded-full border border-[#4E7D53]/40 px-5 py-2 text-sm font-medium text-[#a0c8a3] hover:border-[#4E7D53]/80 hover:text-white transition-all duration-200"
+                    style={{ background: "linear-gradient(135deg, #0F1A12 0%, #1B3320 60%, #131D15 100%)" }}
+                  >
+                    View case study
+                    <span className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </Link>
+                </div>
+
+                {/* Description */}
+                <p className="text-base text-[#999] leading-relaxed max-w-2xl font-[family-name:var(--font-inter)]">
+                  {project.description}
+                </p>
+
+                {/* Highlights */}
+                <ul className="flex flex-col gap-1.5">
+                  {project.highlights.map((h) => (
+                    <li
+                      key={h}
+                      className="flex items-start gap-2 text-sm text-[#888] leading-relaxed font-[family-name:var(--font-inter)]"
+                    >
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#4E7D53]/60" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-[#0E1A11]/70 px-3 py-1.5 text-sm text-[#5A8060] border border-[#1E3A22]/70"
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
-              </Link>
+              </div>
+
+              {/* Image section */}
+              {project.slug === "web-and-graphics" ? (
+                <div className="border-t border-[#1A2E1C]/50 p-6 md:p-8 pt-5 md:pt-5">
+                  <div className="grid grid-cols-3 gap-3">
+                    {project.images.map((img, imgIdx) => (
+                      <Link
+                        key={`${img.src}-${imgIdx}`}
+                        href={`/work/${project.slug}`}
+                        className="group/img relative block overflow-hidden rounded-lg"
+                        style={{ aspectRatio: "4/3" }}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="h-full w-full object-cover object-top opacity-75 group-hover/img:opacity-100 transition-all duration-300 group-hover/img:scale-[1.03]"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 ring-1 ring-[#4E7D53]/0 group-hover/img:ring-[#4E7D53]/40 rounded-lg transition-all duration-300" />
+                        <span className="absolute bottom-2 left-2.5 text-xs tracking-widest uppercase text-white/0 group-hover/img:text-white/70 transition-colors duration-300">
+                          View
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link href={`/work/${project.slug}`} className="block">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-px border-t border-[#1A2E1C]/50">
+                    {project.images.slice(0, 3).map((img, imgIdx) => (
+                      <div
+                        key={`${img.src}-${imgIdx}`}
+                        className={`relative overflow-hidden bg-[#0c120e] ${imgIdx > 0 ? "hidden sm:block" : ""}`}
+                        style={{ aspectRatio: "16/9" }}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="h-full w-full object-cover object-top opacity-70 group-hover:opacity-90 transition-opacity duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a140b]/70 to-transparent" />
+                        {imgIdx === 0 && (
+                          <span className="absolute bottom-2 left-3 text-xs tracking-widest uppercase text-[#777]">
+                            {project.role.split(",")[0].trim()}
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </Link>
+              )}
             </div>
           </article>
         ))}

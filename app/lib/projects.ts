@@ -1,4 +1,4 @@
-export interface ProjectImage {
+﻿export interface ProjectImage {
   src: string;
   alt: string;
   caption?: string;
@@ -56,10 +56,10 @@ const _projects: Project[] = [
   {
     slug: "sap-concur",
     number: "01",
-    category: "Enterprise Product Design · SAP Concur",
+    category: "Enterprise Product Design Â· SAP Concur",
     title: "Corporate Travel & AI",
     role: "Principal UX Designer, Design Lead, Travel UX",
-    period: "2021–Present",
+    period: "2021â€“Present",
     description:
       "Design lead for SAP Concur's Travel UX team, a platform serving tens of millions of business travelers across 103 countries with 49.6% market share in T&E software. Since 2023 I've led AI interaction design for SAP Joule across all four booking verticals. In my earlier role as Sr. UX Design Specialist, I owned the full air booking flow: search, multi-fare display, seat selection, fare merchandising, and review & book.",
     highlights: [
@@ -67,7 +67,7 @@ const _projects: Project[] = [
       "Led \"Tell Concur About Your Trip,\" a net-new multi-vertical booking workflow with new design system components",
       "Designed the multi-fare display architecture using progressive disclosure to balance traveler comprehension with information density",
       "Scaled the multi-fare interaction system across hotel, rental car, and rail, creating a unified architecture across the full travel ecosystem",
-      "20+ external customer engagement sessions; 10–20 alpha-phase internal usability tests; WCAG 2.1 AA compliance across the air booking flow",
+      "20+ external customer engagement sessions; 10â€“20 alpha-phase internal usability tests; WCAG 2.1 AA compliance across the air booking flow",
     ],
     tags: ["AI Interaction Design", "Conversational UI", "Enterprise UX", "Design Systems", "Accessibility", "Usability Testing"],
     images: [
@@ -107,7 +107,7 @@ const _projects: Project[] = [
         paragraphs: [
           "The multi-fare display was the first major design challenge. The core tension: airline fares carry a lot of information (price, flexibility, seat, bags, status benefits) but traveler attention in a booking flow is limited. Drawing on rank-order research from a prior team, I designed a progressive disclosure model: the primary view leads with the most decision-relevant information, and details surface on demand.",
           "The design went through multiple iterations. Early versions erred toward information richness, which worked for power travelers but created cognitive overload for infrequent business travelers. I pushed for a simpler primary view. That tension is real in enterprise products; balancing traveler comprehension against stakeholder feature requests is part of the job, and not every argument is yours to win.",
-          "Alongside the fare display, I redesigned the seat map interaction model and led WCAG 2.1 AA accessibility compliance across the entire air booking flow, a requirement for enterprise customers with strict procurement standards. Over two years I ran 20+ external customer engagement sessions using moderated interviews, usability studies, focus groups, and hybrid contextual inquiry, plus 10–20 alpha-phase internal usability tests.",
+          "Alongside the fare display, I redesigned the seat map interaction model and led WCAG 2.1 AA accessibility compliance across the entire air booking flow, a requirement for enterprise customers with strict procurement standards. Over two years I ran 20+ external customer engagement sessions using moderated interviews, usability studies, focus groups, and hybrid contextual inquiry, plus 10â€“20 alpha-phase internal usability tests.",
         ],
         images: [
           {
@@ -138,6 +138,7 @@ const _projects: Project[] = [
             alt: "Review and book confirmation screen",
             caption: "Review & book",
             annotation: "The review and book screen is the highest-stakes step in the flow, where travelers confirm everything before spending potentially thousands of dollars in company money. Information hierarchy, error prevention, and policy status indicators all converge here.",
+            magnify: true,
           },
         ],
       },
@@ -155,6 +156,7 @@ const _projects: Project[] = [
             alt: "Event confirmation email in traveler inbox",
             caption: "Step 1: event confirmation email",
             annotation: "The interaction begins with a standard event confirmation in the traveler's inbox. No Concur app required at this stage. The trigger is a simple email forward.",
+            magnify: true,
           },
           {
             src: "/projects/sap-concur/joule/email-forward.png",
@@ -167,32 +169,35 @@ const _projects: Project[] = [
             alt: "Joule presenting flight, hotel, and car options in conversational UI",
             caption: "Step 3: Joule presents options",
             annotation: "Joule returns a structured itinerary with policy-compliant flights, hotel, and rental car. Each option surfaces the attributes that matter in managed travel: carrier preference, loyalty program, policy tier. The traveler reviews and selects without leaving the conversation.",
+            magnify: true,
           },
           {
             src: "/projects/sap-concur/joule/joule-confirmed.png",
             alt: "Trip confirmed state in Joule after booking completion",
             caption: "Step 4: trip confirmed",
             annotation: "Once the traveler confirms payment, Joule finalizes the booking across all three verticals simultaneously and surfaces a trip overview. The entire flow, from email forward to confirmed booking, requires no navigation through the traditional Concur UI.",
+            magnify: true,
           },
           {
             src: "/projects/sap-concur/joule/joule-homepage.png",
             alt: "SAP Concur homepage with Joule panel open showing completed booking",
             caption: "Joule integrated into the Concur homepage",
             annotation: "The Joule panel sits alongside the existing Concur homepage, giving travelers a persistent conversational entry point without replacing the traditional booking UI. The homepage reflects the completed booking in both the Joule conversation and the standard trip cards simultaneously.",
+            magnify: true,
           },
         ],
       },
     ],
   },
 
-  // ─── Multi-Fare Display ──────────────────────────────────────────────────
+  // â”€â”€â”€ Multi-Fare Display â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "multi-fare-display",
     number: "02",
-    category: "Interaction Design · SAP Concur",
+    category: "Interaction Design Â· SAP Concur",
     title: "Multi-Fare Display",
     role: "Sr. UX Design Specialist",
-    period: "2021–2023",
+    period: "2021â€“2023",
     description:
       "The multi-fare display is the central decision surface in SAP Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I originated the information architecture and progressive disclosure model and led research through the project's foundational phases; as the pattern matured, additional designers joined and the work scaled across all four travel verticals.",
     highlights: [
@@ -224,7 +229,7 @@ const _projects: Project[] = [
     overviewStats: [
       { value: "4", label: "verticals scaled to" },
       { value: "20+", label: "customer sessions" },
-      { value: "10–20", label: "alpha usability tests" },
+      { value: "10â€“20", label: "alpha usability tests" },
       { value: "WCAG 2.1 AA", label: "accessibility standard" },
     ],
     sections: [
@@ -247,18 +252,21 @@ const _projects: Project[] = [
             alt: "Rank-order study results: factors travelers consider when booking business travel",
             caption: "Rank-order research: booking factor priorities",
             annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster (price, stops, policy status, departure/arrival times) established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
+            magnify: true,
           },
           {
             src: "/projects/multi-fare-display/card-sort-research.png",
             alt: "Card sort study: business travel booking factor categorization",
             caption: "Card sort: not important / important / very important",
             annotation: "A card sort study asking business travelers to categorize booking factors by importance. The three-tier categorization from this study (not important, important, very important) maps directly to the three disclosure levels in the fare display: default view, first-click expansion, and full detail.",
+            magnify: true,
           },
           {
             src: "/projects/multi-fare-display/prototype-01.png",
             alt: "Early concept prototype, information-dense fare display",
             caption: "Early concept: high information density",
             annotation: "The first prototype surfaced all fare attributes simultaneously before the research-driven hierarchy was applied. Testing with business travelers showed they couldn't identify the most important differentiator between fares; too many attributes competed for attention at once.",
+            magnify: true,
           },
         ],
       },
@@ -274,6 +282,7 @@ const _projects: Project[] = [
             alt: "Progressive disclosure model, columns architecture",
             caption: "Columns architecture: progressive disclosure",
             annotation: "The columns architecture solved the comparison problem: travelers can scan down a single attribute row to compare it across all fare tiers, or scan across a row to see everything included in one tier. This two-dimensional reading pattern matches how people naturally compare structured options, the same pattern used in airline seat maps and hotel room comparison grids.",
+            magnify: true,
           },
           {
             src: "/projects/sap-concur/fare-merchandising.png",
@@ -303,14 +312,14 @@ const _projects: Project[] = [
     ],
   },
 
-  // ─── TCAYT ───────────────────────────────────────────────────────────────
+  // â”€â”€â”€ TCAYT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "tcayt",
     number: "03",
-    category: "Enterprise Product Design · SAP Concur",
+    category: "Enterprise Product Design Â· SAP Concur",
     title: "Tell Concur About Your Trip",
     role: "Principal UX Designer, Design Lead",
-    period: "2023–Present",
+    period: "2023â€“Present",
     description:
       "Tell Concur About Your Trip (TCAYT) is a net-new multi-vertical booking workflow in SAP Concur that lets corporate travelers plan and search all segments of a trip together, rather than visiting each booking vertical separately. I led end-to-end UX design from discovery through production: the segment-declaration entry point, the two-panel trip builder, coordinated search defaults, and the trip-level finalize view with policy and budget visibility.",
     highlights: [
@@ -359,18 +368,21 @@ const _projects: Project[] = [
             alt: "Trip Planning entry dialog with segment checkboxes for Flight, Hotel, Rental Car, and Train",
             caption: "Step 1: declare your segments",
             annotation: "The dialog establishes the trip's shape before any search input is required. Selecting segments activates validation: the UI prevents combinations that the system can't coordinate (flight and train cannot share a trip).",
+            magnify: true,
           },
           {
             src: "/projects/tcayt/page-default.png",
             alt: "Trip Planning page in default state with empty flight search form",
             caption: "The two-panel trip builder",
             annotation: "The left rail holds all selected segments as a persistent inventory. The right panel shows the active segment's form. Travelers see the full scope of what they're building throughout the flow rather than only discovering completeness at checkout.",
+            magnify: true,
           },
           {
             src: "/projects/tcayt/page-filled.png",
             alt: "Trip Planning page with flight details filled in for a trip to Las Vegas",
             caption: "Segment configured: flight",
             annotation: "Once the flight is configured, the segment entry in the left rail updates with origin, destination, and dates. The traveler can navigate to hotel or car from the rail, or continue through the sequence using the Previous/Next controls.",
+            magnify: true,
           },
         ],
       },
@@ -386,12 +398,14 @@ const _projects: Project[] = [
             alt: "Hotel Search with Match Flight Booking checked, showing location and dates derived from flight",
             caption: "Hotel: match flight booking",
             annotation: "The hotel location resolves to the flight destination city; dates match the flight itinerary. The dashed field style signals that these are system-derived values, distinguishing them from traveler-entered fields. The system informs: 'Your Rental Car search will match your flight booking.'",
+            magnify: true,
           },
           {
             src: "/projects/tcayt/car-match.png",
             alt: "Rental Car Search with Match Flight Booking checked, pickup and drop-off derived from flight",
             caption: "Rental car: match flight booking",
             annotation: "Rental car extends the match further: pickup and drop-off location, dates, and times all derive from the flight. The traveler can expand 'Location Options' to override if needed. In the common case, configuring a rental car takes one interaction: confirming the match.",
+            magnify: true,
           },
         ],
       },
@@ -407,6 +421,7 @@ const _projects: Project[] = [
             alt: "Finalize page showing full trip summary with flight, hotel, rental car, budget, and additional information",
             caption: "Finalize: trip-level review",
             annotation: "The Finalize screen consolidates policy status, cost by segment, total estimated cost, and budget allocation in a single view. The 'Rental Car has not been selected' warning at bottom surfaces missing segments before the traveler commits, preventing the coordination gaps that occurred in the prior per-vertical flow.",
+            magnify: true,
           },
         ],
       },
@@ -428,14 +443,14 @@ const _projects: Project[] = [
     ],
   },
 
-  // ─── ATPCO ───────────────────────────────────────────────────────────────
+  // â”€â”€â”€ ATPCO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "atpco",
     number: "04",
-    category: "UX Research & Workshop Facilitation · ATPCO",
+    category: "UX Research & Workshop Facilitation Â· ATPCO",
     title: "Airline Industry UX Practice",
     role: "Sr. UX Researcher & Design Sprint Facilitator",
-    period: "2018–2021",
+    period: "2018â€“2021",
     description:
       "ATPCO is the airline industry's pricing and data infrastructure backbone, a B2B company whose products are used by pricing analysts at 490+ airlines globally. I led UX research and design across ATPCO's product portfolio, establishing the user research practice, contributing core design system components alongside a UX engineer, running Design Sprints across product teams, and designing analyst tools that replaced raw data grids with plain-language interfaces.",
     highlights: [
@@ -492,6 +507,7 @@ const _projects: Project[] = [
             alt: "ATPCO Lightning Decision Jam, team working at sticky note wall",
             caption: "Lightning Decision Jam at ATPCO, 2020",
             annotation: "A Lightning Decision Jam with one of the ATPCO product teams. Teams worked through structured rounds of silent ideation, voting, and prioritization. The whiteboard on the right shows the 'What's Working / Need to Change' framing used in the session's opening divergence phase.",
+            magnify: true,
           },
         ],
       },
@@ -508,6 +524,7 @@ const _projects: Project[] = [
             alt: "CIF fare rule data table interface",
             caption: "CIF fare rule data table, the interface under test",
             annotation: "The fare rule table shows hundreds of rows of airline pricing logic, each with associated conditions, date ranges, and rule codes. Analysts needed to locate specific rules and modify their date parameters, a task that sounds simple but involves significant cognitive load given the volume and complexity of the data.",
+            magnify: true,
           },
           {
             src: "/projects/atpco/search-criteria.png",
@@ -528,10 +545,10 @@ const _projects: Project[] = [
   {
     slug: "cowans",
     number: "05",
-    category: "UX Design & Development · Tribeswell",
+    category: "UX Design & Development Â· Tribeswell",
     title: "Cowan's Collections",
     role: "Web Designer & Developer",
-    period: "2014–2015",
+    period: "2014â€“2015",
     description:
       "A bespoke platform design for Cowan's Auctions, a regional fine art and antiques auction house in Cincinnati. The project required designing a collector-focused web platform where users could discover items, track auction events, and document their own collections with rich provenance data. The work spanned discovery, wireframing, prototyping, and in-person usability testing with real collectors on tablets.",
     highlights: [
@@ -586,6 +603,7 @@ const _projects: Project[] = [
             alt: "Homepage with upcoming events and collections grid",
             caption: "Homepage design",
             annotation: "The homepage was designed to let browsers enter through events ('Upcoming' and 'Newly Auctioned/Sold' sections) while giving collectors a direct path to their active collections. The collector grid, organized by person rather than item type, reflects the research finding that serious collectors think in terms of whose collection they're following, not what category an item belongs to.",
+            magnify: true,
           },
         ],
       },
@@ -616,6 +634,7 @@ const _projects: Project[] = [
             alt: "Item detail screen with Chain of Custodianship",
             caption: "Item detail: Chain of Custodianship, collapsed and expanded",
             annotation: "Left: the Chain of Custodianship accordion in its collapsed default state, showing ownership history as a scannable table with names, dates, and locations. Right: expanded, revealing a personal story field where the current owner added context about how they came to own the item. Testing showed that the personal story section was the most emotionally resonant element of the entire platform for collector users.",
+            magnify: true,
           },
         ],
       },
@@ -631,12 +650,14 @@ const _projects: Project[] = [
             alt: "In-person usability testing on iPad",
             caption: "Usability testing session",
             annotation: "Testing on the actual device was non-negotiable: interactions that felt smooth in desktop prototyping tools often behaved differently on touch. The table surface and coffee shop setting were intentional: Cowan's customers didn't interact with the platform in offices.",
+            magnify: true,
           },
           {
             src: "/projects/cowans/testing-success-state.jpg",
             alt: "Testing the collection creation flow and success state",
             caption: "Testing the 'New Collection' creation and success confirmation",
             annotation: "Left: the main collections browsing view on iPad, testing how easily participants could distinguish between collectors and navigate to items of interest. Right: testing the success state ('Great! You've added a Collection!'), evaluating whether the confirmation felt appropriately celebratory without blocking the user's next action.",
+            magnify: true,
           },
         ],
       },
@@ -645,10 +666,10 @@ const _projects: Project[] = [
   {
     slug: "ebay",
     number: "06",
-    category: "Interaction Design · Academic",
+    category: "Interaction Design Â· Academic",
     title: "eBay Mobile Redesign",
     role: "UX Design, MFA Coursework",
-    period: "2017–2018",
+    period: "2017â€“2018",
     description:
       "A concept redesign of the eBay mobile purchase experience completed during my MFA at Indiana University. The project focused on a persistent UX problem: the post-purchase moment is flat and anticlimactic despite the emotional energy buyers invest in bidding and winning. The proposed redesign introduced a lightweight achievement system, surfacing badges, purchase milestones, and seller trust signals at the confirmation screen to reinforce the win.",
     highlights: [
@@ -720,19 +741,19 @@ const _projects: Project[] = [
       },
     ],
   },
-  // ─── Synthetic User Tool ─────────────────────────────────────────────────
+  // â”€â”€â”€ Synthetic User Tool â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "synthetic-user-tool",
     number: "07",
-    category: "Research Operations · SAP Concur",
+    category: "Research Operations Â· SAP Concur",
     title: "Synthetic User Tool",
     role: "Principal UX Designer, Solo Build",
-    period: "2023–Present",
+    period: "2023â€“Present",
     description:
       "An internal research operations system built entirely from scratch: a full data pipeline that transforms raw customer feedback into segmentable AI personas and structured design evaluation. Built solo using Claude Code, ChatGPT, and GitHub. The design team actively uses it across product lines. The tool's own interface is proprietary and not shown here.",
     highlights: [
       "Sole builder: no engineering sprint, no roadmap slot, no organizational buy-in required to ship",
-      "Full pipeline: raw feedback spreadsheet → monthly content analysis → GitHub → combined dataset → segmentable synthetic personas",
+      "Full pipeline: raw feedback spreadsheet â†’ monthly content analysis â†’ GitHub â†’ combined dataset â†’ segmentable synthetic personas",
       "Evaluation layer contrasts synthetic user assessments against real design criteria: WCAG, Nielsen Norman heuristics, SAP Fiori, iOS HIG, and Material Design",
       "Processes ~25,000 feedback comments per month from the product area",
       "Adopted across the design team without a formal rollout",
@@ -747,7 +768,7 @@ const _projects: Project[] = [
       {
         src: "/projects/synthetic-user-tool/pipeline-flow.svg",
         alt: "Synthetic User Tool data pipeline, five-stage monthly cadence",
-        annotation: "The five-stage pipeline: raw Qualtrics export → AI-powered content analysis → GitHub corpus aggregation → synthetic persona generation → multi-criteria design evaluation. The only manual step is the Day 1 export, which takes about five minutes. Everything else runs on demand.",
+        annotation: "The five-stage pipeline: raw Qualtrics export â†’ AI-powered content analysis â†’ GitHub corpus aggregation â†’ synthetic persona generation â†’ multi-criteria design evaluation. The only manual step is the Day 1 export, which takes about five minutes. Everything else runs on demand.",
       },
       {
         src: "/projects/synthetic-user-tool/persona-grid.svg",
@@ -832,14 +853,14 @@ const _projects: Project[] = [
     ],
   },
 
-  // ─── NGS ─────────────────────────────────────────────────────────────────
+  // â”€â”€â”€ NGS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "ngs",
     number: "08",
-    category: "Product Design · ATPCO",
+    category: "Product Design Â· ATPCO",
     title: "Next Gen Storefront",
     role: "UX Designer",
-    period: "2019–2021",
+    period: "2019â€“2021",
     description:
       "The Next Gen Storefront (NGS) was ATPCO's proof-of-concept for a modernized fare presentation layer, rethinking how airlines display and differentiate their products to booking engines and travelers. I led UX design from initial concept through tested proof of concept, working directly with ATPCO's airline partners to validate the interaction model before any engineering investment.",
     highlights: [
@@ -897,6 +918,7 @@ const _projects: Project[] = [
             alt: "UPA detail expansion panel: Priority Boarding with seat and cabin imagery",
             caption: "UPA detail: attribute description with cabin photography",
             annotation: "Selecting a UPA attribute expands a detail panel with a plain-language description and supporting imagery. This addressed a testing finding: travelers understood the attribute names but wanted confirmation of what the service actually looked like before committing to an upcharge.",
+            magnify: true,
           },
         ],
         videos: [
@@ -965,14 +987,14 @@ const _projects: Project[] = [
     ],
   },
 
-  // ─── Urban Expressions ───────────────────────────────────────────────────
+  // â”€â”€â”€ Urban Expressions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "urban-expressions",
     number: "09",
-    category: "Illustration & Graphic Design · Commission",
+    category: "Illustration & Graphic Design Â· Commission",
     title: "Urban Expressions",
     role: "Illustrator & Graphic Designer",
-    period: "2014–2016",
+    period: "2014â€“2016",
     description:
       "A commissioned series of embroidered patch and badge designs for a law enforcement and public safety organization, with each patch representing a different unit, division, or mission with distinct iconography. The work required balancing institutional tradition and unit-specific symbolism with contemporary illustrative technique, producing a large series of designs that worked individually and as a cohesive visual system.",
     highlights: [
@@ -1020,20 +1042,21 @@ const _projects: Project[] = [
             alt: "Full patch series, grid of completed designs",
             caption: "The completed patch series",
             annotation: "The full grid of completed designs shows the visual system at work: consistent use of border treatments, text placement, and shielding conventions creates family resemblance across widely different subject matter. The color range is deliberately broad across the series (each unit owned its own color identity) while remaining within the palette constraints of embroidery thread production.",
+            magnify: true,
           },
         ],
       },
     ],
   },
 
-  // ─── Web & Graphic Design ────────────────────────────────────────────────
+  // â”€â”€â”€ Web & Graphic Design â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     slug: "web-and-graphics",
     number: "10",
     category: "Web & Graphic Design",
     title: "Web & Graphic Design",
     role: "Designer & Developer",
-    period: "2013–2018",
+    period: "2013â€“2018",
     description:
       "A collection of web design, branding, and graphic design work from the earlier part of my career: bespoke client websites designed and built at Tribeswell LLC, brand identity projects, academic design work from my MFA and BFA programs, and personal projects spanning interaction design, 3D, and publication design.",
     highlights: [
@@ -1180,13 +1203,12 @@ const _projects: Project[] = [
 
 const ORDER = [
   "synthetic-user-tool",
-  "sap-concur",
-  "ngs",
-  "atpco",
-  "cowans",
-  "ebay",
-  "urban-expressions",
   "multi-fare-display",
+  "tcayt",
+  "ngs",
+  "ebay",
+  "cowans",
+  "urban-expressions",
   "web-and-graphics",
 ];
 export const projects: Project[] = ORDER.map(
