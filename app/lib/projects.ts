@@ -3,6 +3,7 @@ export interface ProjectImage {
   alt: string;
   caption?: string;
   annotation?: string;
+  magnify?: boolean;
 }
 
 export interface Stat {
@@ -114,12 +115,14 @@ const _projects: Project[] = [
             alt: "Air search results, fare comparison layout",
             caption: "Search results with fare comparison",
             annotation: "Each result row balances fare name, price, policy status, and included services. The visual hierarchy prioritizes policy compliance first (a core requirement for corporate booking), then price, then fare features.",
+            magnify: true,
           },
           {
             src: "/projects/sap-concur/fare-merchandising.png",
             alt: "Multi-fare merchandising display",
             caption: "Multi-fare merchandising",
             annotation: "Fare families are presented as comparable columns rather than a flat list. This pattern lets travelers see at a glance what they gain or lose between fare tiers, a critical decision point in managed travel where upgrading often requires an approval workflow.",
+            magnify: true,
           },
         ],
       },
@@ -679,6 +682,7 @@ const _projects: Project[] = [
             alt: "Production multi-fare display",
             caption: "Production fare merchandising",
             annotation: "The production implementation: columns are branded fare families, rows are attributes. The policy status badge on each option tells travelers immediately whether a choice requires approval. The design scales cleanly from 2-column to 5-column depending on the number of fare families the airline publishes for a route.",
+            magnify: true,
           },
         ],
       },
@@ -694,6 +698,7 @@ const _projects: Project[] = [
             alt: "Air search results, fare comparison in context",
             caption: "Search results with fare comparison in context",
             annotation: "The full search results view showing the multi-fare display in its natural context, within a list of flight options, each showing fare family tiers inline. Travelers can compare fare classes across flights on the same page rather than having to open each flight individually.",
+            magnify: true,
           },
         ],
       },
@@ -758,6 +763,7 @@ const _projects: Project[] = [
             alt: "Fully expanded result row showing UPA Ticket Specific and UTA In Seat attribute matrix",
             caption: "Expanded row: UPA and UTA attributes organized across fare classes",
             annotation: "The expanded row shows the full matrix. 'Ticket Specific' rows are UPA: fare-level attributes that vary by price point and represent the commercial differentiators airlines publish via ATPCO. 'In Seat' rows are UTA: fixed aircraft attributes that remain constant across all fares on that flight. Checkmarks indicate included; cost values indicate fees; blank cells indicate unpublished data.",
+            magnify: true,
           },
           {
             src: "/projects/ngs/upa-detail.png",
@@ -825,6 +831,7 @@ const _projects: Project[] = [
             alt: "NGS compare mode: three flights with full UPA and UTA attribute grid side by side",
             caption: "Compare mode: cross-airline and cross-fare comparison in a single view",
             annotation: "The compare view surfaces something most booking tools never show: a direct, structured comparison across airlines and across fare classes simultaneously. A business traveler working within company policy can quickly identify which options satisfy their schedule need and which of those has the best UPA package for the price. The challenge was compressing the full UPA/UTA matrix into three columns while keeping it readable. Testing confirmed the grid held up, and travelers zeroed in on UPA differences (Checked Bags, Cancellation) first.",
+            magnify: true,
           },
         ],
       },
