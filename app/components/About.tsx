@@ -30,7 +30,7 @@ const education = [
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-32">
+    <section id="about" className="mx-auto max-w-6xl px-6 py-16 md:py-32">
       <div className="mb-16 flex items-center gap-4">
         <span className="text-xs tracking-widest uppercase text-[#333]">02</span>
         <div className="h-px flex-1 bg-[#1a1a1a]" />
@@ -59,10 +59,10 @@ export default function About() {
               Before the AI work, I owned the full air booking flow at Concur:
               search, multi-fare display, seat selection, fare merchandising, and
               review &amp; book. Prior to Concur, I was at ATPCO, the airline
-              industry&apos;s pricing infrastructure backbone, where I built a UX
-              practice from scratch, ran certified Design Sprints at the CPO&apos;s
-              request, and designed tools for pricing analysts at 490+ airlines
-              worldwide.
+              industry&apos;s pricing infrastructure backbone, where I led UX research
+              and design across the product portfolio, ran certified Design
+              Sprints at the CPO&apos;s request, and designed tools for pricing
+              analysts at 490+ airlines worldwide.
             </p>
             <p>
               I hold an MFA in Graphic Design and an MS in HCI from Indiana

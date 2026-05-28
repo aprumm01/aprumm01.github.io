@@ -3,7 +3,7 @@ import { projects } from "@/app/lib/projects";
 
 export default function Work() {
   return (
-    <section id="work" className="mx-auto max-w-6xl px-6 py-32">
+    <section id="work" className="mx-auto max-w-6xl px-6 py-16 md:py-32">
       <div className="mb-16 flex items-center gap-4">
         <span className="text-xs tracking-widest uppercase text-[#333]">01</span>
         <div className="h-px flex-1 bg-[#1a1a1a]" />
@@ -92,11 +92,11 @@ export default function Work() {
 
               {/* Image strip */}
               <Link href={`/work/${project.slug}`} className="block">
-                <div className="grid grid-cols-3 gap-px border-t border-[#1a1a1a]">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-px border-t border-[#1a1a1a]">
                   {project.images.map((img, i) => (
                     <div
                       key={`${img.src}-${i}`}
-                      className="relative overflow-hidden bg-[#111]"
+                      className={`relative overflow-hidden bg-[#111] ${i > 0 ? "hidden sm:block" : ""}`}
                       style={{ aspectRatio: "16/9" }}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}

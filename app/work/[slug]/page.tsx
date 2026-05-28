@@ -16,9 +16,27 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
+
+  const image = project.images[0]?.src ?? "/projects/sap-concur/search-results.jpg";
+  const title = `${project.title} | Adam Prumm`;
+
   return {
-    title: `${project.title} | Adam Prumm`,
+    title,
     description: project.description,
+    openGraph: {
+      title,
+      description: project.description,
+      url: `https://aprumm01.github.io/work/${slug}/`,
+      siteName: "Adam Prumm",
+      images: [{ url: image, alt: project.title }],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.description,
+      images: [image],
+    },
   };
 }
 
@@ -96,11 +114,11 @@ export default async function CaseStudyPage({
 
         {/* Hero image strip */}
         <div className="border-t border-[#1a1a1a]">
-          <div className="grid grid-cols-3 gap-px">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px">
             {project.images.map((img, i) => (
               <div
                 key={`${img.src}-${i}`}
-                className="relative overflow-hidden bg-[#111]"
+                className={`relative overflow-hidden bg-[#111] ${i > 0 ? "hidden sm:block" : ""}`}
                 style={{ aspectRatio: "16/9" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

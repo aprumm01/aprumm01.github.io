@@ -52,10 +52,9 @@ const _projects: Project[] = [
     role: "Principal UX Designer, Design Lead, Travel UX",
     period: "2021–Present",
     description:
-      "Design lead for SAP Concur's Travel UX team, a platform serving tens of millions of business travelers across 103 countries with 49.6% market share in T&E software. Since 2023 I've led AI interaction design for SAP Joule across all four booking verticals, and I built the team's Synthetic User Tool entirely from scratch. In my earlier role as Sr. UX Design Specialist, I owned the full air booking flow: search, multi-fare display, seat selection, fare merchandising, and review & book.",
+      "Design lead for SAP Concur's Travel UX team, a platform serving tens of millions of business travelers across 103 countries with 49.6% market share in T&E software. Since 2023 I've led AI interaction design for SAP Joule across all four booking verticals. In my earlier role as Sr. UX Design Specialist, I owned the full air booking flow: search, multi-fare display, seat selection, fare merchandising, and review & book.",
     highlights: [
       "Leading conversational UI and AI interaction design for SAP Joule, integrated across all travel booking verticals",
-      "Built a Synthetic User Tool solo: raw customer feedback → monthly content analysis → synthetic personas segmentable by market, now used across the design team",
       "Led \"Tell Concur About Your Trip,\" a net-new multi-vertical booking workflow with new design system components",
       "Designed the multi-fare display architecture using progressive disclosure to balance traveler comprehension with information density",
       "Scaled the multi-fare interaction system across hotel, rental car, and rail, creating a unified architecture across the full travel ecosystem",
@@ -139,20 +138,6 @@ const _projects: Project[] = [
           "The work spans discovery research, usability testing for the Joule experience, aligning conversational UI patterns with traveler mental models, and bridging customer expectations with what the AI can actually do reliably. I run customer validation sessions and work with product and engineering to define what belongs in conversational booking versus what still requires the traditional UI.",
         ],
       },
-      {
-        heading: "Synthetic User Tool",
-        paragraphs: [
-          "Beyond the product work, I built a Synthetic User Tool entirely from scratch. I was the only person at SAP Concur doing this work. The problem: roughly 25,000 feedback comments arrive each month from users of my product area alone. The insights get lost or filtered through whoever summarized last month's data.",
-          "I designed a full data pipeline: raw customer feedback is downloaded monthly, analyzed, and pushed to GitHub where it combines with previous months' data. That aggregated dataset compiles into synthetic user personas, AI-generated users segmentable by market, device, travel frequency, and other dimensions. An evaluation layer contrasts how a synthetic user assesses a design against real design evaluation criteria, incorporating WCAG accessibility standards, Nielsen Norman heuristics, and SAP Fiori, iOS, and Material Design guidelines.",
-          "The design team uses it now. It didn't require organizational buy-in, a roadmap slot, or an engineering sprint.",
-        ],
-        stats: [
-          { value: "~25K", label: "feedback comments/month" },
-          { value: "4", label: "booking verticals in Joule" },
-          { value: "20+", label: "customer engagement sessions" },
-          { value: "WCAG 2.1 AA", label: "accessibility standard" },
-        ],
-      },
     ],
   },
   {
@@ -163,7 +148,7 @@ const _projects: Project[] = [
     role: "Sr. UX Researcher & Design Sprint Facilitator",
     period: "2018–2021",
     description:
-      "ATPCO is the airline industry's pricing and data infrastructure backbone, a B2B company whose products are used by pricing analysts at 490+ airlines globally. I built ATPCO's UX practice from scratch: establishing research processes, building core design system components, running certified Design Sprints at the CPO's request, and designing tools that let analysts filter, sort, and code thousands of airfare rules through plain-language interfaces.",
+      "ATPCO is the airline industry's pricing and data infrastructure backbone, a B2B company whose products are used by pricing analysts at 490+ airlines globally. I led UX research and design across ATPCO's product portfolio, establishing the user research practice, contributing core design system components alongside a UX engineer, running certified Design Sprints at the CPO's request, and designing analyst tools that replaced raw data grids with plain-language interfaces.",
     highlights: [
       "Ran ~12 workshops across 5 product teams over 6 months; the CPO requested a monthly cadence after seeing the first results",
       "Designed pricing analyst tools for teams across American Airlines, Delta, LATAM, and 490+ airlines worldwide",
@@ -202,7 +187,7 @@ const _projects: Project[] = [
         heading: "The Challenge",
         paragraphs: [
           "ATPCO is invisible to most travelers but foundational to every flight booking worldwide. Its systems process the fare data (rules, restrictions, pricing logic) that airlines publish and that booking engines consume. The users of ATPCO's B2B products are pricing analysts at major carriers: highly specialized, domain-expert users who work in complex data environments all day.",
-          "When I arrived in 2018 there was no UX function. No research practice, no design system, no established process for talking to users. The products had been built by engineers for analysts and, while functional, had significant usability debt. My job was to build the UX practice from scratch, establishing what good looked like in this context, and make enough demonstrably valuable work happen that the organization would keep investing in it.",
+          "When I joined in 2018, there was no established research practice and no formal process for engaging users. The products had been built primarily by engineers for a highly technical analyst audience and, while functional, carried significant usability debt. I took on building those foundations: establishing processes for user engagement, earning stakeholder trust in the value of that work, and producing results demonstrably worth sustaining.",
         ],
       },
       {
@@ -588,7 +573,7 @@ const _projects: Project[] = [
     role: "Sr. UX Design Specialist",
     period: "2021–2023",
     description:
-      "The multi-fare display is the central decision surface in Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I designed the full information architecture and progressive disclosure model, ran extensive research, and scaled the pattern across the four travel verticals.",
+      "The multi-fare display is the central decision surface in Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I originated the information architecture and progressive disclosure model and led research through the project's foundational phases; as the pattern matured, additional designers joined and the work scaled across all four travel verticals.",
     highlights: [
       "Translated rank-order research findings into a progressive disclosure model, surfacing the most decision-critical fare attributes upfront",
       "Designed multiple rounds of iteration from information-rich to progressively simpler, balancing stakeholder requirements against traveler comprehension",
@@ -668,7 +653,7 @@ const _projects: Project[] = [
       {
         heading: "Scaling the Pattern",
         paragraphs: [
-          "Once validated for air, I adapted the multi-fare display architecture for hotel rates, rental car tiers, and rail fare classes. Each vertical has different attributes (hotels have cancellation policy and breakfast inclusion; cars have coverage tiers and fuel options; rail has seat class and flex vs. non-flex) but the underlying progressive disclosure model transferred cleanly.",
+          "Once validated for air, the multi-fare architecture was extended to hotel rates, rental car tiers, and rail fare classes, with additional designers contributing as the work expanded. Each vertical has different attributes (hotels have cancellation policy and breakfast inclusion; cars have coverage tiers and fuel options; rail has seat class and flex vs. non-flex) but the underlying progressive disclosure model transferred cleanly.",
           "Scaling the pattern required abstracting the component architecture in a way that could flex across different attribute sets without fracturing the visual language. This work became the foundation for a Figma component library of travel-specific patterns, extending SAP Fiori with the domain-specific components that the design system team hadn't built.",
         ],
         images: [
