@@ -64,11 +64,11 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
           </button>
 
           <div
-            className="flex flex-col md:flex-row max-w-7xl w-full h-[85vh] gap-0 cursor-default"
+            className="flex flex-col md:flex-row max-w-6xl w-full h-[85vh] gap-8 md:gap-14 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Left: scrollable image(s) column */}
-            <div className="flex-1 flex flex-col gap-8 overflow-y-auto pr-0 md:pr-8">
+            <div className="flex-1 flex flex-col gap-8 overflow-y-auto">
               {(piece.images ?? [{ src: piece.src, alt: piece.alt }]).map((img: GalleryImage) => (
                 <div key={img.src}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
