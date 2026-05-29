@@ -178,6 +178,7 @@ export default async function CaseStudyPage({
                           caption={img.caption}
                           annotation={img.annotation}
                           magnify={img.magnify}
+                          magnifyZoom={img.magnifyZoom}
                         />
                       ))}
                     </div>

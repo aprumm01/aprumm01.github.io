@@ -7,6 +7,7 @@ interface Props {
   caption?: string;
   annotation?: string;
   magnify?: boolean;
+  magnifyZoom?: number;
 }
 
 const ZOOM = 2.5;
@@ -22,7 +23,7 @@ interface MagState {
   lensH: number;
 }
 
-export default function AnnotatedImage({ src, alt, caption, annotation, magnify }: Props) {
+export default function AnnotatedImage({ src, alt, caption, annotation, magnify, magnifyZoom }: Props) {
   const [open, setOpen] = useState(false);
   const [mag, setMag] = useState<MagState | null>(null);
   const lightboxImgRef = useRef<HTMLImageElement>(null);
@@ -66,8 +67,9 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
     const relX = e.clientX - contentLeft;
     const relY = e.clientY - contentTop;
 
-    // Lens width adapts to image but is capped so wide landscape images don't create a screen-filling lens
-    const lensW = Math.min(Math.round(contentW + 80), 500, window.innerWidth - 40);
+    const zoom = magnifyZoom ?? ZOOM;
+    // Scale lens size inversely with zoom — lower zoom gets a larger lens window
+    const lensW = Math.min(Math.round(contentW + 80), Math.round(500 * ZOOM / zoom), window.innerWidth - 40);
     const lensH = Math.round(lensW * 0.65);
 
     // Center the lens on the cursor, clamped to stay fully within the viewport
@@ -75,7 +77,7 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
     const magY = Math.max(8, Math.min(e.clientY - Math.round(lensH / 2), window.innerHeight - lensH - 8));
 
     setMag({ viewX: magX, viewY: magY, relX, relY, imgW: contentW, imgH: contentH, lensW, lensH });
-  }, [magnify]);
+  }, [magnify, magnifyZoom]);
 
   const handleLightboxMouseLeave = useCallback(() => setMag(null), []);
 
@@ -178,8 +180,8 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
             width: mag.lensW,
             height: mag.lensH,
             backgroundImage: `url(${src})`,
-            backgroundSize: `${mag.imgW * ZOOM}px ${mag.imgH * ZOOM}px`,
-            backgroundPosition: `${mag.lensW / 2 - mag.relX * ZOOM}px ${mag.lensH / 2 - mag.relY * ZOOM}px`,
+            backgroundSize: `${mag.imgW * (magnifyZoom ?? ZOOM)}px ${mag.imgH * (magnifyZoom ?? ZOOM)}px`,
+            backgroundPosition: `${mag.lensW / 2 - mag.relX * (magnifyZoom ?? ZOOM)}px ${mag.lensH / 2 - mag.relY * (magnifyZoom ?? ZOOM)}px`,
             backgroundRepeat: "no-repeat",
             backgroundColor: "#0a0a0a",
           }}

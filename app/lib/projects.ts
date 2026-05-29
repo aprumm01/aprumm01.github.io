@@ -4,6 +4,7 @@
   caption?: string;
   annotation?: string;
   magnify?: boolean;
+  magnifyZoom?: number;
 }
 
 export interface Stat {
@@ -262,14 +263,14 @@ const _projects: Project[] = [
         images: [
           {
             src: "/projects/multi-fare-display/mfd-research-insights.png",
-            alt: "Research insights map — road warriors and infrequent travelers, personas, user journeys",
+            alt: "Research insights map: road warriors and infrequent travelers, personas, user journeys",
             caption: "Research insights map",
             annotation: "A synthesis of research findings for road warriors and infrequent travelers, including personas, user journeys, and actionable recommendations. The two traveler types have fundamentally different needs: road warriors optimize for loyalty and speed; infrequent travelers need more guidance at each decision point. The fare display had to serve both without becoming a tool only power users could navigate.",
             magnify: true,
           },
           {
             src: "/projects/multi-fare-display/mfd-card-sort.png",
-            alt: "Card sort results — air booking factors ranked by business traveler importance",
+            alt: "Card sort results: air booking factors ranked by business traveler importance",
             caption: "Card sort: air booking factor priorities",
             annotation: "Card sort results showing how business travelers rank air booking factors by importance. The weighted scores establish a clear hierarchy: time and date, stops, arrival airport, and overall flight duration sit at the top; fare class detail, aircraft type, and booking codes sit at the bottom. This ranking maps directly to what appears in the default card view versus what is surfaced on expansion or in fare details.",
             magnify: true,
@@ -299,35 +300,35 @@ const _projects: Project[] = [
         images: [
           {
             src: "/projects/multi-fare-display/mfd-sliver-breakdown.png",
-            alt: "Sliver card anatomy — collapsed fare card expanding to full fare-family columns",
+            alt: "Sliver card anatomy: collapsed fare card expanding to full fare-family columns",
             caption: "Card anatomy: sliver to columns",
-            annotation: "The IA diagram showing the two states of the fare row: the collapsed sliver surfaces the highest-priority attributes — flight identity, stops, times, price — in the minimum footprint needed to compare across flights. Selecting a row expands it into the full fare-family column view where travelers compare included services across tiers.",
+            annotation: "The IA diagram showing the two states of the fare row: the collapsed sliver surfaces the highest-priority attributes: flight identity, stops, times, price: in the minimum footprint needed to compare across flights. Selecting a row expands it into the full fare-family column view where travelers compare included services across tiers.",
             magnify: true,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-departing.jpg",
-            alt: "Departing flight search results — fare columns collapsed, three airlines shown",
-            caption: "Search results — collapsed fare rows",
+            alt: "Departing flight search results: fare columns collapsed, three airlines shown",
+            caption: "Search results: collapsed fare rows",
             annotation: "The production search results page showing three flights with fare columns in the default collapsed state. Each row shows the airline, times, and stops on the left; fare family columns with included services and price on the right. Travelers can compare across both flights and fare tiers on a single page.",
             magnify: true,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-departing-open.jpg",
-            alt: "Departing flight search results — Delta row expanded showing flight details and fare columns",
-            caption: "Search results — expanded row",
-            annotation: "The Delta row expanded: the left panel reveals full flight segment details, layover times, aircraft type, and a seat map preview link. The fare columns expand to show full terms — bags, changes, refundability — while the other flights remain collapsed for easy comparison. This is progressive disclosure at the row level: more detail on demand without leaving the results page.",
+            alt: "Departing flight search results: Delta row expanded showing flight details and fare columns",
+            caption: "Search results: expanded row",
+            annotation: "The Delta row expanded: the left panel reveals full flight segment details, layover times, aircraft type, and a seat map preview link. The fare columns expand to show full terms: bags, changes, refundability: while the other flights remain collapsed for easy comparison. This is progressive disclosure at the row level: more detail on demand without leaving the results page.",
             magnify: true,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-rnb-details.png",
-            alt: "Review and Book — Flight and Fare Details modal",
-            caption: "Review & Book — fare details",
-            annotation: "The Flight and Fare Details modal on the Review and Book page, surfacing the full fare terms for the selected option: seat pitch, baggage, flexibility, onboard experience, and carrier precautions. This is the third disclosure level — complete fare information shown only after the traveler has committed to a choice and needs confirmation before purchasing.",
+            alt: "Review and Book: Flight and Fare Details modal",
+            caption: "Review & Book: fare details",
+            annotation: "The Flight and Fare Details modal on the Review and Book page, surfacing the full fare terms for the selected option: seat pitch, baggage, flexibility, onboard experience, and carrier precautions. This is the third disclosure level: complete fare information shown only after the traveler has committed to a choice and needs confirmation before purchasing.",
             magnify: true,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-merch.png",
-            alt: "SAP Spend Connect Live — fare merchandising cards and full search results",
+            alt: "SAP Spend Connect Live: fare merchandising cards and full search results",
             caption: "Fare merchandising in context",
             annotation: "The fare display shown at SAP Spend Connect Live, with editorial fare merchandising cards at the top and the full multi-fare search results below. The merchandising cards surface airline brand stories and fare highlights; the results list lets travelers act on them directly. The expanded American Airlines row shows the columns model with icon-based attribute rows for seats, bags, and flexibility.",
             magnify: true,
@@ -428,7 +429,7 @@ const _projects: Project[] = [
             src: "/projects/tcayt/wip-multicity.png",
             alt: "TCAYT Trip Planning in multicity mode with two independent flight legs and Custom Itinerary tooltip",
             caption: "Multi-city flight configuration",
-            annotation: "The multicity configuration is the most complex case in the trip builder: multiple independent flight legs, each with its own origin, destination, date, and cabin class. The Custom Itinerary toggle lets travelers choose between system-curated pre-coordinated itineraries — typically more competitive on price — or fully independent leg selection when scheduling flexibility takes priority. The tooltip surfaces this trade-off at the point of decision.",
+            annotation: "The multicity configuration is the most complex case in the trip builder: multiple independent flight legs, each with its own origin, destination, date, and cabin class. The Custom Itinerary toggle lets travelers choose between system-curated pre-coordinated itineraries: typically more competitive on price: or fully independent leg selection when scheduling flexibility takes priority. The tooltip surfaces this trade-off at the point of decision.",
             magnify: true,
           },
         ],
@@ -620,11 +621,11 @@ const _projects: Project[] = [
     role: "Web Designer & Developer",
     period: "2014â€“2015",
     description:
-      "A bespoke platform design for Cowan's Auctions, a regional fine art and antiques auction house in Cincinnati. The core problem: collectors — typically older adults — accumulate objects with deep personal meaning, but as collections grow, their families lose track of what exists, what it's worth, and why it matters. When the collector can no longer manage the collection or passes away, the family is left without the context to make decisions. The platform needed to serve not just the collector, but the family who inherits the collection, the traders and growing collectors looking to acquire, researchers needing expert access, auction houses, and casual browsers.",
+      "A bespoke platform design for Cowan's Auctions, a regional fine art and antiques auction house in Cincinnati. The core problem: collectors: typically older adults: accumulate objects with deep personal meaning, but as collections grow, their families lose track of what exists, what it's worth, and why it matters. When the collector can no longer manage the collection or passes away, the family is left without the context to make decisions. The platform needed to serve not just the collector, but the family who inherits the collection, the traders and growing collectors looking to acquire, researchers needing expert access, auction houses, and casual browsers.",
     highlights: [
       "Designed a bespoke platform (not templated) serving a range of stakeholders: collectors, their families, traders, growing collectors, researchers, auction houses, and casual browsers",
       "Created the full 3-step 'New Collection' flow, allowing collectors to catalog items with keywords, ownership history, appraisal info, and personal stories",
-      "Designed the 'Chain of Custodianship' feature — a provenance-tracking view that translates a collector's knowledge into a record legible to heirs, appraisers, and future owners",
+      "Designed the 'Chain of Custodianship' feature: a provenance-tracking view that translates a collector's knowledge into a record legible to heirs, appraisers, and future owners",
       "Conducted in-person usability testing on tablet with real Cowan's customers to validate navigation, collection creation, and item detail interactions",
       "Built and handed off using WordPress, PHP, and SCSS with custom style guide",
     ],
@@ -657,14 +658,14 @@ const _projects: Project[] = [
       {
         heading: "The Challenge",
         paragraphs: [
-          "The underlying problem Cowan's needed to solve wasn't just auction browsing — it was a succession problem. Collectors, typically older adults, accumulate objects with deep personal meaning: things that are nostalgic, sentimental, historically significant, or financially valuable. As collections grow, families lose track of what exists, where it came from, and why it matters. When the collector can no longer manage the collection, or passes away, the family is left without the context to make good decisions. What's worth selling? What should be kept? What does this piece mean? Without documentation, those answers are gone.",
+          "The underlying problem Cowan's needed to solve wasn't just auction browsing: it was a succession problem. Collectors, typically older adults, accumulate objects with deep personal meaning: things that are nostalgic, sentimental, historically significant, or financially valuable. As collections grow, families lose track of what exists, where it came from, and why it matters. When the collector can no longer manage the collection, or passes away, the family is left without the context to make good decisions. What's worth selling? What should be kept? What does this piece mean? Without documentation, those answers are gone.",
           "The platform needed to serve a range of stakeholders beyond the collector themselves. Families inheriting a collection need to understand both monetary and symbolic value. Avid collectors and traders want to find and exchange pieces with others who share their interests. Researchers need access to experts and provenance records for specific types of artifacts. Auction houses need visibility into available inventory and motivated sellers. And casual browsers just want to discover something interesting. The design challenge was building a single interface that served all of these without collapsing into something that served none of them well.",
         ],
       },
       {
         heading: "Discovery & User Research",
         paragraphs: [
-          "I began with client discovery sessions to map the existing customer base, understand how collectors used the current site, and identify where friction occurred. The most consistent finding: collectors wanted to document personal stories and provenance alongside auction data; the emotional narrative of an object was as important as its appraised value — and crucially, it was the part most at risk of being lost when the collector was gone. This informed the entire information architecture.",
+          "I began with client discovery sessions to map the existing customer base, understand how collectors used the current site, and identify where friction occurred. The most consistent finding: collectors wanted to document personal stories and provenance alongside auction data; the emotional narrative of an object was as important as its appraised value: and crucially, it was the part most at risk of being lost when the collector was gone. This informed the entire information architecture.",
           "The stakeholder map was broader than a simple browser-vs-collector split. The primary user doing the work is the collector; the primary beneficiary of that work is often the family who eventually inherits it. Secondary audiences include traders and growing collectors looking to acquire, researchers needing expert context, auction houses assessing potential inventory, and casual browsers. The design had to let each of these move through the same interface without feeling like they were in the wrong place.",
         ],
         images: [
@@ -695,9 +696,9 @@ const _projects: Project[] = [
       {
         heading: "Chain of Custodianship",
         paragraphs: [
-          "The Chain of Custodianship is the feature that directly addresses the succession problem. On every item's detail screen, collectors can document the full ownership history of an object — names, dates, locations — creating a traceable lineage from the current owner back through all previous custodians. Anonymous entries are supported for gaps in known history. Alongside the ownership record, a personal story field lets the collector attach the human context: where they found it, what it means, who it came from.",
-          "This matters most when the collector is gone. A family inheriting a collection filled with undocumented objects has no way to distinguish what's financially valuable from what's sentimentally irreplaceable from what's simply clutter. The Chain of Custodianship turns the collector's private knowledge into a record the family can actually use — to make decisions about what to keep, what to sell, and what to donate, without having to guess at the meaning behind every object.",
-          "The feature was validated in usability testing as the most compelling element of the entire platform. Several participants said it would drive them to use the platform on its own. The example that landed hardest in testing was Kerry's account of her grandmother's Singer sewing machine, passed down across generations and continents — the kind of story that exists nowhere in an auction catalog but is exactly what a family needs to understand why an object matters.",
+          "The Chain of Custodianship is the feature that directly addresses the succession problem. On every item's detail screen, collectors can document the full ownership history of an object: names, dates, locations: creating a traceable lineage from the current owner back through all previous custodians. Anonymous entries are supported for gaps in known history. Alongside the ownership record, a personal story field lets the collector attach the human context: where they found it, what it means, who it came from.",
+          "This matters most when the collector is gone. A family inheriting a collection filled with undocumented objects has no way to distinguish what's financially valuable from what's sentimentally irreplaceable from what's simply clutter. The Chain of Custodianship turns the collector's private knowledge into a record the family can actually use: to make decisions about what to keep, what to sell, and what to donate, without having to guess at the meaning behind every object.",
+          "The feature was validated in usability testing as the most compelling element of the entire platform. Several participants said it would drive them to use the platform on its own. The example that landed hardest in testing was Kerry's account of her grandmother's Singer sewing machine, passed down across generations and continents: the kind of story that exists nowhere in an auction catalog but is exactly what a family needs to understand why an object matters.",
         ],
         images: [
           {
@@ -1071,49 +1072,16 @@ const _projects: Project[] = [
     role: "Illustrator & Graphic Designer, MFA Thesis",
     period: "2017",
     description:
-      "An MFA thesis project at Indiana University exploring how urban and contemporary legends function as a vehicle for identity expression and community formation. The output is a series of emblem designs organized into four thematic chapters — Alien Conspiracy, Local & Regional, Cryptozoology, and Occult — produced as vinyl decals intended to be placed on personal items as a way of expressing shared cultural identity and finding community.",
+      "An MFA thesis project at Indiana University exploring how urban and contemporary legends function as a vehicle for identity expression and community formation. The output is a series of emblem designs organized into four thematic chapters (Alien Conspiracy, Local & Regional, Cryptozoology, and Occult), produced as vinyl decals intended to be placed on personal items as a way of expressing shared cultural identity and finding community.",
     highlights: [
       "Designed a complete series of contemporary legend emblems organized into four thematic chapters",
       "Grounded in a research essay tracing emblems and identity from Charlemagne's coats of arms through NASA mission patches to urban legend as modern communal symbol",
-      "Proposed a specific output format — vinyl decals — chosen for portability, personal expression, and visibility in public spaces",
+      "Proposed a specific output format, vinyl decals, chosen for portability, personal expression, and visibility in public spaces",
       "Artwork digitized for embroidery production, with stitch paths, stitch direction, and stitch count defined for each design",
       "Work produced as a bound thesis publication combining essay, research imagery, and the full emblem series",
     ],
     tags: ["Illustration", "Emblem Design", "Graphic Design", "Academic Thesis", "Visual Identity", "Publication Design"],
     images: [
-      {
-        src: "/projects/urban-expressions/urban-overview.png",
-        alt: "Urban Expressions emblem series — contemporary legend decal designs",
-        annotation: "The full emblem series from the MFA thesis, organized into four thematic chapters: Alien Conspiracy, Local & Regional, Cryptozoology, and Occult. Each emblem was designed for production as a vinyl decal — a format chosen deliberately for its portability and ability to be placed on personal items in public spaces.",
-      },
-      {
-        src: "/projects/urban-expressions/ue-thesis-cover.png",
-        alt: "Urban Expressions thesis publication — cover",
-        annotation: "The bound thesis publication paired the research essay on emblems, identity, and contemporary legend with the full emblem series. The publication design and emblem series were treated as integrated components of a single thesis argument.",
-      },
-      {
-        src: "/projects/urban-expressions/ue-thesis-book.png",
-        alt: "Urban Expressions thesis book — spread",
-        annotation: "Interior spread of the thesis publication. The book design had to hold both dense academic writing and full-page emblem illustrations without letting either feel like an afterthought.",
-      },
-      {
-        src: "/projects/urban-expressions/ue-thesis-02.png",
-        alt: "Urban Expressions thesis — detail",
-      },
-      {
-        src: "/projects/urban-expressions/ue-thesis-patches.png",
-        alt: "Urban Expressions thesis with physical patches",
-        annotation: "The thesis alongside physical embroidered patch samples. The designs were digitized for embroidery production, with stitch paths, stitch direction, and stitch count defined for each emblem.",
-      },
-      {
-        src: "/projects/urban-expressions/ue-thesis-grid.png",
-        alt: "Urban Expressions emblem grid",
-      },
-      {
-        src: "/projects/urban-expressions/ue-lore-books.png",
-        alt: "Urban Expressions — source material and lore reference books",
-        annotation: "Research material for the thesis: contemporary legend anthologies, folklore studies, and urban myth collections that grounded the emblem designs in documented communal narratives.",
-      },
       {
         src: "/projects/urban-expressions/ue-display.png",
         alt: "Urban Expressions MFA thesis exhibition display",
@@ -1121,7 +1089,12 @@ const _projects: Project[] = [
       },
       {
         src: "/projects/urban-expressions/ue-display-02.png",
-        alt: "Urban Expressions MFA thesis exhibition — second view",
+        alt: "Urban Expressions MFA thesis exhibition, second view",
+      },
+      {
+        src: "/projects/urban-expressions/ue-thesis-book.png",
+        alt: "Urban Expressions thesis book spread",
+        annotation: "Interior spread of the thesis publication. The book design had to hold both dense academic writing and full-page emblem illustrations without letting either feel like an afterthought.",
       },
     ],
     accentColor: "#0d0d1a",
@@ -1129,8 +1102,8 @@ const _projects: Project[] = [
       {
         heading: "The Thesis Argument",
         paragraphs: [
-          "The thesis premise: urban and contemporary legends function as a form of communal identity, and designing emblems around those legends can create a visual language for expressing belonging and finding community. The research essay traced the history of emblems from medieval coats of arms through military and NASA mission patches to the modern day, arguing that emblems connect the wearer to a community of shared values, history, or belief — and that contemporary legends carry exactly that kind of communal meaning.",
-          "The proposed output was deliberate: vinyl decals rather than patches, buttons, or printed goods. Decals are small, cheap, non-permanent, and designed to be placed on items used in public — cars, bikes, phones, laptops — making identity expression visible to others who might share the reference. The question the thesis asked was whether revealing shared cultural identity through a legend emblem could spontaneously create connection between strangers.",
+          "The thesis premise: urban and contemporary legends function as a form of communal identity, and designing emblems around those legends can create a visual language for expressing belonging and finding community. The research essay traced the history of emblems from medieval coats of arms through military and NASA mission patches to the modern day, arguing that emblems connect the wearer to a community of shared values, history, or belief; contemporary legends carry exactly that kind of communal meaning.",
+          "The proposed output was deliberate: vinyl decals rather than patches, buttons, or printed goods. Decals are small, cheap, non-permanent, and designed to be placed on items used in public (cars, bikes, phones, laptops), making identity expression visible to others who might share the reference. The question the thesis asked was whether revealing shared cultural identity through a legend emblem could spontaneously create connection between strangers.",
         ],
       },
       {
@@ -1141,11 +1114,79 @@ const _projects: Project[] = [
         ],
         images: [
           {
-            src: "/projects/urban-expressions/urban-overview.png",
-            alt: "Full Urban Expressions emblem series, all four chapters",
+            src: "/projects/urban-expressions/ue-emblem-series.jpg",
+            alt: "Urban Expressions complete emblem series, all four chapters",
             caption: "The complete emblem series",
-            annotation: "All four chapters of the emblem series side by side. The visual system uses consistent structural conventions — circular containment, emblem proportions, text treatment — that create family resemblance across Alien Conspiracy, Local & Regional, Cryptozoology, and Occult without flattening the distinct character of each legend category.",
+            annotation: "All four chapters of the emblem series. The visual system uses consistent structural conventions (circular containment, emblem proportions, text treatment) that create family resemblance across Alien Conspiracy, Local & Regional, Cryptozoology, and Occult without flattening the distinct character of each legend category.",
             magnify: true,
+            magnifyZoom: 1.5,
+          },
+        ],
+      },
+      {
+        heading: "The Publication",
+        paragraphs: [
+          "The bound thesis publication paired the research essay on emblems, identity, and contemporary legend with the full emblem series. Publication design and emblem series were treated as integrated components of a single argument; neither was supplementary to the other.",
+        ],
+        images: [
+          {
+            src: "/projects/urban-expressions/ue-sketch-02.jpg",
+            alt: "Urban Expressions emblem sketchbook: Project Delta",
+            caption: "Emblem sketches",
+            annotation: "Sketchbook development for the Project Delta emblem. Colored pencil explorations testing form, type layout, and badge structure before moving to digital production.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-sketch-01.jpg",
+            alt: "Urban Expressions emblem sketchbook: Project Blue Planet and Red Light",
+            caption: "Emblem sketches",
+            annotation: "Sketchbook development for two Alien Conspiracy chapter emblems: Project Blue Planet and Red Light. Notes in the margins track legend research and design decisions alongside the drawings.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-sketch-03.jpg",
+            alt: "Urban Expressions emblem sketchbook: Majestic Twelve",
+            caption: "Emblem sketches",
+            annotation: "Sketchbook development for the Majestic 12 emblem, exploring the circular badge structure and monogram treatment before digital refinement.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-thesis-cover.png",
+            alt: "Urban Expressions thesis publication cover",
+            annotation: "The bound thesis publication. The publication design and emblem series were treated as integrated components of a single thesis argument.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-thesis-book.png",
+            alt: "Urban Expressions thesis book interior spread",
+            annotation: "Interior spread of the thesis publication. The book design had to hold both dense academic writing and full-page emblem illustrations without letting either feel like an afterthought.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-thesis-02.png",
+            alt: "Urban Expressions thesis publication detail",
+          },
+        ],
+      },
+      {
+        heading: "Production & Exhibition",
+        paragraphs: [
+          "The emblem designs were digitized for embroidery production, with stitch paths, stitch direction, and stitch count defined for each design. Work was exhibited as part of the IU MFA graduate exhibition alongside physical embroidered patch samples and the source material: contemporary legend anthologies, folklore studies, and urban myth collections that grounded the designs in documented communal narratives.",
+        ],
+        images: [
+          {
+            src: "/projects/urban-expressions/ue-thesis-patches.png",
+            alt: "Urban Expressions thesis with physical embroidered patches",
+            annotation: "The thesis alongside physical embroidered patch samples. The designs were digitized for embroidery production, with stitch paths, stitch direction, and stitch count defined for each emblem.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-lore-books.png",
+            alt: "Urban Expressions source material and lore reference books",
+            annotation: "Research material for the thesis: contemporary legend anthologies, folklore studies, and urban myth collections that grounded the emblem designs in documented communal narratives.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-display.png",
+            alt: "Urban Expressions MFA thesis exhibition display",
+            annotation: "The thesis exhibition display. Work was shown as part of the IU MFA graduate exhibition.",
+          },
+          {
+            src: "/projects/urban-expressions/ue-display-02.png",
+            alt: "Urban Expressions MFA thesis exhibition, second view",
           },
         ],
       },
@@ -1159,7 +1200,7 @@ const _projects: Project[] = [
     category: "Web & Graphic Design",
     title: "Web & Graphic Design",
     role: "Designer & Developer",
-    period: "2013â€“2018",
+    period: "2013-2018",
     description:
       "A collection of web design, branding, and graphic design work from the earlier part of my career: bespoke client websites designed and built at Tribeswell LLC, brand identity projects, academic design work from my MFA program, and personal projects spanning interaction design, 3D, and publication design.",
     highlights: [
@@ -1198,7 +1239,7 @@ const _projects: Project[] = [
             alt: "Boyd & Company Construction corporate website on laptop mockup",
             images: [
               { src: "/projects/web-graphics/boyd-mock.png", alt: "Boyd & Company Construction site on laptop mockup", caption: "Homepage mockup" },
-              { src: "/projects/web-graphics/boyd.png", alt: "Homepage — bold headline over industrial photography", caption: "Homepage" },
+              { src: "/projects/web-graphics/boyd.png", alt: "Homepage: bold headline over industrial photography", caption: "Homepage" },
               { src: "/projects/web-graphics/boyd-divisions.png", alt: "Divisions overview page", caption: "Divisions" },
               { src: "/projects/web-graphics/boyd-heavyhauling.png", alt: "Heavy Hauling service page with custom equipment icons", caption: "Heavy Hauling" },
               { src: "/projects/web-graphics/boyd-map.png", alt: "Interactive US locations map", caption: "Locations" },
@@ -1213,7 +1254,7 @@ const _projects: Project[] = [
             alt: "Crazy Horse restaurant website on laptop mockup",
             images: [
               { src: "/projects/web-graphics/crazyhorse-mock.png", alt: "Crazy Horse site on MacBook Air mockup", caption: "Homepage mockup" },
-              { src: "/projects/web-graphics/crazyhorse-home.jpg", alt: "Crazy Horse homepage — hero, press features, specials, beer and menu sections", caption: "Homepage" },
+              { src: "/projects/web-graphics/crazyhorse-home.jpg", alt: "Crazy Horse homepage: hero, press features, specials, beer and menu sections", caption: "Homepage" },
               { src: "/projects/web-graphics/crazyhorse-menus.jpg", alt: "Crazy Horse menus page with daily specials sidebar", caption: "Menus" },
               { src: "/projects/web-graphics/crazyhorse-drinks.jpg", alt: "Crazy Horse drinks page with daily specials", caption: "Drinks" },
               { src: "/projects/web-graphics/crazyhorse-events.jpg", alt: "Crazy Horse events page with calendar and building exterior", caption: "Events" },
@@ -1225,12 +1266,12 @@ const _projects: Project[] = [
             category: "Education Website",
             description: "Lead design for an online continuing education and certification platform serving medical professionals across multiple states. Built on the Scratch Theme WordPress framework developed at Tribeswell. The core UX challenge was navigation: the site carries a large volume of courses filterable by profession, state, and category, so the left-rail navigation with expandable second-level menus was designed to keep users oriented and able to backtrack at any point. Interior page hierarchy uses color and typographic position to reduce the cognitive load of dense course data.",
             src: "/projects/web-graphics/aspira-mock.png",
-            alt: "AspiraCE continuing education platform — laptop mockup",
+            alt: "AspiraCE continuing education platform: laptop mockup",
             images: [
               { src: "/projects/web-graphics/aspira-mock.png", alt: "AspiraCE site on laptop mockup", caption: "Homepage mockup" },
-              { src: "/projects/web-graphics/aspira-home.png", alt: "AspiraCE homepage — left nav, three-step CE process, CTAs", caption: "Homepage" },
-              { src: "/projects/web-graphics/aspira-interior.png", alt: "AspiraCE interior page — What Aspira Can Do For You", caption: "Interior page" },
-              { src: "/projects/web-graphics/aspira-courses.png", alt: "AspiraCE courses page — state filter, search, course listings", caption: "Courses" },
+              { src: "/projects/web-graphics/aspira-home.png", alt: "AspiraCE homepage: left nav, three-step CE process, CTAs", caption: "Homepage" },
+              { src: "/projects/web-graphics/aspira-interior.png", alt: "AspiraCE interior page: What Aspira Can Do For You", caption: "Interior page" },
+              { src: "/projects/web-graphics/aspira-courses.png", alt: "AspiraCE courses page: state filter, search, course listings", caption: "Courses" },
             ],
           },
           {
@@ -1243,7 +1284,7 @@ const _projects: Project[] = [
             images: [
               { src: "/projects/web-graphics/newmoon-home.png", alt: "New Moon Cottage homepage with dark forest photography", caption: "Homepage" },
               { src: "/projects/web-graphics/newmoon-path.png", alt: "The Spiritual Path editorial content section", caption: "The Spiritual Path" },
-              { src: "/projects/web-graphics/newmoon-featuredw.png", alt: "Featured Products and New Products shop sections", caption: "Shop — Featured & New" },
+              { src: "/projects/web-graphics/newmoon-featuredw.png", alt: "Featured Products and New Products shop sections", caption: "Shop: Featured & New" },
               { src: "/projects/web-graphics/newmoon-2.jpg", alt: "New Moon Cottage interior page", caption: "" },
               { src: "/projects/web-graphics/newmoon-footer.png", alt: "New Moon Cottage footer with newsletter signup", caption: "Footer" },
             ],
@@ -1254,15 +1295,15 @@ const _projects: Project[] = [
             category: "Mobile App UI",
             description: "UI design concept for a dark-mode mobile social app: profile-driven discovery, photo-forward messaging, connection management.",
             src: "/projects/web-graphics/nectar-mockup.png",
-            alt: "Nectar mobile app — phone and web mockup",
+            alt: "Nectar mobile app: phone and web mockup",
             images: [
               { src: "/projects/web-graphics/nectar-mockup.png", alt: "Nectar app on phone and desktop web mockup", caption: "Overview" },
-              { src: "/projects/web-graphics/nectar-start.png", alt: "Nectar start screen — Login with Facebook", caption: "Start", narrow: true },
-              { src: "/projects/web-graphics/nectar-profile.png", alt: "Nectar home screen — user profile with Join Group and Create Group", caption: "Home", narrow: true },
-              { src: "/projects/web-graphics/nectar-mygroup.jpg", alt: "Nectar My Group screen — group members with status", caption: "My Group", narrow: true },
-              { src: "/projects/web-graphics/nectar-attributes.png", alt: "Nectar group attributes — group composition, looking for, search distance", caption: "Group Attributes", narrow: true },
-              { src: "/projects/web-graphics/nectar-browse.png", alt: "Nectar browse groups — discovery with Next and Connect actions", caption: "Browse Groups", narrow: true },
-              { src: "/projects/web-graphics/nectar-chat.png", alt: "Nectar My Group chat — photo-forward group messaging", caption: "Group Chat", narrow: true },
+              { src: "/projects/web-graphics/nectar-start.png", alt: "Nectar start screen: Login with Facebook", caption: "Start", narrow: true },
+              { src: "/projects/web-graphics/nectar-profile.png", alt: "Nectar home screen: user profile with Join Group and Create Group", caption: "Home", narrow: true },
+              { src: "/projects/web-graphics/nectar-mygroup.jpg", alt: "Nectar My Group screen: group members with status", caption: "My Group", narrow: true },
+              { src: "/projects/web-graphics/nectar-attributes.png", alt: "Nectar group attributes: group composition, looking for, search distance", caption: "Group Attributes", narrow: true },
+              { src: "/projects/web-graphics/nectar-browse.png", alt: "Nectar browse groups: discovery with Next and Connect actions", caption: "Browse Groups", narrow: true },
+              { src: "/projects/web-graphics/nectar-chat.png", alt: "Nectar My Group chat: photo-forward group messaging", caption: "Group Chat", narrow: true },
             ],
           },
         ],
@@ -1281,10 +1322,10 @@ const _projects: Project[] = [
             src: "/projects/web-graphics/newmoon-logo-samples.png",
             alt: "New Moon Cottage logo concept variations",
             images: [
-              { src: "/projects/web-graphics/newmoon-sketches-1.jpg", alt: "New Moon Cottage logo mark sketches — cottage and house icon explorations", caption: "Logo Mark — Sketches" },
-              { src: "/projects/web-graphics/newmoon-sketches-2.jpg", alt: "New Moon Cottage logo sketches — icon and lettering development spread", caption: "Logo Mark — Development" },
-              { src: "/projects/web-graphics/newmoon-sketches-3.jpg", alt: "New Moon Cottage logo sketches — typography and mark refinement", caption: "Logo Type — Sketches" },
-              { src: "/projects/web-graphics/newmoon-logo-samples.png", alt: "New Moon Cottage logo samples — multiple digital logo variations", caption: "Logo — Final Options" },
+              { src: "/projects/web-graphics/newmoon-sketches-1.jpg", alt: "New Moon Cottage logo mark sketches: cottage and house icon explorations", caption: "Logo Mark: Sketches" },
+              { src: "/projects/web-graphics/newmoon-sketches-2.jpg", alt: "New Moon Cottage logo sketches: icon and lettering development spread", caption: "Logo Mark: Development" },
+              { src: "/projects/web-graphics/newmoon-sketches-3.jpg", alt: "New Moon Cottage logo sketches: typography and mark refinement", caption: "Logo Type: Sketches" },
+              { src: "/projects/web-graphics/newmoon-logo-samples.png", alt: "New Moon Cottage logo samples: multiple digital logo variations", caption: "Logo: Final Options" },
               { src: "/projects/web-graphics/newmoon-styleguide.png", alt: "New Moon Cottage brand style guide", caption: "Style Guide" },
             ],
           },
@@ -1296,13 +1337,13 @@ const _projects: Project[] = [
             src: "/projects/web-graphics/invest.png",
             alt: "The Big Picture editorial illustration for The Reformed Broker",
             images: [
-              { src: "/projects/web-graphics/broker-logo-dev.jpg", alt: "The Reformed Broker logo development — vintage postcard letterform illustration", caption: "Reformed Broker — Logo Development" },
-              { src: "/projects/web-graphics/broker-header.png", alt: "The Reformed Broker website header with city skyline", caption: "Reformed Broker — Site Header" },
-              { src: "/projects/web-graphics/invest.png", alt: "The Big Picture editorial illustration", caption: "The Big Picture — Editorial Illustration" },
-              { src: "/projects/web-graphics/broker-liftoff-logo.jpg", alt: "Liftoff logo exploration — three rocket and type variations", caption: "Liftoff — Logo Exploration" },
-              { src: "/projects/web-graphics/broker-liftoff-rockets.png", alt: "Liftoff rocket illustration explorations — seven launch variations", caption: "Liftoff — Rocket Illustrations" },
-              { src: "/projects/web-graphics/broker-liftoff-app.png", alt: "Liftoff by Ritholtz Wealth Management web app", caption: "Liftoff — Web App" },
-              { src: "/projects/web-graphics/broker-commonsense.png", alt: "A Wealth of Common Sense brand logo with maze icon", caption: "A Wealth of Common Sense — Identity" },
+              { src: "/projects/web-graphics/broker-logo-dev.jpg", alt: "The Reformed Broker logo development: vintage postcard letterform illustration", caption: "Reformed Broker: Logo Development" },
+              { src: "/projects/web-graphics/broker-header.png", alt: "The Reformed Broker website header with city skyline", caption: "Reformed Broker: Site Header" },
+              { src: "/projects/web-graphics/invest.png", alt: "The Big Picture editorial illustration", caption: "The Big Picture: Editorial Illustration" },
+              { src: "/projects/web-graphics/broker-liftoff-logo.jpg", alt: "Liftoff logo exploration: three rocket and type variations", caption: "Liftoff: Logo Exploration" },
+              { src: "/projects/web-graphics/broker-liftoff-rockets.png", alt: "Liftoff rocket illustration explorations: seven launch variations", caption: "Liftoff: Rocket Illustrations" },
+              { src: "/projects/web-graphics/broker-liftoff-app.png", alt: "Liftoff by Ritholtz Wealth Management web app", caption: "Liftoff: Web App" },
+              { src: "/projects/web-graphics/broker-commonsense.png", alt: "A Wealth of Common Sense brand logo with maze icon", caption: "A Wealth of Common Sense: Identity" },
             ],
           },
           {
@@ -1313,14 +1354,14 @@ const _projects: Project[] = [
             src: "/projects/web-graphics/zhang-card-mock-1.png",
             alt: "Zhang Photography business card mockups",
             images: [
-              { src: "/projects/web-graphics/zhang-card-mock-1.png", alt: "Zhang Photography business card mockup — stacked cards with TZ monogram" },
-              { src: "/projects/web-graphics/zhang-card-mock-2.png", alt: "Zhang Photography business card mockup — eye/lens mark" },
-              { src: "/projects/web-graphics/zhang-card-mock-3.png", alt: "Zhang Photography business card mockup — camera outline wordmark" },
-              { src: "/projects/web-graphics/zhang-card-mock-4.png", alt: "Zhang Photography business card mockup — letterpress style" },
-              { src: "/projects/web-graphics/zhang-sketches.png", alt: "Zhang Photography logo sketches — TZ monogram and typographic explorations" },
-              { src: "/projects/web-graphics/zhang-logos-1.png", alt: "Zhang Photography logo concepts — typographic and illustrated options" },
-              { src: "/projects/web-graphics/zhang-logos-2.png", alt: "Zhang Photography logo concepts — film-roll and camera mark variations" },
-              { src: "/projects/web-graphics/zhang-logos-3.png", alt: "Zhang Photography logo concepts — typographic and script variations" },
+              { src: "/projects/web-graphics/zhang-card-mock-1.png", alt: "Zhang Photography business card mockup: stacked cards with TZ monogram" },
+              { src: "/projects/web-graphics/zhang-card-mock-2.png", alt: "Zhang Photography business card mockup: eye/lens mark" },
+              { src: "/projects/web-graphics/zhang-card-mock-3.png", alt: "Zhang Photography business card mockup: camera outline wordmark" },
+              { src: "/projects/web-graphics/zhang-card-mock-4.png", alt: "Zhang Photography business card mockup: letterpress style" },
+              { src: "/projects/web-graphics/zhang-sketches.png", alt: "Zhang Photography logo sketches: TZ monogram and typographic explorations" },
+              { src: "/projects/web-graphics/zhang-logos-1.png", alt: "Zhang Photography logo concepts: typographic and illustrated options" },
+              { src: "/projects/web-graphics/zhang-logos-2.png", alt: "Zhang Photography logo concepts: film-roll and camera mark variations" },
+              { src: "/projects/web-graphics/zhang-logos-3.png", alt: "Zhang Photography logo concepts: typographic and script variations" },
             ],
           },
         ],
@@ -1339,9 +1380,9 @@ const _projects: Project[] = [
             src: "/projects/web-graphics/mfa-cat01.png",
             alt: "2016 MFA Catalog publication design",
             images: [
-              { src: "/projects/web-graphics/mfa-cat01.png", alt: "2016 MFA Catalog — cover and spread" },
-              { src: "/projects/web-graphics/mfa-cat02.png", alt: "2016 MFA Catalog — interior spread" },
-              { src: "/projects/web-graphics/mfa-cat03.png", alt: "2016 MFA Catalog — interior spread" },
+              { src: "/projects/web-graphics/mfa-cat01.png", alt: "2016 MFA Catalog: cover and spread" },
+              { src: "/projects/web-graphics/mfa-cat02.png", alt: "2016 MFA Catalog: interior spread" },
+              { src: "/projects/web-graphics/mfa-cat03.png", alt: "2016 MFA Catalog: interior spread" },
             ],
           },
           {
@@ -1354,7 +1395,7 @@ const _projects: Project[] = [
             images: [
               {
                 src: "https://img.youtube.com/vi/jPEXzpU9Csw/hqdefault.jpg",
-                alt: "Food Enter-Face — 3D food interaction walkthrough",
+                alt: "Food Enter-Face: 3D food interaction walkthrough",
                 caption: "Interactive walkthrough",
                 youtubeId: "jPEXzpU9Csw",
               },
@@ -1366,26 +1407,26 @@ const _projects: Project[] = [
             category: "3D / Immersive Experience",
             description: "A virtual gallery exploring how lighting, space, and ambient audio affect emotional state, designed as an interactive 3D environment. Concept sketch showing the gallery spatial layout and interactive kiosk placement.",
             src: "/projects/web-graphics/sad-01.png",
-            alt: "Seasonal Affective Disorder — warm amber lit virtual gallery interior",
+            alt: "Seasonal Affective Disorder: warm amber lit virtual gallery interior",
             images: [
-              { src: "/projects/web-graphics/sad-01.png", alt: "SAD state — warm amber light through tall windows, 'Enjoy the sun rise' prompt", caption: "SAD state — sunrise room" },
-              { src: "/projects/web-graphics/sad-05.png", alt: "SAD state — golden ambient light, 'Close your eyes and listen to the music' prompt", caption: "SAD state — gallery entry" },
-              { src: "/projects/web-graphics/sad-02.png", alt: "SAD state — wide gallery view with interactive kiosks under amber light", caption: "SAD state — main gallery" },
-              { src: "/projects/web-graphics/sad-03.png", alt: "Neutral state — bright gallery with artwork and 'Close your eyes and listen to the music' prompt", caption: "Neutral state — main gallery" },
-              { src: "/projects/web-graphics/sad-04.png", alt: "Neutral state — gallery wall with landscape paintings including Frederic Church", caption: "Neutral state — artwork wall" },
+              { src: "/projects/web-graphics/sad-01.png", alt: "SAD state: warm amber light through tall windows, 'Enjoy the sun rise' prompt", caption: "SAD state: sunrise room" },
+              { src: "/projects/web-graphics/sad-05.png", alt: "SAD state: golden ambient light, 'Close your eyes and listen to the music' prompt", caption: "SAD state: gallery entry" },
+              { src: "/projects/web-graphics/sad-02.png", alt: "SAD state: wide gallery view with interactive kiosks under amber light", caption: "SAD state: main gallery" },
+              { src: "/projects/web-graphics/sad-03.png", alt: "Neutral state: bright gallery with artwork and 'Close your eyes and listen to the music' prompt", caption: "Neutral state: main gallery" },
+              { src: "/projects/web-graphics/sad-04.png", alt: "Neutral state: gallery wall with landscape paintings including Frederic Church", caption: "Neutral state: artwork wall" },
             ],
           },
           {
             title: "More Than Words",
             year: "2013",
             category: "Motion Design · BFA Thesis",
-            description: "A BFA thesis project exploring typographic motion design — how letterforms, pacing, and kinetic text can carry emotional meaning beyond their literal content.",
+            description: "A BFA thesis project exploring typographic motion design: how letterforms, pacing, and kinetic text can carry emotional meaning beyond their literal content.",
             src: "https://img.youtube.com/vi/8FYs0BLwheM/hqdefault.jpg",
-            alt: "More Than Words — BFA thesis motion design",
+            alt: "More Than Words: BFA thesis motion design",
             images: [
               {
                 src: "https://img.youtube.com/vi/8FYs0BLwheM/hqdefault.jpg",
-                alt: "More Than Words — BFA thesis motion design",
+                alt: "More Than Words: BFA thesis motion design",
                 caption: "Thesis video",
                 youtubeId: "8FYs0BLwheM",
               },
