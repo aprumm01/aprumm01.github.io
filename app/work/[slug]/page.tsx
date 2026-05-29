@@ -70,7 +70,7 @@ export default async function CaseStudyPage({
           <p className="mb-3 text-sm tracking-widest uppercase text-[#888]">
             {project.category}
           </p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-none tracking-tight text-[#fafafa] mb-4">
+          <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,5vw,5rem)] font-semibold leading-[1.1] tracking-tight text-[#fafafa] mb-4 break-words">
             {project.title}
           </h1>
           <p className="text-sm text-[#888] mb-8">
@@ -216,7 +216,7 @@ export default async function CaseStudyPage({
 
                   {/* Gallery grid */}
                   {section.gallery && section.gallery.length > 0 && (
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                       {section.gallery.map((piece: GalleryItem) => (
                         <GalleryCard key={piece.title} piece={piece} />
                       ))}

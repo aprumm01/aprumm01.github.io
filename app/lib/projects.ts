@@ -440,6 +440,29 @@ const _projects: Project[] = [
           },
         ],
       },
+      {
+        heading: "Accessibility Documentation",
+        paragraphs: [
+          "TCAYT required comprehensive accessibility annotations for engineering implementation. These annotations document screen reader labels, keyboard navigation order, focus management, ARIA attributes, and semantic HTML requirements. The two-panel layout presented specific accessibility challenges: maintaining logical tab order across the left segment inventory and right form panel, ensuring screen reader users understood the relationship between panels, and providing appropriate invisible labels for complex interactive elements.",
+          "The annotation system uses numbered callouts to map visible UI elements to their accessibility requirements. Each annotation specifies invisible labels for screen readers, keyboard interaction patterns, focus behavior, and ARIA roles where semantic HTML alone is insufficient. This documentation ensures that mobility device users, keyboard-only users, and screen reader users can navigate and complete the trip planning workflow with the same efficiency as sighted mouse users.",
+        ],
+        images: [
+          {
+            src: "/projects/tcayt/a11y-annotations01.png",
+            alt: "TCAYT accessibility annotations showing left/right panel structure with numbered callouts for screen reader labels and keyboard navigation",
+            caption: "Accessibility annotations: two-panel layout",
+            annotation: "The annotation map for the two-panel trip builder shows invisible labels, keyboard navigation flow, and focus management requirements. Key annotations include invisible 'Edit Trip Details' label for screen readers, read-as-displayed instructions for dynamic content, navigation landmarks, and form field relationships. Engineers use these annotations to implement proper ARIA attributes, focus trapping, and logical tab order across the split-panel interface.",
+            magnify: true,
+          },
+          {
+            src: "/projects/tcayt/a11y-annotations02.png",
+            alt: "TCAYT accessibility annotations for left column segment inventory showing interaction states and invisible labels",
+            caption: "Accessibility annotations: segment inventory detail",
+            annotation: "Detailed accessibility requirements for the left-column segment inventory. Annotations specify trip title and description fields, navigation instructions for adding segments, segment status indicators (numbered circles with hover states), action button labels, and invisible navigation hints like 'Previous/Next trip segment' for keyboard-only users. The 'Previous/next disabled when on first/last segment' note ensures keyboard users receive appropriate feedback at navigation boundaries.",
+            magnify: true,
+          },
+        ],
+      },
     ],
   },
 
@@ -1069,8 +1092,8 @@ const _projects: Project[] = [
     images: [
       {
         src: "/projects/web-graphics/boyd.png",
-        alt: "Boyd Security corporate website: Honesty, Integrity, and Outstanding Performance",
-        annotation: "Boyd Security corporate website, a Tribeswell client project. Built to a bespoke brief for a construction and energy services company, the design uses dramatic industrial photography with a bold, authoritative typographic system.",
+        alt: "Boyd & Company Construction corporate website: Honesty, Integrity, and Outstanding Performance",
+        annotation: "Boyd & Company Construction corporate website, a Tribeswell client project. Built to a bespoke brief for a construction and energy services company, the design uses dramatic industrial photography with a bold, authoritative typographic system.",
       },
       {
         src: "/projects/web-graphics/newmoon.png",
@@ -1092,12 +1115,12 @@ const _projects: Project[] = [
         ],
         gallery: [
           {
-            title: "Boyd Security",
+            title: "Boyd & Company Construction",
             year: "2015",
             category: "Corporate Website",
-            description: "Website design and development for a defense and security services company. Dark, authoritative visual system with strong aerial photography.",
+            description: "Website design and development for a construction and energy services company. Dark, authoritative visual system with strong aerial photography.",
             src: "/projects/web-graphics/boyd.png",
-            alt: "Boyd Security corporate website",
+            alt: "Boyd & Company Construction corporate website",
           },
           {
             title: "Crazy Horse",

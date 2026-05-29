@@ -34,18 +34,15 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
             </span>
           </div>
         </div>
-        <div className="p-4">
-          <div className="flex items-start justify-between gap-2 mb-1">
-            <p className="text-sm text-[#ccc] leading-snug font-[family-name:var(--font-playfair)]">
+        <div className="p-5">
+          <div className="flex items-start justify-between gap-3 mb-2">
+            <p className="text-base text-[#ccc] leading-snug font-[family-name:var(--font-playfair)] font-semibold">
               {piece.title}
             </p>
-            <span className="shrink-0 text-xs text-[#777] pt-0.5">{piece.year}</span>
+            <span className="shrink-0 text-xs text-[#666] pt-1">{piece.year}</span>
           </div>
-          <p className="text-xs tracking-wide text-[#777] uppercase mb-2">
+          <p className="text-xs tracking-widest text-[#666] uppercase">
             {piece.category}
-          </p>
-          <p className="text-sm text-[#999] leading-relaxed">
-            {piece.description}
           </p>
         </div>
       </button>
@@ -55,7 +52,7 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
           role="dialog"
           aria-modal="true"
           aria-label={piece.title}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-6 cursor-zoom-out"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 sm:p-6 cursor-zoom-out overflow-hidden"
           onClick={() => setOpen(false)}
         >
           <button
@@ -67,21 +64,22 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
           </button>
 
           <div
-            className="flex flex-col md:flex-row max-w-5xl w-full gap-8 md:gap-12 items-start md:items-center cursor-default"
+            className="flex flex-col md:flex-row max-w-7xl w-full h-[85vh] gap-0 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Left: image */}
-            <div className="w-full md:flex-1 min-w-0">
+            {/* Left: scrollable image(s) column */}
+            <div className="flex-1 flex flex-col gap-0 overflow-y-auto pr-0 md:pr-8 scrollbar-thin">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={piece.src}
                 alt={piece.alt}
-                className="w-full rounded-lg object-contain max-h-[60vh] md:max-h-[75vh]"
+                className="w-full rounded-lg object-contain mb-8"
               />
+              {/* Future: Add more images here if GalleryItem supports multiple images */}
             </div>
 
-            {/* Right: details */}
-            <div className="w-full md:w-72 md:shrink-0 flex flex-col gap-5">
+            {/* Right: sticky details */}
+            <div className="w-full md:w-80 md:shrink-0 flex flex-col gap-5 mt-6 md:mt-0 md:sticky md:top-0 md:self-start md:h-fit">
               <div>
                 <p className="text-xs tracking-widest uppercase text-[#555] mb-2">
                   {piece.category}
