@@ -1160,7 +1160,7 @@ const _projects: Project[] = [
             year: "2016",
             category: "Mobile App UI",
             description: "UI design concept for a dark-mode mobile social app: profile-driven discovery, photo-forward messaging, connection management.",
-            src: "/projects/web-graphics/nectar.png",
+            src: "/projects/web-graphics/nectar-home.png",
             alt: "Nectar mobile app UI design",
           },
         ],
@@ -1176,7 +1176,7 @@ const _projects: Project[] = [
             year: "2016",
             category: "Publication Design",
             description: "Art direction and design for the 2016 IU MFA graduation catalog, a print publication showcasing the work of graduating MFA students across fine art and design disciplines.",
-            src: "/projects/web-graphics/mfa.png",
+            src: "/projects/web-graphics/mfa-catalog.jpg",
             alt: "2016 MFA Catalog publication design",
           },
           {
