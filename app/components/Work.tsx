@@ -41,8 +41,8 @@ export default function Work() {
                   {project.category}
                 </p>
 
-                {/* Header row: number + title (baseline-aligned) + CTA button */}
-                <div className="flex items-start justify-between gap-6">
+                {/* Header row: stacks on mobile (title → button), side-by-side on md+ */}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6">
                   <div className="flex items-baseline gap-4 min-w-0 flex-1">
                     <span className="gold-text font-[family-name:var(--font-playfair)] text-4xl opacity-60 group-hover:opacity-95 transition-opacity duration-300 shrink-0 select-none">
                       {String(i + 1).padStart(2, "0")}
@@ -57,10 +57,10 @@ export default function Work() {
                     </div>
                   </div>
 
-                  {/* Primary CTA — top right */}
+                  {/* Primary CTA — below title on mobile, top-right on md+ */}
                   <Link
                     href={`/work/${project.slug}`}
-                    className="shrink-0 inline-flex items-center gap-2 rounded-full border border-[#4E7D53]/40 px-5 py-2 text-sm font-medium text-[#a0c8a3] hover:border-[#4E7D53]/80 hover:text-white transition-all duration-200"
+                    className="self-start shrink-0 inline-flex items-center gap-2 rounded-full border border-[#4E7D53]/40 px-5 py-2 text-sm font-medium text-[#a0c8a3] hover:border-[#4E7D53]/80 hover:text-white transition-all duration-200"
                     style={{ background: "linear-gradient(135deg, #0F1A12 0%, #1B3320 60%, #131D15 100%)" }}
                   >
                     View case study
