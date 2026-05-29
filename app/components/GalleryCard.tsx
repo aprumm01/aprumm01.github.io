@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import type { GalleryItem } from "@/app/lib/projects";
+import type { GalleryItem, GalleryImage } from "@/app/lib/projects";
 
 export default function GalleryCard({ piece }: { piece: GalleryItem }) {
   const [open, setOpen] = useState(false);
@@ -68,14 +68,20 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Left: scrollable image(s) column */}
-            <div className="flex-1 flex flex-col gap-0 overflow-y-auto pr-0 md:pr-8 scrollbar-thin">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={piece.src}
-                alt={piece.alt}
-                className="w-full rounded-lg object-contain mb-8"
-              />
-              {/* Future: Add more images here if GalleryItem supports multiple images */}
+            <div className="flex-1 flex flex-col gap-8 overflow-y-auto pr-0 md:pr-8">
+              {(piece.images ?? [{ src: piece.src, alt: piece.alt }]).map((img: GalleryImage) => (
+                <div key={img.src}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full rounded-lg object-contain"
+                  />
+                  {img.caption && (
+                    <p className="mt-2 text-xs tracking-wide text-[#555]">{img.caption}</p>
+                  )}
+                </div>
+              ))}
             </div>
 
             {/* Right: sticky details */}

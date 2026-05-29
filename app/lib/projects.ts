@@ -11,6 +11,12 @@ export interface Stat {
   label: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface GalleryItem {
   title: string;
   year: string;
@@ -18,6 +24,7 @@ export interface GalleryItem {
   description: string;
   src: string;
   alt: string;
+  images?: GalleryImage[];
 }
 
 export interface ProjectVideo {
@@ -1115,36 +1122,18 @@ const _projects: Project[] = [
         ],
         gallery: [
           {
-            title: "Boyd & Company — Homepage",
+            title: "Boyd & Company Construction",
             year: "2015",
             category: "Corporate Website",
-            description: "Homepage for a construction and energy services company. Dark, authoritative visual system with strong industrial photography and a bold typographic headline.",
+            description: "Website design and development for a construction and energy services company. Bespoke WordPress build with a dark, authoritative visual system, custom equipment icons, interactive US locations map, and strong aerial photography throughout.",
             src: "/projects/web-graphics/boyd.png",
-            alt: "Boyd & Company Construction corporate website homepage",
-          },
-          {
-            title: "Boyd & Company — Divisions",
-            year: "2015",
-            category: "Corporate Website",
-            description: "Divisions overview page, each service line represented with its own photography and entry point. Structured to help visitors self-select into the right service area.",
-            src: "/projects/web-graphics/boyd-divisions.png",
-            alt: "Boyd and Company divisions overview page",
-          },
-          {
-            title: "Boyd & Company — Heavy Hauling",
-            year: "2015",
-            category: "Corporate Website",
-            description: "Service detail page for the Heavy Hauling division. Custom illustrated equipment icons (dozers, excavators, loaders) paired with photography to communicate scale and capability.",
-            src: "/projects/web-graphics/boyd-heavyhauling.png",
-            alt: "Boyd and Company Heavy Hauling service page with custom icons",
-          },
-          {
-            title: "Boyd & Company — Locations Map",
-            year: "2015",
-            category: "Corporate Website",
-            description: "Interactive US locations map with clickable pins and location detail cards. Built to communicate national reach while surfacing local contact details.",
-            src: "/projects/web-graphics/boyd-map.png",
-            alt: "Boyd and Company interactive locations map across the United States",
+            alt: "Boyd & Company Construction corporate website",
+            images: [
+              { src: "/projects/web-graphics/boyd.png", alt: "Homepage — bold headline over industrial photography", caption: "Homepage" },
+              { src: "/projects/web-graphics/boyd-divisions.png", alt: "Divisions overview page", caption: "Divisions" },
+              { src: "/projects/web-graphics/boyd-heavyhauling.png", alt: "Heavy Hauling service page with custom equipment icons", caption: "Heavy Hauling" },
+              { src: "/projects/web-graphics/boyd-map.png", alt: "Interactive US locations map", caption: "Locations" },
+            ],
           },
           {
             title: "Crazy Horse",
@@ -1155,28 +1144,17 @@ const _projects: Project[] = [
             alt: "Crazy Horse restaurant website",
           },
           {
-            title: "New Moon Cottage — Homepage",
+            title: "New Moon Cottage",
             year: "2014",
             category: "Branding & Website",
-            description: "Full brand identity and WordPress build for a metaphysical shop. Dark forest photography anchors the brand; the site combined editorial content with a full e-commerce product catalog.",
+            description: "Full brand identity and WordPress/WooCommerce build for a metaphysical shop. Dark forest photography anchors the brand across homepage, editorial content sections, and a full e-commerce product catalog.",
             src: "/projects/web-graphics/newmoon.png",
-            alt: "New Moon Cottage website homepage",
-          },
-          {
-            title: "New Moon Cottage — Spiritual Path",
-            year: "2014",
-            category: "Branding & Website",
-            description: "Interior content section introducing the shop's philosophy. Dark atmospheric design with custom typography and a dual call-to-action layout.",
-            src: "/projects/web-graphics/newmoon-path.png",
-            alt: "New Moon Cottage Spiritual Path content section",
-          },
-          {
-            title: "New Moon Cottage — Shop",
-            year: "2014",
-            category: "Branding & Website",
-            description: "E-commerce product showcase with featured and new product carousels. WooCommerce integration with custom styling to match the brand's dark, mystical aesthetic.",
-            src: "/projects/web-graphics/newmoon-products.png",
-            alt: "New Moon Cottage shop and featured products section",
+            alt: "New Moon Cottage website",
+            images: [
+              { src: "/projects/web-graphics/newmoon.png", alt: "Homepage with dark forest photography", caption: "Homepage" },
+              { src: "/projects/web-graphics/newmoon-path.png", alt: "The Spiritual Path content section", caption: "The Spiritual Path" },
+              { src: "/projects/web-graphics/newmoon-products.png", alt: "Shop — featured and new product carousels", caption: "Shop" },
+            ],
           },
           {
             title: "The Big Picture",
