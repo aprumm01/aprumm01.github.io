@@ -39,9 +39,9 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
             <p className="text-base text-[#ccc] leading-snug font-[family-name:var(--font-playfair)] font-semibold">
               {piece.title}
             </p>
-            <span className="shrink-0 text-xs text-[#666] pt-1">{piece.year}</span>
+            <span className="shrink-0 text-xs text-[#777] pt-1">{piece.year}</span>
           </div>
-          <p className="text-xs tracking-widest text-[#666] uppercase">
+          <p className="text-xs tracking-widest text-[#777] uppercase">
             {piece.category}
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
                     className="w-full rounded-lg object-contain"
                   />
                   {img.caption && (
-                    <p className="mt-2 text-xs tracking-wide text-[#555]">{img.caption}</p>
+                    <p className="mt-2 text-xs tracking-wide text-[#777]">{img.caption}</p>
                   )}
                 </div>
               ))}
@@ -87,13 +87,13 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
             {/* Right: sticky details */}
             <div className="w-full md:w-80 md:shrink-0 flex flex-col gap-5 mt-6 md:mt-0 md:sticky md:top-0 md:self-start md:h-fit">
               <div>
-                <p className="text-xs tracking-widest uppercase text-[#555] mb-2">
+                <p className="text-xs tracking-widest uppercase text-[#777] mb-2">
                   {piece.category}
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#fafafa] leading-snug">
                   {piece.title}
                 </h2>
-                <p className="mt-1 text-sm text-[#555]">{piece.year}</p>
+                <p className="mt-1 text-sm text-[#777]">{piece.year}</p>
               </div>
               <div className="h-px w-8 bg-[#2a2a2a]" />
               <p className="text-sm leading-relaxed text-[#888] font-[family-name:var(--font-inter)]">

@@ -140,7 +140,7 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify 
           </button>
 
           {magnify && (
-            <p className="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-[#666] tracking-wide pointer-events-none">
+            <p className="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-[#777] tracking-wide pointer-events-none">
               Hover to zoom
             </p>
           )}

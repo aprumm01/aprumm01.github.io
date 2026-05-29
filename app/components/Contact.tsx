@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-32">
       <div className="mb-16 flex items-center gap-4">
-        <span className="text-xs tracking-widest uppercase text-[#333]">03</span>
+        <span className="text-xs tracking-widest uppercase text-[#777]">03</span>
         <div className="h-px flex-1 bg-[#1a1a1a]" />
         <span className="text-xs tracking-widest uppercase text-[#777]">Contact</span>
       </div>

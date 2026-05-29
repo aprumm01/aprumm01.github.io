@@ -145,7 +145,7 @@ export default async function CaseStudyPage({
               <div className="grid gap-10 lg:grid-cols-[200px_1fr]">
                 {/* Section label */}
                 <div className="pt-1">
-                  <span className="text-xs tracking-widest uppercase text-[#444]">
+                  <span className="text-xs tracking-widest uppercase text-[#777]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h2 className="mt-2 font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#ccc] leading-snug">
@@ -236,7 +236,7 @@ export default async function CaseStudyPage({
                 href={`/work/${prev.slug}`}
                 className="group flex flex-col gap-1"
               >
-                <span className="text-xs tracking-widest uppercase text-[#555] group-hover:text-[#888] transition-colors">
+                <span className="text-xs tracking-widest uppercase text-[#777] group-hover:text-[#aaa] transition-colors">
                   ← Previous
                 </span>
                 <span className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-[#999] group-hover:text-[#fafafa] transition-colors">
@@ -252,7 +252,7 @@ export default async function CaseStudyPage({
                 href={`/work/${next.slug}`}
                 className="group flex flex-col items-end gap-1"
               >
-                <span className="text-xs tracking-widest uppercase text-[#555] group-hover:text-[#888] transition-colors">
+                <span className="text-xs tracking-widest uppercase text-[#777] group-hover:text-[#aaa] transition-colors">
                   Next →
                 </span>
                 <span className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-[#999] group-hover:text-[#fafafa] transition-colors">

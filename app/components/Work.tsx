@@ -5,7 +5,7 @@ export default function Work() {
   return (
     <section id="work" className="mx-auto max-w-6xl px-6 py-16 md:py-32">
       <div className="mb-16 flex items-center gap-4">
-        <span className="text-xs tracking-widest uppercase text-[#333]">01</span>
+        <span className="text-xs tracking-widest uppercase text-[#777]">01</span>
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#2A4A2E]/40 to-transparent" />
         <span className="text-sm tracking-widest uppercase text-[#777]">Selected Work</span>
       </div>
@@ -51,7 +51,7 @@ export default function Work() {
                       <h3 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#f0f0f0] leading-tight">
                         {project.title}
                       </h3>
-                      <p className="mt-1 text-sm text-[#666]">
+                      <p className="mt-1 text-sm text-[#777]">
                         {project.role} &middot; {project.period}
                       </p>
                     </div>

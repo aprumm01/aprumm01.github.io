@@ -217,6 +217,10 @@ const _projects: Project[] = [
     tags: ["Information Architecture", "Progressive Disclosure", "Interaction Design", "Enterprise UX", "Design Systems", "Usability Testing"],
     images: [
       {
+        src: "/projects/multi-fare-display/t2mockup.png",
+        alt: "Multi-fare display showing fare comparison layout in a browser mockup",
+      },
+      {
         src: "/projects/multi-fare-display/prototype-01.png",
         alt: "Air booking multi-fare display, concept prototype iteration 1",
         annotation: "First-generation concept prototype showing the fare comparison architecture. Early iterations erred toward maximum information density, surfacing all fare attributes simultaneously to give travelers complete data. Usability testing with business travelers revealed this created decision paralysis rather than clarity.",
@@ -339,9 +343,8 @@ const _projects: Project[] = [
     tags: ["Interaction Design", "Enterprise UX", "Design Systems", "Information Architecture", "Multi-vertical", "Usability Testing"],
     images: [
       {
-        src: "/projects/tcayt/page-filled.png",
-        alt: "TCAYT Trip Planning page with a flight from San Antonio to Las Vegas filled in",
-        annotation: "The Trip Planning page with a completed flight segment. The left panel shows all selected segments as a persistent inventory; the right panel surfaces the active segment's search form. Travelers configure each segment in sequence without losing sight of the full trip.",
+        src: "/projects/tcayt/tcayt-hero.png",
+        alt: "TCAYT Trip Planning interface with flight search form overlaid on a globe reflecting a city",
       },
       {
         src: "/projects/tcayt/finalize-full.png",
@@ -389,6 +392,13 @@ const _projects: Project[] = [
             alt: "Trip Planning page with flight details filled in for a trip to Las Vegas",
             caption: "Segment configured: flight",
             annotation: "Once the flight is configured, the segment entry in the left rail updates with origin, destination, and dates. The traveler can navigate to hotel or car from the rail, or continue through the sequence using the Previous/Next controls.",
+            magnify: true,
+          },
+          {
+            src: "/projects/tcayt/wip-multicity.png",
+            alt: "TCAYT Trip Planning in multicity mode with two independent flight legs and Custom Itinerary tooltip",
+            caption: "Multi-city flight configuration",
+            annotation: "The multicity configuration is the most complex case in the trip builder: multiple independent flight legs, each with its own origin, destination, date, and cabin class. The Custom Itinerary toggle lets travelers choose between system-curated pre-coordinated itineraries — typically more competitive on price — or fully independent leg selection when scheduling flexibility takes priority. The tooltip surfaces this trade-off at the point of decision.",
             magnify: true,
           },
         ],
@@ -580,11 +590,11 @@ const _projects: Project[] = [
     role: "Web Designer & Developer",
     period: "2014â€“2015",
     description:
-      "A bespoke platform design for Cowan's Auctions, a regional fine art and antiques auction house in Cincinnati. The project required designing a collector-focused web platform where users could discover items, track auction events, and document their own collections with rich provenance data. The work spanned discovery, wireframing, prototyping, and in-person usability testing with real collectors on tablets.",
+      "A bespoke platform design for Cowan's Auctions, a regional fine art and antiques auction house in Cincinnati. The core problem: collectors — typically older adults — accumulate objects with deep personal meaning, but as collections grow, their families lose track of what exists, what it's worth, and why it matters. When the collector can no longer manage the collection or passes away, the family is left without the context to make decisions. The platform needed to serve not just the collector, but the family who inherits the collection, the traders and growing collectors looking to acquire, researchers needing expert access, auction houses, and casual browsers.",
     highlights: [
-      "Designed a bespoke platform (not templated) for two distinct audiences: casual browsers and serious collectors with active acquisition habits",
+      "Designed a bespoke platform (not templated) serving a range of stakeholders: collectors, their families, traders, growing collectors, researchers, auction houses, and casual browsers",
       "Created the full 3-step 'New Collection' flow, allowing collectors to catalog items with keywords, ownership history, appraisal info, and personal stories",
-      "Designed the 'Chain of Custodianship' feature, a provenance-tracking view showing an item's full ownership history with dates and locations",
+      "Designed the 'Chain of Custodianship' feature — a provenance-tracking view that translates a collector's knowledge into a record legible to heirs, appraisers, and future owners",
       "Conducted in-person usability testing on tablet with real Cowan's customers to validate navigation, collection creation, and item detail interactions",
       "Built and handed off using WordPress, PHP, and SCSS with custom style guide",
     ],
@@ -609,7 +619,7 @@ const _projects: Project[] = [
     accentColor: "#1a1208",
     overviewStats: [
       { value: "Bespoke", label: "custom design, not templated" },
-      { value: "2", label: "distinct user types designed for" },
+      { value: "6+", label: "distinct stakeholder types" },
       { value: "5+", label: "usability sessions" },
       { value: "WP + PHP", label: "built with WordPress & SCSS" },
     ],
@@ -617,15 +627,15 @@ const _projects: Project[] = [
       {
         heading: "The Challenge",
         paragraphs: [
-          "Cowan's Auctions needed a platform that served two audiences simultaneously: casual browsers who discovered items through auction events, and serious collectors who needed robust tools for cataloguing their own finds, tracking provenance, and managing multiple active collections. The existing site handled the auction-browsing use case adequately but had no capability for collector-side collection management at all.",
-          "The design challenge was building a system that felt welcoming and elegant for casual discovery, consistent with the fine art aesthetic of the brand, while also providing the depth of functionality that serious collectors needed without overwhelming them. These two modes needed to coexist in the same interface.",
+          "The underlying problem Cowan's needed to solve wasn't just auction browsing — it was a succession problem. Collectors, typically older adults, accumulate objects with deep personal meaning: things that are nostalgic, sentimental, historically significant, or financially valuable. As collections grow, families lose track of what exists, where it came from, and why it matters. When the collector can no longer manage the collection, or passes away, the family is left without the context to make good decisions. What's worth selling? What should be kept? What does this piece mean? Without documentation, those answers are gone.",
+          "The platform needed to serve a range of stakeholders beyond the collector themselves. Families inheriting a collection need to understand both monetary and symbolic value. Avid collectors and traders want to find and exchange pieces with others who share their interests. Researchers need access to experts and provenance records for specific types of artifacts. Auction houses need visibility into available inventory and motivated sellers. And casual browsers just want to discover something interesting. The design challenge was building a single interface that served all of these without collapsing into something that served none of them well.",
         ],
       },
       {
         heading: "Discovery & User Research",
         paragraphs: [
-          "I began with client discovery sessions to map the existing customer base, understand how collectors used the current site, and identify where friction occurred. The most consistent finding: collectors wanted to document personal stories and provenance alongside auction data; the emotional narrative of an object was as important as its appraised value. This informed the entire information architecture.",
-          "Two user types emerged clearly: browsers (motivated by discovery, low friction needed) and collectors (motivated by cataloguing and community, needing structured input tools). The design had to let both types move through the same interface without feeling like they were in the wrong place.",
+          "I began with client discovery sessions to map the existing customer base, understand how collectors used the current site, and identify where friction occurred. The most consistent finding: collectors wanted to document personal stories and provenance alongside auction data; the emotional narrative of an object was as important as its appraised value — and crucially, it was the part most at risk of being lost when the collector was gone. This informed the entire information architecture.",
+          "The stakeholder map was broader than a simple browser-vs-collector split. The primary user doing the work is the collector; the primary beneficiary of that work is often the family who eventually inherits it. Secondary audiences include traders and growing collectors looking to acquire, researchers needing expert context, auction houses assessing potential inventory, and casual browsers. The design had to let each of these move through the same interface without feeling like they were in the wrong place.",
         ],
         images: [
           {
@@ -655,8 +665,9 @@ const _projects: Project[] = [
       {
         heading: "Chain of Custodianship",
         paragraphs: [
-          "One of the most distinctive features of the platform was the Chain of Custodianship, a provenance-tracking view on every item's detail screen. Collectors could document the ownership history of an object with dates and locations, creating a traceable lineage from the current owner back through previous custodians. Anonymous entries were supported for gaps in known history.",
-          "The feature was validated in usability testing as highly compelling for serious collectors: several participants volunteered that this capability alone would drive them to use the platform. The ability to attach a personal story to an item (like Kerry's account of her grandmother's Singer sewing machine, passed down across generations and continents) gave the provenance data human context that comparable auction platforms lacked entirely.",
+          "The Chain of Custodianship is the feature that directly addresses the succession problem. On every item's detail screen, collectors can document the full ownership history of an object — names, dates, locations — creating a traceable lineage from the current owner back through all previous custodians. Anonymous entries are supported for gaps in known history. Alongside the ownership record, a personal story field lets the collector attach the human context: where they found it, what it means, who it came from.",
+          "This matters most when the collector is gone. A family inheriting a collection filled with undocumented objects has no way to distinguish what's financially valuable from what's sentimentally irreplaceable from what's simply clutter. The Chain of Custodianship turns the collector's private knowledge into a record the family can actually use — to make decisions about what to keep, what to sell, and what to donate, without having to guess at the meaning behind every object.",
+          "The feature was validated in usability testing as the most compelling element of the entire platform. Several participants said it would drive them to use the platform on its own. The example that landed hardest in testing was Kerry's account of her grandmother's Singer sewing machine, passed down across generations and continents — the kind of story that exists nowhere in an auction catalog but is exactly what a family needs to understand why an object matters.",
         ],
         images: [
           {
@@ -903,6 +914,10 @@ const _projects: Project[] = [
     tags: ["Product Design", "B2B Enterprise", "Prototyping", "Airline Industry", "Usability Testing", "Information Architecture"],
     images: [
       {
+        src: "/projects/ngs/ngs-results-mockup.png",
+        alt: "NGS flight search results interface shown on a laptop",
+      },
+      {
         src: "/projects/ngs/results-collapsed.png",
         alt: "NGS results page: default collapsed view with UPA attribute chips",
         annotation: "The default results view shows airlines as scannable rows with highlighted UPA attributes surfaced as chips on the right: Seat Selection, Checked Bags, Upgrade Rights, and others. At a glance, travelers can compare airlines on specific differentiators without expanding any row.",
@@ -1019,59 +1034,60 @@ const _projects: Project[] = [
 
   // â”€â”€â”€ Urban Expressions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
-    slug: "urban-expressions",
-    number: "09",
-    category: "Illustration & Graphic Design Â· Commission",
-    title: "Urban Expressions",
-    role: "Illustrator & Graphic Designer",
-    period: "2014â€“2016",
+    slug: “urban-expressions”,
+    number: “09”,
+    category: “Illustration & Graphic Design Â· MFA Thesis”,
+    title: “Urban Expressions”,
+    role: “Illustrator & Graphic Designer, MFA Thesis”,
+    period: “2017”,
     description:
-      "A commissioned series of embroidered patch and badge designs for a law enforcement and public safety organization, with each patch representing a different unit, division, or mission with distinct iconography. The work required balancing institutional tradition and unit-specific symbolism with contemporary illustrative technique, producing a large series of designs that worked individually and as a cohesive visual system.",
+      “An MFA thesis project at Indiana University exploring how urban and contemporary legends function as a vehicle for identity expression and community formation. The output is a series of emblem designs organized into four thematic chapters — Alien Conspiracy, Local & Regional, Cryptozoology, and Occult — produced as vinyl decals intended to be placed on personal items as a way of expressing shared cultural identity and finding community.”,
     highlights: [
-      "Designed a large series of embroidered patch designs, each representing a distinct unit with specific iconographic requirements",
-      "Developed a consistent visual language across diverse subject matter: animals, shields, crests, emblems, and abstract symbols",
-      "Produced camera-ready artwork for embroidery production, accounting for thread count limitations and minimum stitch size",
-      "Work was reproduced in bound publication collections and displayed at institutional events",
+      “Designed a complete series of contemporary legend emblems organized into four thematic chapters”,
+      “Grounded in a research essay tracing emblems and identity from Charlemagne's coats of arms through NASA mission patches to urban legend as modern communal symbol”,
+      “Proposed a specific output format — vinyl decals — chosen for portability, personal expression, and visibility in public spaces”,
+      “Artwork digitized for embroidery production, with stitch paths, stitch direction, and stitch count defined for each design”,
+      “Work produced as a bound thesis publication combining essay, research imagery, and the full emblem series”,
     ],
-    tags: ["Illustration", "Brand Identity", "Visual Systems", "Print Design", "Commissioned Work"],
+    tags: [“Illustration”, “Emblem Design”, “Graphic Design”, “Academic Thesis”, “Visual Identity”, “Publication Design”],
     images: [
       {
-        src: "/projects/urban-expressions/urban-overview.png",
-        alt: "Urban Expressions series of embroidered patch designs and production documentation",
-        annotation: "The full patch series alongside production documentation, showing the range of iconographic approaches across different units. Each design had specific requirements from the commissioning organization, requiring close collaboration to translate unit identity into embroiderable form.",
+        src: “/projects/urban-expressions/urban-overview.png”,
+        alt: “Urban Expressions emblem series — contemporary legend decal designs”,
+        annotation: “The full emblem series from the MFA thesis, organized into four thematic chapters: Alien Conspiracy, Local & Regional, Cryptozoology, and Occult. Each emblem was designed for production as a vinyl decal — a format chosen deliberately for its portability and ability to be placed on personal items in public spaces.”,
       },
       {
-        src: "/projects/urban-expressions/urban-overview.png",
-        alt: "Urban Expressions patch designs in bound publication format",
-        annotation: "The completed patch series reproduced in bound publication format for institutional distribution. The transition from vector artwork to physical embroidery required design decisions around thread color matching, minimum detail size, and background fill to ensure the designs read clearly at patch scale.",
+        src: “/projects/urban-expressions/urban-overview.png”,
+        alt: “Urban Expressions thesis publication design”,
+        annotation: “The work was produced as a bound thesis publication, pairing the research essay on emblems, identity, and contemporary legend with the full emblem series. The publication design and the emblem series were treated as integrated components of a single thesis argument.”,
       },
       {
-        src: "/projects/urban-expressions/urban-overview.png",
-        alt: "Urban Expressions design process and finished display",
-        annotation: "From sketch to finished display: the design process began with brief-driven sketches, moved to vector refinement, then to production-ready embroidery files. The display installation shows how the series reads as a cohesive visual system despite the diversity of individual unit identities it represents.",
+        src: “/projects/urban-expressions/urban-overview.png”,
+        alt: “Urban Expressions emblem designs displayed”,
+        annotation: “The completed emblem series. The design challenge across all four chapters was creating emblems that felt visually cohesive as a system while remaining individually legible as references to specific legends — from Bigfoot and the Chupacabra to Indiana-specific legends like Diana of the Dunes and The Girl in White.”,
       },
     ],
-    accentColor: "#0d0d1a",
+    accentColor: “#0d0d1a”,
     sections: [
       {
-        heading: "The Commission",
+        heading: “The Thesis Argument”,
         paragraphs: [
-          "The project was a series of patch commissions from a law enforcement and public safety organization, with each patch representing a different unit, division, or special program. Embroidered patches carry a specific institutional weight in this context: they're worn on uniforms, awarded for service, and accumulate as a record of an officer's career. The designs had to earn that weight.",
-          "Each patch required a client brief covering the unit's name, mission, and any specific iconographic requirements (mascots, shields, geographic references, motto text). Many clients had strong opinions about what their unit's identity should look like; part of the design process was translating those requirements into something that would actually work at embroidery scale.",
+          “The thesis premise: urban and contemporary legends function as a form of communal identity, and designing emblems around those legends can create a visual language for expressing belonging and finding community. The research essay traced the history of emblems from medieval coats of arms through military and NASA mission patches to the modern day, arguing that emblems connect the wearer to a community of shared values, history, or belief — and that contemporary legends carry exactly that kind of communal meaning.”,
+          “The proposed output was deliberate: vinyl decals rather than patches, buttons, or printed goods. Decals are small, cheap, non-permanent, and designed to be placed on items used in public — cars, bikes, phones, laptops — making identity expression visible to others who might share the reference. The question the thesis asked was whether revealing shared cultural identity through a legend emblem could spontaneously create connection between strangers.”,
         ],
       },
       {
-        heading: "Design Process",
+        heading: “The Emblem Series”,
         paragraphs: [
-          "The illustration process started with pencil sketches, working out the compositional structure, the relationship between central icon and surrounding text, and the overall silhouette of each patch. For patches with complex subject matter (wildlife, vehicles, architectural elements), I developed detailed reference studies before moving to vector.",
-          "Vector production for embroidery has specific constraints: minimum stitch areas, thread color limits per design, and the need for clean paths that translate without ambiguity to embroidery machine files. A design that looks sharp at 300dpi can become muddy at 2-inch diameter if it relies on fine gradient detail or thin strokes that won't hold in thread.",
+          “The emblem series is organized into four chapters. Alien Conspiracy covers UFO and government conspiracy legends (Red Light, Delta, Blue Planet, Majestic 12, Blue Bolt). Local & Regional covers Indiana-specific legends including Woman in Black, Hatchet Man, Diana of the Dunes (Michigan City), and The Girl in White (Franklin). Cryptozoology covers creature legends: Chupacabra, Tasmanian wolf/tiger, Bigfoot/Sasquatch, Mothman, and Loch Ness. Occult covers ritual and supernatural legends: Ouija, Light as a Feather, Bloody Mary, Tarot, and Hotel California.”,
+          “Each emblem had to be legible at small scale, work in a limited color palette appropriate for decal production, and carry enough visual specificity to be recognizable to someone familiar with the legend without requiring an explanation. The design system needed to feel cohesive across four wildly different subject matter categories.”,
         ],
         images: [
           {
-            src: "/projects/urban-expressions/urban-overview.png",
-            alt: "Full patch series, grid of completed designs",
-            caption: "The completed patch series",
-            annotation: "The full grid of completed designs shows the visual system at work: consistent use of border treatments, text placement, and shielding conventions creates family resemblance across widely different subject matter. The color range is deliberately broad across the series (each unit owned its own color identity) while remaining within the palette constraints of embroidery thread production.",
+            src: “/projects/urban-expressions/urban-overview.png”,
+            alt: “Full Urban Expressions emblem series, all four chapters”,
+            caption: “The complete emblem series”,
+            annotation: “All four chapters of the emblem series side by side. The visual system uses consistent structural conventions — circular containment, emblem proportions, text treatment — that create family resemblance across Alien Conspiracy, Local & Regional, Cryptozoology, and Occult without flattening the distinct character of each legend category.”,
             magnify: true,
           },
         ],
@@ -1088,7 +1104,7 @@ const _projects: Project[] = [
     role: "Designer & Developer",
     period: "2013â€“2018",
     description:
-      "A collection of web design, branding, and graphic design work from the earlier part of my career: bespoke client websites designed and built at Tribeswell LLC, brand identity projects, academic design work from my MFA and BFA programs, and personal projects spanning interaction design, 3D, and publication design.",
+      "A collection of web design, branding, and graphic design work from the earlier part of my career: bespoke client websites designed and built at Tribeswell LLC, brand identity projects, academic design work from my MFA program, and personal projects spanning interaction design, 3D, and publication design.",
     highlights: [
       "All client websites were bespoke designs, no templates, each built to client-specific creative brief and requirements",
       "WordPress development using custom PHP and SCSS; all handoffs via Git",
@@ -1157,20 +1173,20 @@ const _projects: Project[] = [
             ],
           },
           {
-            title: "The Big Picture",
+            title: "The Reformed Broker / Investment Bros",
             year: "2015",
-            category: "Financial Media — Illustration",
-            description: "Illustrated editorial header for The Reformed Broker's \"The Big Picture\" column. Intricate pen-and-ink style illustration combining clocks, gears, financial instruments, and mechanical typography.",
+            category: "Branding & Web Design",
+            description: "Full brand system and digital work for Ritholtz Wealth Management and affiliated properties: logo development for The Reformed Broker using vintage postcard letterform illustration, applied site header, The Big Picture editorial illustration, Liftoff robo-advisor web app design, Liftoff logo exploration, and A Wealth of Common Sense identity.",
             src: "/projects/web-graphics/invest.png",
             alt: "The Big Picture editorial illustration for The Reformed Broker",
-          },
-          {
-            title: "Liftoff by Ritholtz",
-            year: "2015",
-            category: "Web App",
-            description: "Web application design for Liftoff, a robo-advisor product by Ritholtz Wealth Management. Clean, minimal UI with the illustrated rocket mark as the hero element.",
-            src: "/projects/web-graphics/broker-liftoff-app.png",
-            alt: "Liftoff by Ritholtz Wealth Management web app",
+            images: [
+              { src: "/projects/web-graphics/broker-logo-dev.jpg", alt: "The Reformed Broker logo development — vintage postcard letterform illustration", caption: "Reformed Broker — Logo Development" },
+              { src: "/projects/web-graphics/broker-header.png", alt: "The Reformed Broker website header with city skyline", caption: "Reformed Broker — Site Header" },
+              { src: "/projects/web-graphics/invest.png", alt: "The Big Picture editorial illustration", caption: "The Big Picture — Editorial Illustration" },
+              { src: "/projects/web-graphics/broker-liftoff-logo.jpg", alt: "Liftoff logo exploration — three rocket and type variations", caption: "Liftoff — Logo Exploration" },
+              { src: "/projects/web-graphics/broker-liftoff-app.png", alt: "Liftoff by Ritholtz Wealth Management web app", caption: "Liftoff — Web App" },
+              { src: "/projects/web-graphics/broker-commonsense.png", alt: "A Wealth of Common Sense brand logo with maze icon", caption: "A Wealth of Common Sense — Identity" },
+            ],
           },
         ],
       },
@@ -1180,38 +1196,6 @@ const _projects: Project[] = [
           "Brand identity projects ranged from single-mark commissions to full identity systems with style guides, logo variations, and collateral design. Each started from a client brief and moved through multiple concept directions before refinement.",
         ],
         gallery: [
-          {
-            title: "The Reformed Broker — Logo Development",
-            year: "2015",
-            category: "Logo Design",
-            description: "Logo development for The Reformed Broker financial blog. The concept drew from vintage large-letter travel postcards, filling each letterform with illustrated Wall Street and financial imagery.",
-            src: "/projects/web-graphics/broker-logo-dev.jpg",
-            alt: "The Reformed Broker logo development showing vintage postcard influence and illustrated letterform variations",
-          },
-          {
-            title: "The Reformed Broker — Site Header",
-            year: "2015",
-            category: "Logo Application",
-            description: "Final logo applied to the website header with a custom city skyline silhouette. The illustrated BROKER letters sit against a blue Manhattan skyline, grounding the financial media brand in place.",
-            src: "/projects/web-graphics/broker-header.png",
-            alt: "The Reformed Broker website header with city skyline",
-          },
-          {
-            title: "Liftoff — Logo Exploration",
-            year: "2015",
-            category: "Logo Design",
-            description: "Logo exploration for Liftoff, a Ritholtz Wealth Management product. Three directions explored combinations of rocket illustration and typographic treatments before arriving at the final mark.",
-            src: "/projects/web-graphics/broker-liftoff-logo.jpg",
-            alt: "Liftoff logo exploration showing three rocket and type variations",
-          },
-          {
-            title: "A Wealth of Common Sense",
-            year: "2015",
-            category: "Logo & Brand Identity",
-            description: "Brand identity for A Wealth of Common Sense, a financial blog by Ben Carlson. The maze icon references navigating complexity; the typographic system pairs a structured icon with a confident editorial wordmark.",
-            src: "/projects/web-graphics/broker-commonsense.png",
-            alt: "A Wealth of Common Sense brand logo with maze icon",
-          },
           {
             title: "New Moon Cottage",
             year: "2014",
@@ -1249,7 +1233,7 @@ const _projects: Project[] = [
       {
         heading: "Academic & Personal Work",
         paragraphs: [
-          "Academic projects from my MFA at Indiana University and BFA at Purdue Fort Wayne, spanning interaction design, 3D environment design, publication design, and motion. These projects were less constrained by client requirements and more by research questions and formal design exploration.",
+          "Academic projects from my MFA at Indiana University, spanning interaction design, 3D environment design, publication design, and motion. These projects were less constrained by client requirements and more by research questions and formal design exploration.",
         ],
         gallery: [
           {

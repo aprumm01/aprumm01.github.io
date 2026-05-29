@@ -32,7 +32,7 @@ export default function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-6 py-16 md:py-32">
       <div className="mb-16 flex items-center gap-4">
-        <span className="text-xs tracking-widest uppercase text-[#333]">02</span>
+        <span className="text-xs tracking-widest uppercase text-[#777]">02</span>
         <div className="h-px flex-1 bg-[#1a1a1a]" />
         <span className="text-sm tracking-widest uppercase text-[#777]">About</span>
       </div>
