@@ -4,6 +4,7 @@ import Nav from "@/app/components/Nav";
 import AnnotatedImage from "@/app/components/AnnotatedImage";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import { projects, getProject, getAdjacentProjects, type GalleryItem } from "@/app/lib/projects";
+import GalleryCard from "@/app/components/GalleryCard";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -217,34 +218,7 @@ export default async function CaseStudyPage({
                   {section.gallery && section.gallery.length > 0 && (
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {section.gallery.map((piece: GalleryItem) => (
-                        <div
-                          key={piece.title}
-                          className="group overflow-hidden rounded-lg border border-[#1a1a1a] bg-[#0e0e0e]"
-                        >
-                          <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                              src={piece.src}
-                              alt={piece.alt}
-                              className="h-full w-full object-cover object-top opacity-70 transition-opacity duration-300 group-hover:opacity-90"
-                              loading="lazy"
-                            />
-                          </div>
-                          <div className="p-4">
-                            <div className="flex items-start justify-between gap-2 mb-1">
-                              <p className="text-sm text-[#ccc] leading-snug font-[family-name:var(--font-playfair)]">
-                                {piece.title}
-                              </p>
-                              <span className="shrink-0 text-xs text-[#777] pt-0.5">{piece.year}</span>
-                            </div>
-                            <p className="text-xs tracking-wide text-[#777] uppercase mb-2">
-                              {piece.category}
-                            </p>
-                            <p className="text-sm text-[#999] leading-relaxed">
-                              {piece.description}
-                            </p>
-                          </div>
-                        </div>
+                        <GalleryCard key={piece.title} piece={piece} />
                       ))}
                     </div>
                   )}
