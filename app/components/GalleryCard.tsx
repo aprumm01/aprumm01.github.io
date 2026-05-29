@@ -68,17 +68,27 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Left: scrollable image(s) column */}
-            <div className="flex-1 flex flex-col gap-8 overflow-y-auto">
+            <div className={`flex-1 flex flex-col gap-8 overflow-y-auto${(piece.images ?? [piece]).length === 1 ? " justify-center" : ""}`}>
               {(piece.images ?? [{ src: piece.src, alt: piece.alt }]).map((img: GalleryImage) => (
-                <div key={img.src}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full rounded-lg object-contain"
-                  />
+                <div key={img.src} className={img.narrow ? "flex flex-col items-center" : undefined}>
+                  {img.youtubeId ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${img.youtubeId}`}
+                      title={img.alt}
+                      className="w-full rounded-lg aspect-video"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className={`rounded-lg object-contain ${img.narrow ? "w-full max-w-[280px]" : "w-full"}`}
+                    />
+                  )}
                   {img.caption && (
-                    <p className="mt-2 text-xs tracking-wide text-[#777]">{img.caption}</p>
+                    <p className={`mt-2 text-xs tracking-wide text-[#777] ${img.narrow ? "text-center" : ""}`}>{img.caption}</p>
                   )}
                 </div>
               ))}
