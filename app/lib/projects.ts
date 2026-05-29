@@ -784,17 +784,17 @@ const _projects: Project[] = [
     tags: ["Research Operations", "AI Tools", "Data Pipeline", "Synthetic Users", "Design Evaluation", "Agent-Based Modeling"],
     images: [
       {
-        src: "/projects/synthetic-user-tool/agent-network.svg",
+        src: "/projects/synthetic-user-tool/agent-network.png",
         alt: "Synthetic user agent-based model, network topology of synthetic personas",
         annotation: "The agent-based model topology: each node is a synthetic persona generated from real customer feedback. Personas are interconnected through shared behavioral attributes, and each receives the same design stimulus during an evaluation round. The network structure mirrors how real user segments influence and inform each other.",
       },
       {
-        src: "/projects/synthetic-user-tool/pipeline-flow.svg",
+        src: "/projects/synthetic-user-tool/pipline.png",
         alt: "Synthetic User Tool data pipeline, five-stage monthly cadence",
         annotation: "The five-stage pipeline: raw Qualtrics export â†’ AI-powered content analysis â†’ GitHub corpus aggregation â†’ synthetic persona generation â†’ multi-criteria design evaluation. The only manual step is the Day 1 export, which takes about five minutes. Everything else runs on demand.",
       },
       {
-        src: "/projects/synthetic-user-tool/persona-grid.svg",
+        src: "/projects/synthetic-user-tool/synth user persona.png",
         alt: "Synthetic persona corpus, six agent segments with attributes",
         annotation: "A sample of the synthetic persona corpus: six agent types segmented by market, device, and booking frequency. Each persona carries a weighted influence score derived from their share of the feedback corpus. SP-06 (Power User Hub) serves as the central evaluation baseline across all design assessments.",
       },
@@ -822,7 +822,7 @@ const _projects: Project[] = [
         ],
         images: [
           {
-            src: "/projects/synthetic-user-tool/pipeline-flow.svg",
+            src: "/projects/synthetic-user-tool/pipline.png",
             alt: "Synthetic User Tool five-stage data pipeline",
             caption: "The data pipeline: five stages from raw feedback to evaluation",
             annotation: "The pipeline's five stages run at different cadences: data collection and analysis happen monthly, corpus aggregation is continuous, and persona generation and design evaluation run on demand. The only bottleneck is the five-minute manual export step; everything else is automated.",
@@ -837,7 +837,7 @@ const _projects: Project[] = [
         ],
         images: [
           {
-            src: "/projects/synthetic-user-tool/agent-network.svg",
+            src: "/projects/synthetic-user-tool/agent-network.png",
             alt: "Agent-based model network, synthetic personas as interconnected agents",
             caption: "The agent-based simulation network",
             annotation: "The network topology shows six synthetic persona agents, each connected to clusters of feedback data nodes that shaped their attributes. During an evaluation round, all agents receive the same design stimulus simultaneously. SP-06 (Power User Hub) sits at the center of the network because that segment generates the highest-signal feedback and carries the highest influence weight in multi-agent consensus scoring.",
@@ -866,7 +866,7 @@ const _projects: Project[] = [
         ],
         images: [
           {
-            src: "/projects/synthetic-user-tool/persona-grid.svg",
+            src: "/projects/synthetic-user-tool/synth user persona.png",
             alt: "Synthetic persona corpus, agent segmentation matrix",
             caption: "The synthetic persona corpus, segmented by market, device, and frequency",
             annotation: "Six synthetic personas derived from the real feedback corpus, each with weighted influence scores proportional to their share of monthly comments. The personas aren't invented archetypes; they emerge from the data. SP-06 (Power User Hub) carries a 1.00 influence weight because that segment generates the highest volume of high-signal feedback.",
