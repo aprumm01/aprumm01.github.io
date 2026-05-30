@@ -1157,10 +1157,6 @@ const _projects: Project[] = [
             alt: "Urban Expressions thesis book interior spread",
             annotation: "Interior spread of the thesis publication. The book design had to hold both dense academic writing and full-page emblem illustrations without letting either feel like an afterthought.",
           },
-          {
-            src: "/projects/urban-expressions/ue-thesis-02.png",
-            alt: "Urban Expressions thesis publication detail",
-          },
         ],
       },
       {
