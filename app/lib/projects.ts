@@ -68,10 +68,10 @@ const _projects: Project[] = [
   {
     slug: "sap-concur",
     number: "01",
-    category: "Enterprise Product Design Â· SAP Concur",
+    category: "Enterprise Product Design · SAP Concur",
     title: "Corporate Travel & AI",
     role: "Principal UX Designer, Design Lead, Travel UX",
-    period: "2021â€“Present",
+    period: "2021–Present",
     description:
       "Design lead for SAP Concur's Travel UX team, a platform serving tens of millions of business travelers across 103 countries with 49.6% market share in T&E software. Since 2023 I've led AI interaction design for SAP Joule across all four booking verticals. In my earlier role as Sr. UX Design Specialist, I owned the full air booking flow: search, multi-fare display, seat selection, fare merchandising, and review & book.",
     highlights: [
@@ -79,7 +79,7 @@ const _projects: Project[] = [
       "Led \"Tell Concur About Your Trip,\" a net-new multi-vertical booking workflow with new design system components",
       "Designed the multi-fare display architecture using progressive disclosure to balance traveler comprehension with information density",
       "Scaled the multi-fare interaction system across hotel, rental car, and rail, creating a unified architecture across the full travel ecosystem",
-      "20+ external customer engagement sessions; 10â€“20 alpha-phase internal usability tests; WCAG 2.1 AA compliance across the air booking flow",
+      "20+ external customer engagement sessions; 10–20 alpha-phase internal usability tests; WCAG 2.1 AA compliance across the air booking flow",
     ],
     tags: ["AI Interaction Design", "Conversational UI", "Enterprise UX", "Design Systems", "Accessibility", "Usability Testing"],
     images: [
@@ -119,7 +119,7 @@ const _projects: Project[] = [
         paragraphs: [
           "The multi-fare display was the first major design challenge. The core tension: airline fares carry a lot of information (price, flexibility, seat, bags, status benefits) but traveler attention in a booking flow is limited. Drawing on rank-order research from a prior team, I designed a progressive disclosure model: the primary view leads with the most decision-relevant information, and details surface on demand.",
           "The design went through multiple iterations. Early versions erred toward information richness, which worked for power travelers but created cognitive overload for infrequent business travelers. I pushed for a simpler primary view. That tension is real in enterprise products; balancing traveler comprehension against stakeholder feature requests is part of the job, and not every argument is yours to win.",
-          "Alongside the fare display, I redesigned the seat map interaction model and led WCAG 2.1 AA accessibility compliance across the entire air booking flow, a requirement for enterprise customers with strict procurement standards. Over two years I ran 20+ external customer engagement sessions using moderated interviews, usability studies, focus groups, and hybrid contextual inquiry, plus 10â€“20 alpha-phase internal usability tests.",
+          "Alongside the fare display, I redesigned the seat map interaction model and led WCAG 2.1 AA accessibility compliance across the entire air booking flow, a requirement for enterprise customers with strict procurement standards. Over two years I ran 20+ external customer engagement sessions using moderated interviews, usability studies, focus groups, and hybrid contextual inquiry, plus 10–20 alpha-phase internal usability tests.",
         ],
         images: [
           {
@@ -206,10 +206,10 @@ const _projects: Project[] = [
   {
     slug: "multi-fare-display",
     number: "02",
-    category: "Interaction Design Â· SAP Concur",
+    category: "Interaction Design · SAP Concur",
     title: "Multi-Fare Display",
     role: "Sr. UX Design Specialist",
-    period: "2021â€“2023",
+    period: "2021–2023",
     description:
       "The multi-fare display is the central decision surface in SAP Concur's air booking flow, where corporate travelers compare fare classes, understand included services, and make a purchase decision that must comply with company travel policy. I originated the information architecture and progressive disclosure model and led research through the project's foundational phases; as the pattern matured, additional designers joined and the work scaled across all four travel verticals.",
     highlights: [
@@ -245,7 +245,7 @@ const _projects: Project[] = [
     overviewStats: [
       { value: "4", label: "verticals scaled to" },
       { value: "20+", label: "customer sessions" },
-      { value: "10â€“20", label: "alpha usability tests" },
+      { value: "10–20", label: "alpha usability tests" },
       { value: "WCAG 2.1 AA", label: "accessibility standard" },
     ],
     sections: [
@@ -363,10 +363,10 @@ const _projects: Project[] = [
   {
     slug: "tcayt",
     number: "03",
-    category: "Enterprise Product Design Â· SAP Concur",
+    category: "Enterprise Product Design · SAP Concur",
     title: "Tell Concur About Your Trip",
     role: "Principal UX Designer, Design Lead",
-    period: "2023â€“Present",
+    period: "2023–Present",
     description:
       "Tell Concur About Your Trip (TCAYT) is a net-new multi-vertical booking workflow in SAP Concur that lets corporate travelers plan and search all segments of a trip together, rather than visiting each booking vertical separately. I led end-to-end UX design from discovery through production: the segment-declaration entry point, the two-panel trip builder, coordinated search defaults, and the trip-level finalize view with policy and budget visibility.",
     highlights: [
@@ -524,10 +524,10 @@ const _projects: Project[] = [
   {
     slug: "atpco",
     number: "04",
-    category: "UX Research & Workshop Facilitation Â· ATPCO",
+    category: "UX Research & Workshop Facilitation · ATPCO",
     title: "Airline Industry UX Practice",
     role: "Sr. UX Researcher & Design Sprint Facilitator",
-    period: "2018â€“2021",
+    period: "2018–2021",
     description:
       "ATPCO is the airline industry's pricing and data infrastructure backbone, a B2B company whose products are used by pricing analysts at 490+ airlines globally. I led UX research and design across ATPCO's product portfolio, establishing the user research practice, contributing core design system components alongside a UX engineer, running Design Sprints across product teams, and designing analyst tools that replaced raw data grids with plain-language interfaces.",
     highlights: [
@@ -622,10 +622,10 @@ const _projects: Project[] = [
   {
     slug: "cowans",
     number: "05",
-    category: "UX Design & Development Â· Tribeswell",
+    category: "UX Design & Development · Tribeswell",
     title: "Cowan's Collections",
     role: "Web Designer & Developer",
-    period: "2014â€“2015",
+    period: "2014–2015",
     description:
       "A bespoke platform design for Cowan's Auctions, a regional fine art and antiques auction house in Cincinnati. The core problem: collectors: typically older adults: accumulate objects with deep personal meaning, but as collections grow, their families lose track of what exists, what it's worth, and why it matters. When the collector can no longer manage the collection or passes away, the family is left without the context to make decisions. The platform needed to serve not just the collector, but the family who inherits the collection, the traders and growing collectors looking to acquire, researchers needing expert access, auction houses, and casual browsers.",
     highlights: [
@@ -744,10 +744,10 @@ const _projects: Project[] = [
   {
     slug: "ebay",
     number: "06",
-    category: "Interaction Design Â· Academic",
+    category: "Interaction Design · Academic",
     title: "eBay Mobile Redesign",
     role: "UX Design, MFA Coursework",
-    period: "2017â€“2018",
+    period: "2017–2018",
     description:
       "A concept redesign of the eBay mobile purchase experience completed during my MFA at Indiana University. The project focused on a persistent UX problem: the post-purchase moment is flat and anticlimactic despite the emotional energy buyers invest in bidding and winning. The proposed redesign introduced a lightweight achievement system, surfacing badges, purchase milestones, and seller trust signals at the confirmation screen to reinforce the win.",
     highlights: [
@@ -823,15 +823,15 @@ const _projects: Project[] = [
   {
     slug: "synthetic-user-tool",
     number: "07",
-    category: "Research Operations Â· SAP Concur",
+    category: "Research Operations · SAP Concur",
     title: "Synthetic User Tool",
     role: "Principal UX Designer, Solo Build",
-    period: "2023â€“Present",
+    period: "2023–Present",
     description:
       "An internal research operations system built entirely from scratch: a full data pipeline that transforms raw customer feedback into segmentable AI personas and structured design evaluation. Built solo using Claude Code, ChatGPT, and GitHub. The design team actively uses it across product lines. The tool's own interface is proprietary and not shown here.",
     highlights: [
       "Sole builder: no engineering sprint, no roadmap slot, no organizational buy-in required to ship",
-      "Full pipeline: raw feedback spreadsheet â†’ monthly content analysis â†’ GitHub â†’ combined dataset â†’ segmentable synthetic personas",
+      "Full pipeline: raw feedback spreadsheet → monthly content analysis → GitHub → combined dataset → segmentable synthetic personas",
       "Evaluation layer contrasts synthetic user assessments against real design criteria: WCAG, Nielsen Norman heuristics, SAP Fiori, iOS HIG, and Material Design",
       "Processes ~25,000 feedback comments per month from the product area",
       "Adopted across the design team without a formal rollout",
@@ -846,7 +846,7 @@ const _projects: Project[] = [
       {
         src: "/projects/synthetic-user-tool/pipline.png",
         alt: "Synthetic User Tool data pipeline, five-stage monthly cadence",
-        annotation: "The five-stage pipeline: raw Qualtrics export â†’ AI-powered content analysis â†’ GitHub corpus aggregation â†’ synthetic persona generation â†’ multi-criteria design evaluation. The only manual step is the Day 1 export, which takes about five minutes. Everything else runs on demand.",
+        annotation: "The five-stage pipeline: raw Qualtrics export → AI-powered content analysis → GitHub corpus aggregation → synthetic persona generation → multi-criteria design evaluation. The only manual step is the Day 1 export, which takes about five minutes. Everything else runs on demand.",
       },
       {
         src: "/projects/synthetic-user-tool/synth-user-persona.png",
@@ -944,10 +944,10 @@ const _projects: Project[] = [
   {
     slug: "ngs",
     number: "08",
-    category: "Product Design Â· ATPCO",
+    category: "Product Design · ATPCO",
     title: "Next Gen Storefront",
     role: "UX Designer",
-    period: "2019â€“2021",
+    period: "2019–2021",
     description:
       "The Next Gen Storefront (NGS) was ATPCO's proof-of-concept for a modernized fare presentation layer, rethinking how airlines display and differentiate their products to booking engines and travelers. I led UX design from initial concept through tested proof of concept, working directly with ATPCO's airline partners to validate the interaction model before any engineering investment.",
     highlights: [
@@ -1082,7 +1082,7 @@ const _projects: Project[] = [
   {
     slug: "urban-expressions",
     number: "09",
-    category: "Illustration & Graphic Design Â· MFA Thesis",
+    category: "Illustration & Graphic Design · MFA Thesis",
     title: "Urban Expressions",
     role: "Illustrator & Graphic Designer, MFA Thesis",
     period: "2017",
