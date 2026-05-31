@@ -20,7 +20,7 @@ const META = {
   description:
     "Principal UX Designer at SAP Concur. 10 years of design experience spanning enterprise travel products, web design, and front-end development. PhD candidate in Informatics at Indiana University.",
   url: "https://aprumm01.github.io",
-  image: "/projects/sap-concur/search-results.jpg",
+  image: "/meta-tag.jpg",
 };
 
 export const metadata: Metadata = {
