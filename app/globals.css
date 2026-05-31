@@ -98,6 +98,25 @@ body {
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 
+/* Gallery lightbox scrollbar — dark and minimal */
+.gallery-scroll-col::-webkit-scrollbar {
+  width: 3px;
+}
+.gallery-scroll-col::-webkit-scrollbar-track {
+  background: transparent;
+}
+.gallery-scroll-col::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 2px;
+}
+.gallery-scroll-col::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+.gallery-scroll-col {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a transparent;
+}
+
 /* Custom scrollbar for gallery lightbox */
 .scrollbar-thin::-webkit-scrollbar {
   width: 8px;

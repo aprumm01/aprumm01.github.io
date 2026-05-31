@@ -7,11 +7,24 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
 
   useEffect(() => {
     if (!open) return;
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    document.body.style.overflowY = "scroll";
+
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("keydown", onKey);
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+      window.scrollTo(0, scrollY);
     };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
   }, [open]);
 
   return (
@@ -64,11 +77,11 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
           </button>
 
           <div
-            className="flex flex-col md:flex-row max-w-6xl w-full h-[85vh] gap-8 md:gap-14 cursor-default"
+            className="flex flex-col md:flex-row max-w-7xl w-full h-[85vh] gap-0 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Left: scrollable image(s) column */}
-            <div className={`flex-1 flex flex-col gap-8 overflow-y-auto${(piece.images ?? [piece]).length === 1 ? " justify-center" : ""}`}>
+            <div className={`gallery-scroll-col flex-1 flex flex-col gap-8 overflow-y-auto pr-0 md:pr-8${(piece.images ?? [piece]).length === 1 ? " justify-center" : ""}`}>
               {(piece.images ?? [{ src: piece.src, alt: piece.alt }]).map((img: GalleryImage) => (
                 <div key={img.src} className={img.narrow ? "flex flex-col items-center" : undefined}>
                   {img.youtubeId ? (
@@ -95,7 +108,7 @@ export default function GalleryCard({ piece }: { piece: GalleryItem }) {
             </div>
 
             {/* Right: sticky details */}
-            <div className="w-full md:w-80 md:shrink-0 flex flex-col gap-5 mt-6 md:mt-0 md:sticky md:top-0 md:self-start md:h-fit">
+            <div className="w-full md:w-80 md:shrink-0 flex flex-col gap-5 mt-6 md:mt-0 md:sticky md:top-0 md:self-start md:h-fit md:pl-6 md:border-l md:border-[#1f1f1f]">
               <div>
                 <p className="text-xs tracking-widest uppercase text-[#777] mb-2">
                   {piece.category}
