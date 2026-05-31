@@ -5,6 +5,7 @@
   annotation?: string;
   magnify?: boolean;
   magnifyZoom?: number;
+  magnifyLensWidth?: number;
 }
 
 export interface Stat {
@@ -34,6 +35,7 @@ export interface ProjectVideo {
   src: string;
   caption?: string;
   annotation?: string;
+  body?: string;
   poster?: string;
 }
 
@@ -267,6 +269,8 @@ const _projects: Project[] = [
             caption: "Research insights map",
             annotation: "A synthesis of research findings for road warriors and infrequent travelers, including personas, user journeys, and actionable recommendations. The two traveler types have fundamentally different needs: road warriors optimize for loyalty and speed; infrequent travelers need more guidance at each decision point. The fare display had to serve both without becoming a tool only power users could navigate.",
             magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
           },
           {
             src: "/projects/multi-fare-display/mfd-card-sort.png",
@@ -281,6 +285,8 @@ const _projects: Project[] = [
             caption: "Rank-order research: booking factor priorities",
             annotation: "Results from rank-order research across business travelers, showing relative priority weighting for both flight and hotel booking factors. The top cluster (price, stops, policy status, departure/arrival times) established the first-view attribute set for the fare display. Mid-tier factors (seat selection, loyalty, amenities) mapped to the expanded card view. Lower-priority attributes were surfaced in fare details.",
             magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
           },
           {
             src: "/projects/multi-fare-display/card-sort-research.png",
@@ -311,6 +317,8 @@ const _projects: Project[] = [
             caption: "Search results: collapsed fare rows",
             annotation: "The production search results page showing three flights with fare columns in the default collapsed state. Each row shows the airline, times, and stops on the left; fare family columns with included services and price on the right. Travelers can compare across both flights and fare tiers on a single page.",
             magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-departing-open.jpg",
@@ -318,6 +326,8 @@ const _projects: Project[] = [
             caption: "Search results: expanded row",
             annotation: "The Delta row expanded: the left panel reveals full flight segment details, layover times, aircraft type, and a seat map preview link. The fare columns expand to show full terms: bags, changes, refundability: while the other flights remain collapsed for easy comparison. This is progressive disclosure at the row level: more detail on demand without leaving the results page.",
             magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-rnb-details.png",
@@ -325,6 +335,8 @@ const _projects: Project[] = [
             caption: "Review & Book: fare details",
             annotation: "The Flight and Fare Details modal on the Review and Book page, surfacing the full fare terms for the selected option: seat pitch, baggage, flexibility, onboard experience, and carrier precautions. This is the third disclosure level: complete fare information shown only after the traveler has committed to a choice and needs confirmation before purchasing.",
             magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
           },
           {
             src: "/projects/multi-fare-display/mfd-air-merch.png",
@@ -332,6 +344,8 @@ const _projects: Project[] = [
             caption: "Fare merchandising in context",
             annotation: "The fare display shown at SAP Spend Connect Live, with editorial fare merchandising cards at the top and the full multi-fare search results below. The merchandising cards surface airline brand stories and fare highlights; the results list lets travelers act on them directly. The expanded American Airlines row shows the columns model with icon-based attribute rows for seats, bags, and flexibility.",
             magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
           },
         ],
       },
@@ -340,15 +354,6 @@ const _projects: Project[] = [
         paragraphs: [
           "Once validated for air, the multi-fare architecture was extended to hotel rates, rental car tiers, and rail fare classes, with additional designers contributing as the work expanded. Each vertical has different attributes (hotels have cancellation policy and breakfast inclusion; cars have coverage tiers and fuel options; rail has seat class and flex vs. non-flex) but the underlying progressive disclosure model transferred cleanly.",
           "Scaling the pattern required abstracting the component architecture in a way that could flex across different attribute sets without fracturing the visual language. This work became the foundation for a Figma component library of travel-specific patterns, extending SAP Fiori with the domain-specific components that the design system team hadn't built.",
-        ],
-        images: [
-          {
-            src: "/projects/sap-concur/search-results.jpg",
-            alt: "Air search results, fare comparison in context",
-            caption: "Search results with fare comparison in context",
-            annotation: "The full search results view showing the multi-fare display in its natural context, within a list of flight options, each showing fare family tiers inline. Travelers can compare fare classes across flights on the same page rather than having to open each flight individually.",
-            magnify: true,
-          },
         ],
       },
     ],
@@ -476,14 +481,15 @@ const _projects: Project[] = [
       {
         heading: "Usability Validation",
         paragraphs: [
-          "I ran usability testing across the full workflow to validate the segment-builder pattern and the match flight defaults. Key findings shaped several design changes: the left-rail segment inventory needed clearer in-progress vs. complete state differentiation; the dashed field treatment for matched values needed an explicit label explaining the source of the pre-filled data; and the entry dialog needed validation feedback for incompatible segment combinations before the traveler hit the Continue button.",
-          "The overall task completion rate and time-on-task comparisons against the prior per-vertical flow demonstrated a meaningful reduction in booking time for multi-segment trips, which represented the core business case for the feature.",
+          "Usability studies ran across the full TCAYT workflow and all travel modes (air, hotel, car, and rail) to validate mental model and expectations. TCAYT introduced a net-new interaction pattern: booking multiple travel modes together in a single workflow, which was fundamentally different from the per-vertical single-search flows customers were accustomed to. That shift created contested entry points and genuine uncertainty about what the feature was and how it worked. Studies tested variations for button placement and overall layout to find the arrangement that matched traveler expectations.",
+          "The match dates feature lets travelers check a single checkbox to apply flight dates and destination to hotel and rental car segments automatically. This is particularly useful for international trips and overnight flights, where departure and arrival dates differ and manual entry is error-prone. The match logic ensures hotel and car reservations land on the correct dates without the traveler having to calculate or re-enter them.",
         ],
         videos: [
           {
             src: "/projects/tcayt/usability-1.mp4",
             caption: "Usability session excerpt",
-            annotation: "An excerpt from a moderated usability session evaluating the trip builder. The session focused on the segment configuration flow and the Match Flight Booking interaction.",
+            annotation: "The participant is uncertain whether he needs to search one segment at a time or all at once. The moment he presses the action button and sees the first booking open, the product flow becomes clear.",
+            body: "This session focused on the placement of the final action button, tested across three iterations. The original design followed design system guidelines and placed the button in the header bar at the top right; participants consistently said that was not the expected location for a primary action. A modal approach moved the button to the bottom right of the dialog, but that put it too far from the travel mode list anchored to the left side of the screen. Switching to a full-page layout with the action on the left tested significantly better than either prior version.",
             poster: "/projects/tcayt/page-filled.png",
           },
         ],

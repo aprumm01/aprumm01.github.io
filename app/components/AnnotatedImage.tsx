@@ -8,6 +8,7 @@ interface Props {
   annotation?: string;
   magnify?: boolean;
   magnifyZoom?: number;
+  magnifyLensWidth?: number;
 }
 
 const ZOOM = 2.5;
@@ -23,7 +24,7 @@ interface MagState {
   lensH: number;
 }
 
-export default function AnnotatedImage({ src, alt, caption, annotation, magnify, magnifyZoom }: Props) {
+export default function AnnotatedImage({ src, alt, caption, annotation, magnify, magnifyZoom, magnifyLensWidth }: Props) {
   const [open, setOpen] = useState(false);
   const [mag, setMag] = useState<MagState | null>(null);
   const lightboxImgRef = useRef<HTMLImageElement>(null);
@@ -68,8 +69,10 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify,
     const relY = e.clientY - contentTop;
 
     const zoom = magnifyZoom ?? ZOOM;
-    // Scale lens size inversely with zoom — lower zoom gets a larger lens window
-    const lensW = Math.min(Math.round(contentW + 80), Math.round(500 * ZOOM / zoom), window.innerWidth - 40);
+    // Scale lens size inversely with zoom — lower zoom gets a larger lens window; magnifyLensWidth overrides
+    const lensW = magnifyLensWidth
+      ? Math.min(magnifyLensWidth, window.innerWidth - 40)
+      : Math.min(Math.round(contentW + 80), Math.round(500 * ZOOM / zoom), window.innerWidth - 40);
     const lensH = Math.round(lensW * 0.65);
 
     // Center the lens on the cursor, clamped to stay fully within the viewport

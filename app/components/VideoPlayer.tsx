@@ -6,10 +6,11 @@ interface Props {
   src: string;
   caption?: string;
   annotation?: string;
+  body?: string;
   poster?: string;
 }
 
-export default function VideoPlayer({ src, caption, annotation, poster }: Props) {
+export default function VideoPlayer({ src, caption, annotation, body, poster }: Props) {
   const [open, setOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -71,6 +72,12 @@ export default function VideoPlayer({ src, caption, annotation, poster }: Props)
           </div>
         )}
       </div>
+
+      {body && (
+        <p className="mt-6 text-base leading-relaxed text-[#aaa] font-[family-name:var(--font-inter)]">
+          {body}
+        </p>
+      )}
 
       {/* Lightbox */}
       {open && (
