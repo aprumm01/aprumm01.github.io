@@ -32,13 +32,29 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify,
   useEffect(() => {
     if (!open) {
       setMag(null);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
       return;
     }
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    document.body.style.overflowY = "scroll";
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
     document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
+    return () => {
+      document.removeEventListener("keydown", handler);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+      window.scrollTo(0, scrollY);
+    };
   }, [open]);
 
   const handleLightboxMouseMove = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
@@ -72,7 +88,7 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify,
     // Scale lens size inversely with zoom — lower zoom gets a larger lens window; magnifyLensWidth overrides
     const lensW = magnifyLensWidth
       ? Math.min(magnifyLensWidth, window.innerWidth - 40)
-      : Math.min(Math.round(contentW + 80), Math.round(500 * ZOOM / zoom), window.innerWidth - 40);
+      : Math.min(Math.round(contentW + 80), Math.round(800 * ZOOM / zoom), window.innerWidth - 40);
     const lensH = Math.round(lensW * 0.65);
 
     // Center the lens on the cursor, clamped to stay fully within the viewport
@@ -133,7 +149,7 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify,
           role="dialog"
           aria-modal="true"
           aria-label={`Full size view: ${alt}`}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/95 p-6 cursor-zoom-out"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-6 cursor-zoom-out"
           onClick={() => setOpen(false)}
         >
           <button
@@ -150,26 +166,34 @@ export default function AnnotatedImage({ src, alt, caption, annotation, magnify,
             </p>
           )}
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            ref={lightboxImgRef}
-            src={src}
-            alt={alt}
-            className="max-h-[80vh] max-w-[90vw] rounded-lg object-contain"
-            style={{ cursor: magnify ? "crosshair" : "default" }}
+          <div
+            className="flex flex-col md:flex-row max-w-7xl w-full h-[85vh] gap-0 cursor-default"
             onClick={(e) => e.stopPropagation()}
-            onMouseMove={magnify ? handleLightboxMouseMove : undefined}
-            onMouseLeave={magnify ? handleLightboxMouseLeave : undefined}
-          />
+          >
+            {/* Left: image */}
+            <div className="flex-1 overflow-hidden pr-0 md:pr-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                ref={lightboxImgRef}
+                src={src}
+                alt={alt}
+                className="w-full h-full rounded-lg object-contain"
+                style={{ cursor: magnify ? "crosshair" : "default" }}
+                onMouseMove={magnify ? handleLightboxMouseMove : undefined}
+                onMouseLeave={magnify ? handleLightboxMouseLeave : undefined}
+              />
+            </div>
 
-          {annotation && (
-            <p
-              className="max-w-2xl text-center text-sm leading-relaxed text-[#888]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {annotation}
-            </p>
-          )}
+            {/* Right: annotation */}
+            {annotation && (
+              <div className="w-full md:w-56 md:shrink-0 flex flex-col gap-4 mt-6 md:mt-0 md:pl-6 md:border-l md:border-[#1f1f1f] md:overflow-y-auto md:self-center">
+                <div className="h-px w-8 bg-[#2a2a2a]" />
+                <p className="text-sm leading-relaxed text-[#888] font-[family-name:var(--font-inter)]">
+                  {annotation}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
