@@ -1438,12 +1438,151 @@ const _projects: Project[] = [
       },
     ],
   },
+
+  // ─── Research Vault ────────────────────────────────────────────────────────
+  {
+    slug: "research-vault",
+    number: "11",
+    category: "Systems Design · AI Research Tools",
+    title: "Research Vault",
+    role: "Designer & Developer",
+    period: "2026",
+    description:
+      "Research Vault is a queryable knowledge system built for dissertation literature review, combining a semantic knowledge graph, AI-generated paper summaries, and a natural language query interface across 360+ academic sources. The architecture is a practical template for any organization that needs to surface relevant knowledge from large, unstructured document collections.",
+    highlights: [
+      "Built on Quartz v4 with a semantic graph layer extracted using graphify, an open-source Python tool on GitHub for building knowledge graphs from document collections",
+      "Semantic graph maps 484 nodes (papers, authors, frameworks, methods) and 1,140 edges across 8 topic communities, enabling relationship discovery that flat citation managers cannot provide",
+      "AI-powered Ask Claude panel uses Fuse.js weighted search over 860+ indexed notes, passing top results to Claude Haiku for natural language synthesis with streamed responses and inline citations",
+      "Every paper note enriched with DOI, abstract, and a structured Study Partner summary, creating a uniform secondary index that improves both human recall and search retrieval accuracy",
+      "Three-repo architecture separates the publishing layer (Quartz, GitHub Pages), the data layer (notes index, paper snippets, graph JSON), and the AI query backend (Vercel serverless)",
+    ],
+    tags: ["Systems Design", "AI Integration", "Knowledge Graph", "Research Tools", "Full-Stack", "Quartz", "Python"],
+    images: [
+      {
+        src: "/projects/research-vault/vault-01-home.jpg",
+        alt: "Research Vault homepage showing community hubs, explorer sidebar, and graph view",
+      },
+      {
+        src: "/projects/research-vault/vault-02.jpg",
+        alt: "Ask Claude panel open with a natural language query typed into the input field",
+        annotation: "The Ask Claude panel is embedded directly in the Quartz site. It runs Fuse.js search over 860+ indexed notes, feeds the top results to Claude Haiku, and streams a synthesized response with traceable source citations.",
+      },
+    ],
+    accentColor: "#0d2137",
+    overviewStats: [
+      { value: "360+", label: "paper notes indexed" },
+      { value: "484", label: "graph nodes" },
+      { value: "1,140", label: "semantic edges" },
+      { value: "8", label: "topic communities" },
+    ],
+    sections: [
+      {
+        heading: "The Problem",
+        paragraphs: [
+          "Dissertation literature review means managing hundreds of PDFs, each read once and then difficult to resurface when it is actually needed. Standard citation managers handle bibliographic data well but treat a document collection as a flat list. There is no native way to ask: which papers address this concept, who are the central authors in this sub-field, or what frameworks does this paper share with that one.",
+          "The vault was built to solve a specific research problem, but the underlying architecture addresses a broadly applicable organizational challenge: how do you make a large corpus of unstructured documents queryable, relational, and retrievable by meaning rather than just keyword? Any company or research org sitting on mass amounts of internal documents, reports, or literature faces the same problem.",
+        ],
+      },
+      {
+        heading: "The Architecture",
+        paragraphs: [
+          "The system runs across three layers. The publishing layer is Quartz v4, an open-source digital garden framework that converts Obsidian-compatible markdown notes into a linked website with an interactive knowledge graph visualization. Each paper in the corpus has a corresponding markdown note with structured frontmatter (authors, year, DOI, abstract, tags) and a plain-text Study Partner summary.",
+          "The graph layer is built using graphify, an open-source Python tool available on GitHub that extracts semantic relationships between documents, authors, frameworks, and methods from a document collection. Running graphify against the vault produces a semantic JSON graph: 484 nodes and 1,140 edges organized into 8 topic communities. The graph drives Quartz's node visualization and powers the search index.",
+          "The query layer is a Vercel serverless function that accepts natural language queries, runs Fuse.js weighted search over a pre-built notes index, passes the top results to Claude Haiku with a synthesis prompt, and streams the response back to a custom Quartz component embedded in the site.",
+        ],
+        images: [
+          {
+            src: "/projects/research-vault/vault-03-sts.jpg",
+            alt: "Science and Technology Studies framework page showing overview, key thinkers, linked papers, and backlinks",
+            caption: "Framework node: Science and Technology Studies",
+            annotation: "Each framework and method has its own page generated from the graphify graph. The STS node links to all papers in the corpus that cite or apply it, with backlinks showing the full network of connections. This is what makes the graph navigable rather than just visual.",
+            magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
+          },
+          {
+            src: "/projects/research-vault/vault-04-graph.jpg",
+            alt: "Full-screen knowledge graph showing the STS node selected with 23 radiating connections",
+            caption: "Graph view: node connections",
+            annotation: "The interactive graph view rendered by Quartz shows every node and edge in the corpus. Selecting a node highlights its direct connections. The STS framework node shown here has 23 connections spanning papers, authors, and related frameworks.",
+            magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
+          },
+        ],
+      },
+      {
+        heading: "Obsidian and the Relational Graph",
+        paragraphs: [
+          "The vault notes live in Obsidian, a local markdown editor that treats every wikilink between notes as a graph edge. As papers are read and tagged, Obsidian builds a live network mesh: every connection between a paper and a framework, a framework and an author, or two papers that cite each other becomes a visible edge in the graph. This is the authoring layer — the place where the knowledge is built and the relationships are formed.",
+          "graphify, an open-source Python tool available on GitHub, reads the Obsidian vault and extracts its semantic structure into a typed knowledge graph: papers, authors, frameworks, and methods as distinct node types, with weighted edges derived from co-citation patterns and shared concept tags. That structured output is what powers Quartz's published graph visualization and the search index that VaultQuery runs against. Obsidian provides the relational mesh locally; graphify and Quartz make it queryable and shareable.",
+        ],
+        images: [
+          {
+            src: "/projects/research-vault/obsidian-graphNode.jpg",
+            alt: "Obsidian graph view showing the AI and Future of Work community node selected with connections radiating across the full corpus mesh",
+            caption: "Obsidian graph: AI and Future of Work community",
+            annotation: "The Obsidian graph view shows the full network mesh across all 360+ notes. The 'AI and Future of Work' community node is selected, highlighting every paper, framework, and method connected to it. Each edge is a wikilink authored in a note.",
+            magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
+          },
+          {
+            src: "/projects/research-vault/obsidian-graphNode-2.jpg",
+            alt: "Obsidian graph view showing the GenAI in UX and Design Practice community node with the largest connection cluster in the corpus",
+            caption: "Obsidian graph: GenAI in UX and Design Practice community",
+            annotation: "GenAI in UX and Design Practice is the most densely connected community in the corpus. The node's connection density reflects how much of the literature converges on this topic, which maps directly to the dissertation's primary research area.",
+            magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
+          },
+        ],
+      },
+      {
+        heading: "Ask Claude",
+        paragraphs: [
+          "The Ask Claude panel is embedded in the Quartz site as a custom component. A query triggers Fuse.js search weighted toward title (0.5), abstract (0.3), and note body (0.2). The top five results are retrieved; the top three get full paper snippets (abstract and methods section, approximately 1,400 characters each). These are sent to Claude Haiku with a system prompt that instructs it to synthesize across sources rather than summarize any single one, and to lead with what the evidence says.",
+          "The architecture is intentionally lightweight: no vector database, no embedding pipeline, no persistent session state. Fuse.js lexical search is fast, cheap, and sufficient for a well-structured corpus where notes have consistent frontmatter and Study Partner summaries. Streamed responses arrive via server-sent events and render progressively alongside a citations list, so every claim is traceable to a specific source.",
+        ],
+        images: [
+          {
+            src: "/projects/research-vault/vault-02.jpg",
+            alt: "Ask Claude panel open with a natural language query about AI and UX practice",
+            caption: "Ask Claude: natural language query",
+            annotation: "Fuse.js search over 860+ indexed notes feeds the top results to Claude Haiku. The synthesized response streams progressively; citations are listed separately so every claim maps back to a specific paper.",
+            magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
+          },
+        ],
+      },
+      {
+        heading: "Study Partner Summaries",
+        paragraphs: [
+          "Every paper note has a structured Study Partner summary generated by a custom Claude Code skill built specifically for this project. The skill was designed around what a PhD student actually needs to extract from a paper: research question, theoretical framework, methodology, key findings, limitations, and connections to adjacent work in the literature. Those categories were not arbitrary — they map directly to the manual annotation process a researcher would otherwise do by hand for every paper, taking notes in the margins and building a reading log. The skill automates that process at scale while preserving the structure that makes the output useful for synthesis.",
+          "The summaries are the primary reason the Ask Claude panel works without embeddings. Because every note has a well-structured plain-language equivalent written to a consistent schema, lexical search against the notes index returns semantically relevant results even when the query terms do not appear verbatim in the source paper. The schema also makes the summaries useful outside the query interface — scanning a summary is faster than re-reading a paper, and the consistent structure makes it easy to compare methodology or theoretical framing across sources.",
+        ],
+        images: [
+          {
+            src: "/projects/research-vault/vault-05-article.jpg",
+            alt: "Paper note for Bilgram and Laarmann showing Study Partner summary with key concepts, theoretical framework, and backlinks",
+            caption: "Paper note: Study Partner summary",
+            annotation: "Each note follows a consistent structure: frontmatter with bibliographic metadata, a Study Partner summary covering research question, key concepts, theoretical framework, methodology, findings, and limitations, plus Quartz-generated backlinks to related papers, frameworks, and authors.",
+            magnify: true,
+            magnifyZoom: 3,
+            magnifyLensWidth: 700,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const ORDER = [
   "synthetic-user-tool",
   "multi-fare-display",
   "tcayt",
+  "research-vault",
   "ngs",
   "ebay",
   "cowans",
