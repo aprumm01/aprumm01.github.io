@@ -98,6 +98,19 @@ body {
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 
+/* ── Cursor spotlight ────────────────────────────────────────────────────── */
+.cursor-spotlight {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    circle 500px at var(--mx, -9999px) var(--my, -9999px),
+    rgba(255, 255, 255, 0.015) 0%,
+    transparent 100%
+  );
+}
+
 /* Gallery lightbox scrollbar — dark and minimal */
 .gallery-scroll-col::-webkit-scrollbar {
   width: 3px;
