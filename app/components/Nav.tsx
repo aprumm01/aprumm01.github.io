@@ -9,6 +9,9 @@ const navItems = [
   { label: "Contact", href: "/#contact" },
 ];
 
+// Hidden nav item - same color as background, no hover, just click
+const hiddenNavItem = { label: "Archives", href: "/archives" };
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,6 +64,16 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          {/* Hidden archives link - blends with background */}
+          <li>
+            <Link
+              href={hiddenNavItem.href}
+              className="text-sm text-[#0a0a0a] tracking-wide cursor-default"
+              aria-label="Archives"
+            >
+              {hiddenNavItem.label}
+            </Link>
+          </li>
         </ul>
 
         {/* Mobile hamburger */}
