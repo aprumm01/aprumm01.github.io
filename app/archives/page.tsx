@@ -22,6 +22,14 @@ export default function ArchivesPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-[#fafafa]">
       <div className="mx-auto max-w-2xl px-6 py-32">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-[#555] hover:text-[#888] transition-colors mb-12"
+        >
+          <span>←</span>
+          <span>Back</span>
+        </Link>
+
         <h1 className="font-[family-name:var(--font-playfair)] text-4xl font-light tracking-tight mb-16">
           Archives
         </h1>
